@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>KALI KALI </title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style-1.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <h1 class="logo">
+            <a href="./index.html"><img src="./image/header-logo-KaliKali.png" alt="logo"></a>
+        </h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">News</a></li>
+                <li><a href="#">Brand & Culture</a></li>
+                <li><a href="#">Recipe</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Contact / FAQ</a></li>
+            </ul>
+            <ul class="topbar-member">
+                <li><a href="#">會員</a></li>
+                <li><a href="#">購物車</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+
+
+
+    </main>
+
+
+
+    <div id="root"></div>
+    <script type="text/babel">
+        const Card = () => {
+            return <>
+                <div className="product-content-card">
+                    <figure><img src="./image/product/product-content-img.png" alt="" /></figure>
+                    <p className="product-content-card-title">起司奶油咖哩(蛋奶素)</p>
+                    <div className="price">
+                        <small>NT$</small><h2>150</h2><a href=""><img src="./image/product/product-content-add.png" alt="" /></a>
+                    </div>
+                    <small className="weight">200g</small>
+                </div>
+            </>
+        }
+        function MyApp() {
+            return <>
+                <section id="banner">
+                    <div className="banner-bk">
+                    </div>
+                    <div className="tag-box">
+                        <ul className="tag">
+                            <li><a href="#">所有商品</a></li>
+                            <li><a href="#">咖哩調理包</a></li>
+                            <li><a href="#">湯品調理包</a></li>
+                            <li><a href="#">素食料理</a></li>
+                            <li><a href="#">辣味</a></li>
+                            <li><a href="#">調味粉</a></li>
+                        </ul>
+                    </div>
+                </section>
+                <section id="product-content">
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                </section>
+                <footer>
+                    <figure><img src="./image/footer-logo.png" alt=""/></figure>
+                    <ul class="menu">
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Brand & Culture</a></li>
+                        <li><a href="#">Recipe</a></li>
+                        <li><a href="#">Product</a></li>
+                        <li><a href="#">Contact / FAQ</a></li>
+                    </ul>
+                    <small class="copyright">© Kali Kali  2024 copyright</small>
+                </footer>
+            </>;
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    </script>
+    <!--
+        Note: this page is a great way to try React but it's not suitable for production.
+        It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+        Read this page for starting a new React project with JSX:
+        https://react.dev/learn/start-a-new-react-project
+
+        Read this page for adding React with JSX to an existing project:
+        https://react.dev/learn/add-react-to-an-existing-project
+    -->
+</body>
+
+</html>
