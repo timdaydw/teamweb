@@ -179,7 +179,8 @@ img {
     padding-bottom: 25px;
     padding-left: 37px;
     padding-right: 64px; 
-    /* position: fixed; */
+    position: fixed;
+    z-index: 100;
 }
 
 .topbar a{
