@@ -13,33 +13,48 @@
 </head>
 
 <body>
-    <header class="topbar">
-        <h1 class="logo">
-            <a href="./index.html"><img src="./image/header-logo-KaliKali.png" alt="logo"></a>
-        </h1>
-        <nav>
-            <ul class="menu">
-                <li><a href="#">News</a></li>
-                <li><a href="#">Brand & Culture</a></li>
-                <li><a href="#">Recipe</a></li>
-                <li><a href="#">Product</a></li>
-                <li><a href="#">Contact / FAQ</a></li>
-            </ul>
-            <ul class="topbar-member">
-                <li><a href="#">會員</a></li>
-                <li><a href="#">購物車</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-    </main>
-
-
-
     <div id="root"></div>
     <script type="text/babel">
         const { useState } = React;
+
+        const Topbar = () => {
+            return <>
+                <header className="topbar">
+                    <h1 className="logo">
+                        <a href="./index.html"><img src="./image/header-logo-KaliKali.png" alt="logo" /></a>
+                    </h1>
+                    <nav>
+                        <ul className="menu">
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Brand & Culture</a></li>
+                            <li><a href="#">Recipe</a></li>
+                            <li><a href="#">Product</a></li>
+                            <li><a href="#">Contact / FAQ</a></li>
+                        </ul>
+                        <ul className="topbar-member">
+                            <li><a href="#">會員</a></li>
+                            <li><a href="#">購物車</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </>
+        }
+
+        const Footer = () => {
+            return <>
+                <footer>
+                    <figure><img src="./image/footer-logo.png" alt="" /></figure>
+                    <ul className="menu">
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Brand & Culture</a></li>
+                        <li><a href="#">Recipe</a></li>
+                        <li><a href="#">Product</a></li>
+                        <li><a href="#">Contact / FAQ</a></li>
+                    </ul>
+                    <small className="copyright">© Kali Kali  2024 copyright</small>
+                </footer>
+            </>
+        }
 
         const Card = () => {
             const [num, setNum] = useState(0);
@@ -56,7 +71,7 @@
                             <img src="./image/product/product-card-hover-sub.png" alt="" onClick={() => {
                                 // num--;
                                 setNum(num - 1);
-                            }}/>
+                            }} />
                             <p>{num}</p>
                             <img src="./image/product/product-card-hover-add.png" alt="" onClick={() => {
                                 // num+;
@@ -74,46 +89,39 @@
         }
         function MyApp() {
             return <>
-                <section id="banner">
-                    <div className="banner-bk">
-                    </div>
-                    <div className="tag-box">
-                        <ul className="tag">
-                            <li><a href="#">所有商品</a></li>
-                            <li><a href="#">咖哩調理包</a></li>
-                            <li><a href="#">湯品調理包</a></li>
-                            <li><a href="#">素食料理</a></li>
-                            <li><a href="#">辣味</a></li>
-                            <li><a href="#">調味粉</a></li>
-                        </ul>
-                    </div>
-                </section>
-                <section id="product-content">
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                </section>
-                <footer>
-                    <figure><img src="./image/footer-logo.png" alt="" /></figure>
-                    <ul class="menu">
-                        <li><a href="#">News</a></li>
-                        <li><a href="#">Brand & Culture</a></li>
-                        <li><a href="#">Recipe</a></li>
-                        <li><a href="#">Product</a></li>
-                        <li><a href="#">Contact / FAQ</a></li>
-                    </ul>
-                    <small class="copyright">© Kali Kali  2024 copyright</small>
-                </footer>
+                <Topbar />
+                <main>
+                    <section id="banner">
+                        <div className="banner-bk">
+                        </div>
+                        <div className="tag-box">
+                            <ul className="tag">
+                                <li><a href="#">所有商品</a></li>
+                                <li><a href="#">咖哩調理包</a></li>
+                                <li><a href="#">湯品調理包</a></li>
+                                <li><a href="#">素食料理</a></li>
+                                <li><a href="#">辣味</a></li>
+                                <li><a href="#">調味粉</a></li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section id="product-content">
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                    </section>
+                </main>
+                <Footer/>
             </>;
         }
 

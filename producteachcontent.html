@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>KALI KALI </title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style-producteachcontent.css">
+</head>
+
+<body>
+
+
+
+    <!-- <main>
+        <section id="banner"></section>
+        <section id="content">
+            <div class="tag-box">
+                <ul class="tag">
+                    <li><a href="#">所有商品</a></li>
+                    <li><a href="#">咖哩調理包</a></li>
+                    <li><a href="#">湯品調理包</a></li>
+                    <li><a href="#">素食料理</a></li>
+                    <li><a href="#">辣味</a></li>
+                    <li><a href="#">調味粉</a></li>
+                </ul>
+                <div class="recipe">
+                    <h1>食譜分享</h1>
+                    <img src="./image/product/723535-colorbox.png" alt="">
+                </div>
+            </div>
+            <div class="content-content">
+                <div class="topinfo">
+                    <figure><img src="./image/product/producteachcontent-content-img-1.png" alt=""></figure>
+                    <div class="buy-card">
+                        <h2 class="buy-card-title">濃郁奶油雞肉咖哩</h2>
+                        <small>06/01~06/30期間內 調理包買一送一</small>
+                        <h1>NT$150</h1>
+                        <p>數量</p>
+                        <h3 class="buy-number"><a href="#">
+                                <p>-</p>
+                            </a>1<a href="#">+</a></h3>
+                        <button class="buynow">立即購買</button>
+                        <button class="addshop">加入購物車</button>
+                        <h2 style="font-size: 1.125rem; font-weight: bold;">付款與運送</h2>
+                        <h3>宅配滿NT$1,000免運</h3>
+                    </div>
+                </div>
+                <div class="content-contenttext">
+                    <h1>商品特色</h1>
+                    <ul>
+                        <li>純素友善：完全不含蛋和奶製品，適合素食者和對蛋奶產品敏感的人食用。</li>
+                        <li>豐富口感：獨特的配方結合了濃郁的起司風味和奶油質感，加上精選的咖哩香料，為您帶來滿滿的口感和豐富的味道。</li>
+                        <li>健康美味：精心挑選的天然食材，不含人工添加劑和防腐劑，讓您可以安心享受美味同時保持健康。</li>
+                        <li>方便快捷：即食產品，只需加熱即可享用，為您節省烹飪時間，讓您隨時隨地輕鬆品嚐美味。</li>
+                    </ul>
+                </div>
+
+                <div class="content-text-explain">
+                    <div class="content-text-explain-title">
+                        <h1>詳細說明</h1>
+                        <h1>注意事項</h1>
+                    </div>
+                    <div class="content-text-explain-img">
+                        <figure><img src="./image/product/content-text-explain-img1.png" alt=""></figure>
+                        <figure><img src="./image/product/content-text-explain-img2.png" alt=""></figure>
+                    </div>
+                </div>
+
+                <div class="content-recommend">
+                    <h1 class="content-text-explain-title">推薦商品</h1>
+                    <img src="./image/product/723535-colorbox.png" alt="">
+                    <img src="./image/product/723535-colorbox.png" alt="">
+                    <img src="./image/product/723535-colorbox.png" alt="">
+                    <img src="./image/product/723535-colorbox.png" alt="">
+                    <img src="./image/product/723535-colorbox.png" alt="">
+                </div>
+            </div>
+
+        </section>
+    </main> -->
+
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const Topbar = () => {
+            return <>
+                <header className="topbar">
+                    <h1 className="logo">
+                        <a href="./index.html"><img src="./image/header-logo-KaliKali.png" alt="logo" /></a>
+                    </h1>
+                    <nav>
+                        <ul className="menu">
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Brand & Culture</a></li>
+                            <li><a href="#">Recipe</a></li>
+                            <li><a href="#">Product</a></li>
+                            <li><a href="#">Contact / FAQ</a></li>
+                        </ul>
+                        <ul className="topbar-member">
+                            <li><a href="#">會員</a></li>
+                            <li><a href="#">購物車</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </>
+        }
+
+        const Footer = () => {
+            return <>
+                <footer>
+                    <figure><img src="./image/footer-logo.png" alt="" /></figure>
+                    <ul className="menu">
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Brand & Culture</a></li>
+                        <li><a href="#">Recipe</a></li>
+                        <li><a href="#">Product</a></li>
+                        <li><a href="#">Contact / FAQ</a></li>
+                    </ul>
+                    <small className="copyright">© Kali Kali  2024 copyright</small>
+                </footer>
+            </>
+        }
+
+
+        function MyApp() {
+            return <>
+                <Topbar />
+                <main>
+                    <section id="banner"></section>
+                    <section id="content">
+                        <div className="tag-box">
+                            <ul className="tag">
+                                <li><a href="#">所有商品</a></li>
+                                <li><a href="#">咖哩調理包</a></li>
+                                <li><a href="#">湯品調理包</a></li>
+                                <li><a href="#">素食料理</a></li>
+                                <li><a href="#">辣味</a></li>
+                                <li><a href="#">調味粉</a></li>
+                            </ul>
+                            <div className="recipe">
+                                <h1>食譜分享</h1>
+                                <img src="./image/product/723535-colorbox.png" alt="" />
+                            </div>
+                        </div>
+                        <div className="content-content">
+                            <div className="topinfo">
+                                <figure><img src="./image/product/producteachcontent-content-img-1.png" alt="" /></figure>
+                                <div className="buy-card">
+                                    <h2 className="buy-card-title">濃郁奶油雞肉咖哩</h2>
+                                    <small>06/01~06/30期間內 調理包買一送一</small>
+                                    <h1>NT$150</h1>
+                                    <p>數量</p>
+                                    <h3 className="buy-number"><a href="#">
+                                        <p>-</p>
+                                    </a>1<a href="#">+</a></h3>
+                                    <button className="buynow">立即購買</button>
+                                    <button className="addshop">加入購物車</button>
+                                    <h2 className="payinfo">付款與運送</h2>
+                                    <h3>宅配滿NT$1,000免運</h3>
+                                </div>
+                            </div>
+                            <div className="content-contenttext">
+                                <h1>商品特色</h1>
+                                <ul>
+                                    <li>純素友善：完全不含蛋和奶製品，適合素食者和對蛋奶產品敏感的人食用。</li>
+                                    <li>豐富口感：獨特的配方結合了濃郁的起司風味和奶油質感，加上精選的咖哩香料，為您帶來滿滿的口感和豐富的味道。</li>
+                                    <li>健康美味：精心挑選的天然食材，不含人工添加劑和防腐劑，讓您可以安心享受美味同時保持健康。</li>
+                                    <li>方便快捷：即食產品，只需加熱即可享用，為您節省烹飪時間，讓您隨時隨地輕鬆品嚐美味。</li>
+                                </ul>
+                            </div>
+                            <div className="content-text-explain">
+                                <div className="content-text-explain-title">
+                                    <h1>詳細說明</h1>
+                                    <h1>注意事項</h1>
+                                </div>
+                                <div className="content-text-explain-img">
+                                    <figure><img src="./image/product/content-text-explain-img1.png" alt="" /></figure>
+                                    <figure><img src="./image/product/content-text-explain-img2.png" alt="" /></figure>
+                                </div>
+                            </div>
+                            <div className="content-recommend">
+                                <h1 className="content-text-explain-title">推薦商品</h1>
+                                <img src="./image/product/723535-colorbox.png" alt="" />
+                                <img src="./image/product/723535-colorbox.png" alt="" />
+                                <img src="./image/product/723535-colorbox.png" alt="" />
+                                <img src="./image/product/723535-colorbox.png" alt="" />
+                                <img src="./image/product/723535-colorbox.png" alt="" />
+                            </div>
+                        </div>
+                    </section>
+                </main>
+                <Footer/>
+            </>;
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    </script>
+    <!--
+        Note: this page is a great way to try React but it's not suitable for production.
+        It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+        Read this page for starting a new React project with JSX:
+        https://react.dev/learn/start-a-new-react-project
+
+        Read this page for adding React with JSX to an existing project:
+        https://react.dev/learn/add-react-to-an-existing-project
+    -->
+</body>
+
+</html>
