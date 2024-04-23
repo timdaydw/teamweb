@@ -324,6 +324,11 @@ a {
     opacity: 1;
 }
 
+.card-hover-number img {
+    /* 滑鼠游標圖案:超連結手指 */
+    cursor: pointer;
+}
+
 .card-hover-number{
     width: 181px;
     height: 70px;

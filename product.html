@@ -33,17 +33,16 @@
     </header>
 
     <main>
-
-
-
-
     </main>
 
 
 
     <div id="root"></div>
     <script type="text/babel">
+        const { useState } = React;
+
         const Card = () => {
+            const [num, setNum] = useState(0);
             return <>
                 <div className="product-content-card">
                     <figure><img src="./image/product/product-content-img.png" alt="" /></figure>
@@ -54,9 +53,15 @@
                     <small className="weight">200g</small>
                     <div className="card-buy">
                         <div className="card-hover-number">
-                            <a href="#"><img src="./image/product/product-card-hover-sub.png" alt="" /></a>
-                            <p>2</p>
-                            <a href="#"><img src="./image/product/product-card-hover-add.png" alt="" /></a>
+                            <img src="./image/product/product-card-hover-sub.png" alt="" onClick={() => {
+                                // num--;
+                                setNum(num - 1);
+                            }}/>
+                            <p>{num}</p>
+                            <img src="./image/product/product-card-hover-add.png" alt="" onClick={() => {
+                                // num+;
+                                setNum(num + 1);
+                            }} />
                         </div>
                         <p className="product-hover-number-title">起司奶油咖哩(蛋奶素)</p>
                         <div className="price-hover">
