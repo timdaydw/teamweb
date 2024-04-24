@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <link rel="stylesheet" href="member-log.css">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const Topbar = () => {
+            return <>
+                <header className="topbar">
+                    <h1 className="logo">
+                        <a href="./index.html"><img src="./image/header-logo-KaliKali.png" alt="logo" /></a>
+                    </h1>
+                    <nav>
+                        <ul className="menu">
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Brand & Culture</a></li>
+                            <li><a href="#">Recipe</a></li>
+                            <li><a href="#">Product</a></li>
+                            <li><a href="#">Contact / FAQ</a></li>
+                        </ul>
+                        <ul className="topbar-member">
+                            <li><a href="#">會員</a></li>
+                            <li><a href="#">購物車</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </>
+        }
+
+        const Footer = () => {
+            return <>
+                <footer>
+                    <figure><img src="./image/footer-logo.png" alt="" /></figure>
+                    <ul className="menu">
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Brand & Culture</a></li>
+                        <li><a href="#">Recipe</a></li>
+                        <li><a href="#">Product</a></li>
+                        <li><a href="#">Contact / FAQ</a></li>
+                    </ul>
+                    <small className="copyright">© Kali Kali  2024 copyright</small>
+                </footer>
+            </>
+        }
+        function MyApp() {
+            return <>
+            <Topbar/>
+                <main>
+                    <section id="log">
+                        <div className="log-input">
+                            <div className="log-box">
+                                <h1>會員登入</h1>
+                                <div className="acc">
+                                    <label for="acc">會員信箱</label>
+                                    <input type="text" id="acc"/>
+                                </div>
+                                <div className="pass">
+                                    <label for="pass">會員密碼</label>
+                                    <input type="password" id="pass"/>
+                                </div>
+                                <button>登入</button>
+                                <a href="#"><small>忘記密碼FORGOT PASSWORD</small></a>
+                                <h2>快速登入</h2>
+                                <ul>
+                                    <li><a href="#"><img src="./image/member/member-fb-icon.png" alt=""/></a></li>
+                                    <li><a href="#"><img src="./image/member/member-google-icon.png" alt=""/></a></li>
+                                    <li><a href="#"><img src="./image/member/member-line-icon.png" alt=""/></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="forgetacc">
+                            <h1>尚未註冊會員帳號</h1>
+                            <button>註冊會員</button>
+                        </div>
+                    </section>
+                </main>
+                <Footer/>
+            </>;
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    </script>
+
+</body>
+
+</html>
