@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+
+
+    <div id="root"></div>
+    <script type="text/babel">
+        const Topbar = () => {
+            return <>
+                <header className="topbar">
+                    <h1 className="logo">
+                        <a href="./index.html"><img src="./image/header-logo-KaliKali.png" alt="logo" /></a>
+                    </h1>
+                    <nav>
+                        <ul className="menu">
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Brand & Culture</a></li>
+                            <li><a href="#">Recipe</a></li>
+                            <li><a href="#">Product</a></li>
+                            <li><a href="#">Contact / FAQ</a></li>
+                        </ul>
+                        <ul className="topbar-member">
+                            <li><a href="#">會員</a></li>
+                            <li><a href="#">購物車</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </>
+        }
+
+        const Footer = () => {
+            return <>
+                <footer>
+                    <figure><img src="./image/footer-logo.png" alt="" /></figure>
+                    <ul className="menu">
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Brand & Culture</a></li>
+                        <li><a href="#">Recipe</a></li>
+                        <li><a href="#">Product</a></li>
+                        <li><a href="#">Contact / FAQ</a></li>
+                    </ul>
+                    <small className="copyright">© Kali Kali  2024 copyright</small>
+                </footer>
+            </>
+        }
+        function MyApp() {
+            return <>
+                <Topbar />
+                <main>
+                    <section id="register">
+                        <div className="register-box">
+                            <h1>註冊會員</h1>
+                            <div className="name">
+                                <label htmlFor="name">會員姓名</label>
+                                <input type="text" id="name" />
+                            </div>
+                            <div className="email">
+                                <label htmlFor="email">會員信箱</label>
+                                <input type="email" id="email" />
+                            </div>
+                            <div className="password">
+                                <label htmlFor="password">會員密碼</label>
+                                <input type="password" id="password" />
+                            </div>
+                            <div className="tel">
+                                <label htmlFor="tel">會員電話</label>
+                                <input type="tel" id="tel" />
+                            </div>
+                            <div className="date">
+                                <label htmlFor="date">會員生日</label>
+                                <input type="date" id="date" />
+                            </div>
+
+                            <button className="register-btn">註冊</button>
+                            <small>已是會員 Already a member</small>
+                            <button className="log-btn">登入會員</button>
+                        </div>
+                    </section>
+
+                </main>
+                <Footer />
+            </>;
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    </script>
+</body>
+
+</html>
