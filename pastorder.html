@@ -9,13 +9,23 @@
 
     <!-- Don't use this in production: -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <link rel="stylesheet" href="forgetpass.css">
+    <link rel="stylesheet" href="pastorder.css">
 </head>
 
 <body>
-    
     <div id="root"></div>
     <script type="text/babel">
+        const FormRow = () => {
+            return <>
+                <div className="row">
+                    <div className="w346"><p>20230619091311179</p></div>
+                    <div className="w251"><p>2023-06-19</p></div>
+                    <div className="w239"><p>NT $600</p></div>
+                    <div className="w478"><p>已完成</p><p>2023-06-26</p><button>查閱訂單</button></div>
+                </div>
+            </>
+        }
+
         const Topbar = () => {
             return <>
                 <header className="topbar">
@@ -56,19 +66,32 @@
         }
         function MyApp() {
             return <>
-                <Topbar/>
+                <Topbar />
                 <main>
-                    <section id="resetpass">
-                        <h1>密碼重設</h1>
-                        <p>請輸入您註冊使用的「E-Mail帳號」<br/>系統會將密碼寄到您的信箱中</p>
-                        <div className="email">
-                            <label htmlFor="email">會員信箱</label>
-                            <input type="email" id="email"/>
+                    <section id="pastorder">
+                        <div className="title">
+                            <h1 className="none">會員資料</h1>
+                            <h1 className="separator">/</h1>
+                            <h1>歷史訂單</h1>
                         </div>
-                        <button>送出</button>
+                        <div className="form-title-box">
+                            <div className="w346"><h1>訂單標號</h1></div>
+                            <div className="w251"><h1>訂單日期</h1></div>
+                            <div className="w239"><h1>合計金額</h1></div>
+                            <div className="w478"><h1>訂單狀態</h1></div>
+                        </div>
+                        <div className="form-box">
+                            <FormRow />
+                            <FormRow />
+                            <FormRow />
+                            <FormRow />
+                            <FormRow />
+                            <FormRow />
+                            <FormRow />
+                        </div>
                     </section>
                 </main>
-                <Footer/>
+                <Footer />
             </>;
         }
 

@@ -162,11 +162,10 @@ body {
 
 /* main */
 
-/* resetpass */
-#resetpass {
-    padding-top: 182px;
-    padding-bottom: 132px;
-    width: 100%;
+/* member-info */
+#member-info {
+    padding-top: 116px;
+    padding-bottom: 92px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -177,49 +176,54 @@ body {
     background-repeat: no-repeat;
 }
 
-#resetpass h1{
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 42px;
-    margin-left: 99px;
+#member-info h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
 }
 
-#resetpass p {
-    margin-bottom: 66px;
-    margin-left: 99px;
-    font-weight: 700;
-    text-align: center;
+.title {
+    display: flex;
+    width: 578px;
+    justify-content: space-around;
+    margin-bottom: 56px;
 }
 
-.email {
-    margin-bottom: 29px;
+#member-info .separator {
+    font-size: 3rem;
+    font-weight: 900;
 }
 
-#resetpass label{
+.none {
+    color: #B3B3B3;
+}
+
+#member-info div {
+    margin-bottom: 24px;
+}
+
+#member-info label {
     font-size: 1.125rem;
     color: var(--09302b);
-    margin-right: 27px;
-    font-weight: 700;
 }
-
-#resetpass input {
+#member-info input {
     width: 570px;
     height: 52px;
     background-color: var(--f5e9e4);
-    color: var(--09302b);
     text-align: center;
+    color: var(--09302b);
     border: none;
+    margin-left: 30px;
 }
 
-#resetpass button {
+#member-info button {
     width: 570px;
-    height: 53px;
+    height: 52px;
     background-color: var(--d59c41);
-    color: black;
+    text-align: center;
     font-size: 1.5rem;
-    margin-left: 99px;
+    font-weight: 600;
     border: none;
-    font-weight: 700;
+    margin-left: 102px;
 }
 
 

@@ -9,11 +9,11 @@
 
     <!-- Don't use this in production: -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <link rel="stylesheet" href="forgetpass.css">
+    <link rel="stylesheet" href="memberinfo.css">
 </head>
 
 <body>
-    
+
     <div id="root"></div>
     <script type="text/babel">
         const Topbar = () => {
@@ -56,19 +56,45 @@
         }
         function MyApp() {
             return <>
-                <Topbar/>
+                <Topbar />
                 <main>
-                    <section id="resetpass">
-                        <h1>密碼重設</h1>
-                        <p>請輸入您註冊使用的「E-Mail帳號」<br/>系統會將密碼寄到您的信箱中</p>
-                        <div className="email">
-                            <label htmlFor="email">會員信箱</label>
-                            <input type="email" id="email"/>
-                        </div>
-                        <button>送出</button>
+                    <section id="member-info">
+                        
+                            <div className="title">
+                                <h1>會員資料</h1>
+                                <h1 className="separator">/</h1>
+                                <h1 className="none">歷史訂單</h1>
+                            </div>
+                            <div className="name">
+                                <label htmlFor="name">會員姓名</label>
+                                <input type="text" id="name" />
+                            </div>
+                            <div className="email">
+                                <label htmlFor="email">會員信箱</label>
+                                <input type="email" id="email" />
+                            </div>
+                            <div className="password">
+                                <label htmlFor="password">會員密碼</label>
+                                <input type="password" id="password" />
+                            </div>
+                            <div className="tel">
+                                <label htmlFor="tel">會員電話</label>
+                                <input type="tel" id="tel" />
+                            </div>
+                            <div className="date">
+                                <label htmlFor="date">會員生日</label>
+                                <input type="date" id="date" />
+                            </div>
+                            <div className="address">
+                                <label htmlFor="address">收貨地址</label>
+                                <input type="text" id="address" />
+                            </div>
+                            <button className="member-info-btn">儲存</button>
+                        
                     </section>
+
                 </main>
-                <Footer/>
+                <Footer />
             </>;
         }
 
