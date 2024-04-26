@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="orderinfo.css">
+</head>
+
+<body>
+
+    <main>
+        <section id="orderinfo">
+            <div class="orderinfo-box">
+                <h1>訂單詳情</h1>
+                <div class="order-title-box">
+                    <div class="w359"><h2>商品資料</h2></div>
+                    <div class="w269"><h2>優惠</h2></div>
+                    <div class="w208"><h2>單件價格</h2></div>
+                    <div class="w181"><h2>數量</h2></div>
+                    <div class="w325"><h2>小計</h2></div>
+                </div>
+                <div class="order-row">
+                    <div class="w359">
+                        <img src="./image/member/orderinfo-img.png" alt="">
+                        <div class="h1">
+                            <h1>起司奶油咖哩(蛋奶素)</h1>
+                        </div>
+                    </div>
+                    <div class="discount w269">
+                            <div class="discount-banner"><p>任選優惠</p></div>
+                            <div>
+                                <p>
+                                    06/01~06/30期間內<br>
+                                    調理包買一送一
+                                </p>
+                            </div>
+                    </div>
+                    <div class="w208"><p>NT$100</p></div>
+                    <div class="w181 amount"><p>2</p></div>
+                    <div class="w325 total"><p>NT$100</p></div>
+                </div>
+                <div class="total-box">
+                    <div><h2>小計 :</h2>NT$ 1000</div>
+                    <div><h2>折扣優惠 :</h2>NT$ 420</div>
+                    <div><h2>運費 :</h2>NT$ 100</div>
+                    <div><h2>合計 :</h2>NT$ 680</div>
+                    <button>再次加入購物車</button>
+                </div>
+                
+            </div>
+        </section>
+
+    </main>
+
+    <div id="root"></div>
+    <script type="text/babel">
+
+        const Topbar = () => {
+            return <>
+                <header className="topbar">
+                    <h1 className="logo">
+                        <a href="./index.html"><img src="./image/header-logo-KaliKali.png" alt="logo" /></a>
+                    </h1>
+                    <nav>
+                        <ul className="menu">
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Brand & Culture</a></li>
+                            <li><a href="#">Recipe</a></li>
+                            <li><a href="#">Product</a></li>
+                            <li><a href="#">Contact / FAQ</a></li>
+                        </ul>
+                        <ul className="topbar-member">
+                            <li><a href="#">會員</a></li>
+                            <li><a href="#">購物車</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </>
+        }
+
+        const Footer = () => {
+            return <>
+                <footer>
+                    <figure><img src="./image/footer-logo.png" alt="" /></figure>
+                    <ul className="menu">
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Brand & Culture</a></li>
+                        <li><a href="#">Recipe</a></li>
+                        <li><a href="#">Product</a></li>
+                        <li><a href="#">Contact / FAQ</a></li>
+                    </ul>
+                    <small className="copyright">© Kali Kali  2024 copyright</small>
+                </footer>
+            </>
+        }
+        function MyApp() {
+            return <>
+
+            </>;
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    </script>
+</body>
+
+</html>
