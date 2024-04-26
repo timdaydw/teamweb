@@ -168,6 +168,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 115px;
+    padding-bottom: 44px;
+    background-color: #FFFAF8;
 }
 .orderinfo-box {
     display: flex;
@@ -175,8 +178,9 @@ body {
     align-items: center;
 }
 
-.orderinfo-box h1 {
+.orderinfo-box>h1 {
     font-size: 1.5rem;
+    margin-bottom: 39px;
 }
 
 .order-title-box {
@@ -185,6 +189,7 @@ body {
     background-color: var(--3b4a1f);
     color: white;
     height: 49px;
+    margin-bottom: 24px;
 }
 .order-title-box>div, .order-row>div{
     display: flex;
@@ -202,6 +207,7 @@ body {
     display: flex;
     height: 104px;
     background-color: var(--f5e9e4);
+    margin-bottom: 12px;
 }
 
 
@@ -268,6 +274,38 @@ body {
 }
 .w325{
     width: 325px;
+}
+
+.total-box {
+    align-self: flex-end;
+    margin-top: 28px;
+}
+
+.total-box>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 540px;
+    height: 32px;
+    background-color: var(--f5e9e4);
+    padding-right: 36px;
+    margin-bottom: 9px;
+}
+
+.total-l{
+    width: 146px;
+    text-align: center;
+}
+
+.total-box button{
+    float: right;
+    width: 163px;
+    height: 32px;
+    background-color: var(--d59c41);
+    border: none;
+    text-align: center;
+
+    margin-top: 22px;
 }
 
 /* header */
