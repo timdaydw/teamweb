@@ -9,11 +9,20 @@
 
     <!-- Don't use this in production: -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="forgetpass.css">
 </head>
 
 <body>
+    <main>
+        <section id="resetpass">
+            <h1>密碼重設</h1>
+            <p>請輸入您註冊使用的「E-Mail帳號」<br>系統會將密碼寄到您的信箱中</p>
+            <label for="email">會員信箱</label>
+            <input type="email" id="email">
+            <button>送出</button>
+        </section>
 
+    </main>
 
     <div id="root"></div>
     <script type="text/babel">
@@ -57,38 +66,12 @@
         }
         function MyApp() {
             return <>
-                <Topbar />
-                <main>
-                    <section id="register">
-                        <div className="register-box">
-                            <h1>註冊會員</h1>
-                            <div className="name">
-                                <label htmlFor="name">會員姓名</label>
-                                <input type="text" id="name" />
-                            </div>
-                            <div className="email">
-                                <label htmlFor="email">會員信箱</label>
-                                <input type="email" id="email" />
-                            </div>
-                            <div className="password">
-                                <label htmlFor="password">會員密碼</label>
-                                <input type="password" id="password" />
-                            </div>
-                            <div className="tel">
-                                <label htmlFor="tel">會員電話</label>
-                                <input type="tel" id="tel" />
-                            </div>
-                            <div className="date">
-                                <label htmlFor="date">會員生日</label>
-                                <input type="date" id="date" />
-                            </div>
 
-                            <button className="register-btn">註冊</button>
-                        </div>
-                    </section>
+                <main>
+                    
 
                 </main>
-                <Footer />
+
             </>;
         }
 
