@@ -185,7 +185,9 @@ body {
     display: flex;
     width: 578px;
     justify-content: space-around;
+    align-items: center;
     margin-bottom: 56px;
+    padding-left: 151px;
 }
 
 #member-info .separator {
