@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="shopdone.css">
+    
+</head>
+
+<body>
+    <main>
+        <section id="shopdone">
+            <div class="shopdone-box">
+                <figure><img src="./image/shop/done.png" alt=""></figure>
+                <h1>感謝您的購買!</h1>
+                <div class="btn">
+                    <button>返回首頁</button>
+                    <button>查詢訂單</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="root"></div>
+    <script type="text/babel">
+        
+        function MyApp() {
+            return <>
+                
+            </>;
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    </script>
+</body>
+
+</html>

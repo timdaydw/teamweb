@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="shopconfirm.css">
+    
+</head>
+
+<body>
+    <main>
+        <section id="shoplist">
+            <div class="shoplist-box">
+                <div class="title">
+                    <h1>購物車</h1>
+                </div>
+                <div class="step">
+                    <img src="./image/shop/step1-deep.png" alt="">
+                    <img src="./image/shop/arrow.png" alt="">
+                    <img src="./image/shop/step2.png" alt="">
+                    <img src="./image/shop/arrow.png" alt="">
+                    <img src="./image/shop/step3.png" alt="">
+                </div>
+                <div class="shoplist-content">
+                    <div class="order-title-box">
+                        <div class="w359"><h2>商品資料</h2></div>
+                        <div class="w269"><h2>優惠</h2></div>
+                        <div class="w208"><h2>單件價格</h2></div>
+                        <div class="w181"><h2>數量</h2></div>
+                        <div class="w325"><h2>小計</h2></div>
+                    </div>
+                    <div class="order-row">
+                        <div class="w359">
+                            <img src="./image/member/orderinfo-img.png" alt="" />
+                            <div class="h1">
+                                <h1>起司奶油咖哩(蛋奶素)</h1>
+                            </div>
+                        </div>
+                        <div class="discount w269">
+                            <div class="discount-banner"><p>任選優惠</p></div>
+                            <div>
+                                <p>
+                                    06/01~06/30期間內<br />
+                                    調理包買一送一
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w208"><p>NT$100</p></div>
+                        <div class="w181 amount"><p>2</p></div>
+                        <div class="w325 total"><p>NT$100</p></div>
+                    </div>
+                </div>
+                <div class="total-box">
+                    <div>
+                        <div class="total-l"><h2>小計 :</h2></div>
+                        <div class="total-r"><p>NT$ 1000</p></div>
+                    </div>
+                    <div>
+                        <div class="total-l"><h2>折扣優惠 :</h2></div>
+                        <div class="total-r"><p>NT$ 420</p></div>
+                    </div>
+                    <div>
+                        <div class="total-l"><h2>運費 :</h2></div>
+                        <div class="total-r"><p>NT$ 100</p></div>
+                    </div>
+                    <div>
+                        <div class="total-l"><h2>合計 :</h2></div>
+                        <div class="total-r"><p>NT$ 680</p></div>
+                    </div>
+                </div>
+                <div class="memberinfo">
+                    <div><h1>收件姓名</h1><p>王小明</p></div>
+                    <div><h1>會員信箱</h1><p>ming000@gmail.com</p></div>
+                    <div><h1>聯絡電話</h1><p>0900-123-000</p></div>
+                    <div><h1>收貨地址</h1><p>台北市大同區咖哩路咖哩巷77號7樓</p></div>
+                    <div><h1>付款方式</h1><p>線上支付</p></div>
+                    <div><h1>開立發票</h1><p>雲端載具</p></div>
+                    <div><h1>載具編號</h1><p>/UMGX0M2</p></div>
+                </div>
+                <div class="btn">
+                    <button>回到上一頁</button>
+                    <button>完成訂單</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="root"></div>
+    <script type="text/babel">
+        
+        function MyApp() {
+            return <>
+                
+            </>;
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    </script>
+</body>
+
+</html>
