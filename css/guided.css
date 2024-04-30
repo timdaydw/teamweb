@@ -278,3 +278,104 @@ body {
     width: 322px;
     font-size: 1.125rem;
 }
+
+/* curry-first */
+
+#curry-first {
+    height: 800px;
+    background-color: #FFF6F2;
+    display: flex;
+}
+
+.curry-first-box {
+    line-height: 1.5;
+    width: 656px;
+    margin-left: 19%;
+    margin-top: 490px;
+}
+
+.curry-first-box h1{
+    font-size: 2.5rem;
+    color: #C89443;
+    margin-bottom: 35px;
+}
+
+.curry-first-box p{
+    font-size: 1.125rem;
+    color: var(--09302b);
+}
+
+/* curry-orgin */
+
+#curry-orgin {
+    height: 800px;
+    background: linear-gradient(170deg, #9F4800 60%,#FFF6F2 40%);
+    position: relative;
+}
+
+#curry-orgin h1 {
+    font-size: 3rem;
+    text-align: center;
+    line-height: 100px;
+    display: block;
+    width: 380px;
+    height: 100px;
+}
+
+#curry-orgin h2 {
+    font-size: 2.25rem;
+    letter-spacing: 1.3rem;
+}
+
+.curry-orgin-title h1 {
+    color: #052F2A;
+    background-color: #CE9741;
+    border-end-end-radius: 99px;
+    border-top-right-radius: 99px;
+    text-align: center;
+}
+
+.curry-orgin-title h2 {
+    margin-left: 108px;
+    margin-top: 26px;
+    color: white;
+}
+
+.curry-orgin-content{
+    width: 490px;
+    position: absolute;
+    top: 19.3%;
+    left: 40%;
+    color: #9F4800;
+    background-color: #F2E6E1;
+    line-height: 2;
+}
+
+.curry-orgin-footer {
+    float: right;
+    margin-top: 25%;
+}
+
+.curry-orgin-footer h1{
+    color: #F2E6E1;
+    background-color: #9F4800;
+    border-start-start-radius: 99px;
+    border-bottom-left-radius: 99px;
+    text-align: center;
+    bottom: 0;
+}
+.curry-orgin-footer h2 {
+    padding-left: 110px;
+    color: #09302B;
+    margin-top: 11px;
+}
+
+/* curry-eachcountry */
+
+#curry-eachcountry {
+    height: 800px;
+    background-color: #FFF6F2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
