@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="./css/contact.css">
+</head>
+
+<body>
+    <main>
+        <section class="contact">
+            <div class="contact-info">
+                <h1>Contact & FQA</h1>
+                <h2>聯絡我們 與 問答</h2>
+            </div>
+            <div>
+                <div>
+                    <h3>客服電話</h3>
+                    <p>02-2222-6666</p>
+                </div>
+                <div>
+                    <h3>官方Email</h3>
+                    <p>kalikali666@gmail.com</p>
+                </div>
+                <div>
+                    <h3>客服服務時間</h3>
+                    <p>MON-SAT . 11:00~20:00</p>
+                </div>
+            </div>
+        </section>
+        <section id="shop-qa">
+            <div class="shop-qa-box">
+                <div>
+                    <p>我可以在你們的網站上訂購嗎？</p>
+                    <img src="./image/contact/add.png" alt="">
+                </div>
+                <div>
+                    <p>我可以取消或修改已經下單的訂單嗎？</p>
+                    <img src="./image/contact/add.png" alt="">
+                </div>
+                <div>
+                    <p>我可以在網站上追蹤我的訂單嗎？</p>
+                    <img src="./image/contact/add.png" alt="">
+                </div>
+                <div>
+                    <p>我可以使用哪些付款方式購物？</p>
+                    <img src="./image/contact/add.png" alt="">
+                </div>
+                <div>
+                    <p>訂單遇到問題該怎麼辦？</p>
+                    <img src="./image/contact/add.png" alt="">
+                </div>
+            </div>
+            <div class="shop-qa-title">
+                <h1>Shopping Guidelines</h1>
+                <h2>購物需知</h2>
+            </div>
+        </section>
+        <section id="transport-qa">
+            <div class="transport-qa-box">
+                <div>
+                    <p>運費如何計算？</p>
+                    <img src="./image/contact/add.png" alt="">
+                </div>
+                <div>
+                    <p>是否有免運費的優惠？</p>
+                    <img src="./image/contact/add.png" alt="">
+                </div>
+                <div>
+                    <p>我可以選擇配送方式嗎？</p>
+                    <img src="./image/contact/add.png" alt="">
+                </div>
+                <div>
+                    <p>我可以在哪些地區購買您的產品？</p>
+                    <img src="./image/contact/add.png" alt="">
+                </div>
+            </div>
+            <div class="transport-qa-title">
+                <h1>Shipping Information</h1>
+                <h2>運費需知</h2>
+            </div>
+        </section>
+        <section id="product-qa">
+            <div class="product-qa-title">
+                <h1>Product Instructions</h1>
+                <h2>產品需知</h2>
+            </div>
+            <div class="product-qa-box">
+                <div>
+                    <p>調理包該如何使用？</p>
+                    <img src="./image/contact/add.png" alt="">
+                </div>
+                <div>
+                    <p>產品包含了哪些成分？</p>
+                    <img src="./image/contact/add.png" alt="">
+                </div>
+                <div>
+                    <p>產品是否適合素食者或特殊飲食需求者？</p>
+                    <img src="./image/contact/add.png" alt="">
+                </div>
+                <div>
+                    <p>產品是否含有防腐劑或人工添加劑？</p>
+                    <img src="./image/contact/add.png" alt="">
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <div id="root"></div>
+    <script type="text/babel">
+        function MyApp() {
+            return <></>;
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    </script>
+    <!--
+        Note: this page is a great way to try React but it's not suitable for production.
+        It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+        Read this page for starting a new React project with JSX:
+        https://react.dev/learn/start-a-new-react-project
+
+        Read this page for adding React with JSX to an existing project:
+        https://react.dev/learn/add-react-to-an-existing-project
+    -->
+</body>
+
+</html>
