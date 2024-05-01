@@ -157,19 +157,18 @@ a {
 
 body {
 
-    width: 1440px;
     margin: auto;
 }
 
 img {
-    object-fit: contain;
+    /* object-fit: contain; */
     /* width: 100%; */
 }
 
 /* header */
 
 .topbar {
-    width: 1440px;
+    width: 100%;
     height: 92px;
     background-color: var(--9f4800);
     display: flex;
@@ -213,6 +212,8 @@ img {
 .banner {
     height: 800px;
     background-image: url(./image/Carousel.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -246,9 +247,9 @@ img {
 /* news */
 
 .news {
+    position: relative;
     width: 100%;
     height: 800px;
-    background-image: url(./image/news-bk.png);
     background-position: bottom;
     background-repeat: no-repeat;
     background-size:contain;
@@ -263,6 +264,7 @@ img {
 }
 
 .news-img img{
+    object-fit: contain;
     height: 66.25%;
     width: 73.6%;
     margin-top: 220px;
@@ -321,10 +323,12 @@ img {
 /* brand */
 
 .brand{
+    position: relative;
     width: 100%;
     height: 800px;
     display: flex;
-    /* background-color: #062F2A; */
+    background-color: #062F2A;
+    padding-left: 10%;
 }
 
 .brand-box {
@@ -378,20 +382,29 @@ img {
 /* product */
 
 .product {
+    position: relative;
     height: 1100px;
     width: 100%;
     display: flex;
-
+    justify-content: center;
+    background-color: #09302B;
 }
 
 .product-box {
     height: 54%;
-    width: 100%;
+    /* width: 74%; */
     align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10;
 }
 
 .product-box * {
     color: var(--09302b);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .product-title{
@@ -399,21 +412,23 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 150px;
 }
 
 .product-content-box {
+    height: 378px;
+    padding: 0 10%;
     display: flex;
-    margin-left: 185px;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .product-content {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     width: 26.5%;
-    margin-left: 60px;
 }
 
 .product-content h2{
@@ -436,23 +451,39 @@ img {
     border-radius: 99px;
 }
 
-.brandandproduct-bk{
-    background: url(./image/news-product-bk.png),
-    #062F2A;
-    background-color: #062F2A;
-    margin: 0;
-    padding: 0;
+.roof-bg {
+    height: 1004px;
+    position: absolute;
     width: 100%;
-    background-size: cover;
-    background-position: bottom;
+    bottom: 0;
+    z-index: 1;
 }
+.light-bg{
+    position: absolute;
+    left: 0;
+    z-index: 0;
+}
+
+.leaf-right-bg{
+    position: absolute;
+    right: 0;
+    z-index: 0;
+}
+
+.leaf-left-bg{
+    position: absolute;
+    left: 0;
+    z-index: 0;
+}
+
+
 
 /* contact */
 
 .contact {
     height: 955px;
     padding-top: 15%;
-    background-image: url(./image/contact-bk.png);
+
 }
 
 .contact-title{
