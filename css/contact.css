@@ -163,10 +163,29 @@ body {
 
 /* main */
 
+.qa-box{
+    width: 927px;
+    height: 53px;
+    font-size: 1.125rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 50px;
+    margin-bottom: 10px;
+    background-color: var(--9f4800);
+    color: white;
+}
+
+.qa-box img {
+    width: 23px;
+    height: 23px;
+}
+
 /* contact */
 
 #contact {
     height: 800px;
+    background-color: #CF9842;
 }
 
 /* shop-qa */
