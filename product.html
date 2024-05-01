@@ -13,6 +13,44 @@
 </head>
 
 <body>
+    <main>
+
+        <section id="banner">
+            <div class="banner-content">
+                <div class="banner-content-title">
+                    <h1>瑪莎拉雞肉咖哩</h1>
+                    <small>Chicken Masala Curry</small>
+                </div>
+                <p>品嚐正宗印度風味的瑪莎拉雞肉咖哩！每一口都充滿了深邃的香料風味，搭配著椰奶的濃郁口感，絕對是您晚餐時光的完美選擇。</p>
+                <a href="">前往購買</a>
+            </div>
+            <img src="./image/product/product-banner-right-img.png" alt="" class="right">
+            <img src="./image/product/product-banner-masalaspice-img.png" alt="" class="banner-content-img1">
+            <img src="./image/product/product-banner-coconutmilk-img.png" alt="" class="banner-content-img2">
+            <img src="./image/product/product-banner-freshchicken-img.png" alt="" class="banner-content-img3">
+            <img src="./image/product/product-banner-freshtomatoes-img.png" alt="" class="banner-content-img4">
+        </section>
+
+        <section id="masalaintro">
+            <div class="masalaintro-img-box">
+                <div class="masalaintro-img-box-left">
+                    <img src="./image/product/product-masalaintro-img1.png" alt="">
+                    <img src="./image/product/product-masalaintro-img2.png" alt="">
+                </div>
+                <img src="./image/product/product-masalaintro-img3.png" alt="">
+            </div>
+            <div class="masalaintro-content">
+                <h1>什麼是瑪莎拉香料？</h1>
+                <small>What is masala spice?</small>
+                <p>
+                    瑪莎拉香料起源於印度南部的瑪莎拉地區，擁有悠久的香料製作傳統和獨特的地理環境。
+                    <br><br>
+                    我們精心挑選的瑪莎拉香料混合了多種來自印度及其他地區的香料，包括孜然、肉桂、丁香、芫荽等，每一種都散發著獨特的香氣和風味。這些香料的組合給予了瑪莎拉香料濃郁而迷人的味道。
+                </p>
+            </div>
+        </section>
+
+    </main>
     <div id="root"></div>
     <script type="text/babel">
         const { useState } = React;
@@ -63,7 +101,7 @@
                     <figure><img src="./image/product/product-content-img.png" alt="" /></figure>
                     <p className="product-content-card-title">起司奶油咖哩(蛋奶素)</p>
                     <div className="price">
-                        <small>NT$</small><h2>150</h2><a href=""><img src="./image/product/product-content-add.png" alt="" /></a>
+                        <small>NT$</small><h2>150</h2><a href=""></a>
                     </div>
                     <small className="weight">200g</small>
                     <div className="card-buy">
@@ -78,6 +116,7 @@
                                 setNum(num + 1);
                             }} />
                         </div>
+                        <button>加入購物車</button>
                         <p className="product-hover-number-title">起司奶油咖哩(蛋奶素)</p>
                         <div className="price-hover">
                             <small>NT$</small><h2>150</h2>
@@ -89,18 +128,15 @@
         }
         function MyApp() {
             return <>
-                <Topbar />
                 <main>
-                    <section id="banner">
-                        <div className="banner-bk">
-                        </div>
+                    <section id="menu-tag">
                         <div className="tag-box">
+                            <h1>MENU</h1>
                             <ul className="tag">
                                 <li><a href="#">所有商品</a></li>
                                 <li><a href="#">咖哩調理包</a></li>
                                 <li><a href="#">湯品調理包</a></li>
                                 <li><a href="#">素食料理</a></li>
-                                <li><a href="#">辣味</a></li>
                                 <li><a href="#">調味粉</a></li>
                             </ul>
                         </div>
@@ -121,7 +157,6 @@
                         <Card />
                     </section>
                 </main>
-                <Footer/>
             </>;
         }
 
@@ -139,6 +174,27 @@
         Read this page for adding React with JSX to an existing project:
         https://react.dev/learn/add-react-to-an-existing-project
     -->
+
+    <section id="comment">
+        <h1>顧客好評</h1>
+        <div class="comment-card-box">
+            <div class="comment-card">
+                <h2>Brian Wu</h2>
+                <img src="./image/product/product-comment-fivestar.png" alt="">
+                <p>瑪莎拉雞肉調理包讓我對印度菜的魅力有了全新的理解！它的香料混合得恰到好處，不會太辣但又帶有一絲辛香，起司奶油咖哩也很特別，讓人難以忘懷。</p>
+            </div>
+            <div class="comment-card">
+                <h2>Brian Wu</h2>
+                <img src="./image/product/product-comment-fivestar.png" alt="">
+                <p>瑪莎拉雞肉調理包讓我對印度菜的魅力有了全新的理解！它的香料混合得恰到好處，不會太辣但又帶有一絲辛香，起司奶油咖哩也很特別，讓人難以忘懷。</p>
+            </div>
+            <div class="comment-card">
+                <h2>Brian Wu</h2>
+                <img src="./image/product/product-comment-fivestar.png" alt="">
+                <p>瑪莎拉雞肉調理包讓我對印度菜的魅力有了全新的理解！它的香料混合得恰到好處，不會太辣但又帶有一絲辛香，起司奶油咖哩也很特別，讓人難以忘懷。</p>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>

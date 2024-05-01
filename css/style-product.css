@@ -155,110 +155,199 @@ a {
     text-decoration: none;
 }
 
-/* header */
-
-.topbar {
-    width: 100%;
-    height: 92px;
-    background-color: var(--9f4800);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 36px;
-    padding-bottom: 25px;
-    padding-left: 37px;
-    padding-right: 64px; 
-    position: fixed;
-    z-index: 100;
-}
-
-.topbar a{
-    color: var(--f5e9e4);
-}
-
-.topbar nav{
-    display: flex;
-    width: 50%;
-    justify-content: space-between;
-}
-
-.topbar nav ul {
-    display: flex;
-    
-}
-
-.topbar-member li,.menu li{
-    margin: 15px;
-    white-space:nowrap;
-}
-
-.topbar .menu{
-    width: 492px;
-}
-
 /* main */
 
 /* banner */
-
 #banner {
-    width: 100%;
-
+    height: 840px;
+    background: url(./image/product/product-banner-top-left-bg.png) no-repeat, #FCFBF9;
+    position: relative;
     
+    padding-top: 310px;
+    padding-left: 163px;
 }
 
-.banner-bk {
-    width: 100%;
-    height: 600px;
-    background-image: url(./image/product/product-banner.png);
-    background-size:cover;
+#banner .right {
+    position: absolute;
+    right: 0;
+    top: 7%;
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    width: 340px;
+    height: 384px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.banner-content-title {
+    text-align: center;
+}
+
+.banner-content h1, .masalaintro-content h1{
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.banner-content p{
+    font-size: 1.25rem;
+    display: block;
+    width: 340px;
+}
+
+.banner-content a{
+    width: 184px;
+    height: 57px;
+    background-color: #D79A49;
+    color: black;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.25rem;
+    text-align: center;
+    line-height: 57px;
+}
+
+.banner-content-img1 {
+    position: absolute;
+    top: 2%;
+    right: 22%;
+}
+
+.banner-content-img2 {
+    position: absolute;
+    top: 15%;
+    right: 31%;
+}
+
+.banner-content-img3 {
+    position: absolute;
+    top: 33%;
+    right: 33%;
+}
+
+.banner-content-img4 {
+    position: absolute;
+    top: 70%;
+    right: 27%;
+}
+
+/* masalaintro */
+
+#masalaintro {
+    height: 836px;
+    background-color: #F5EAD2;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.masalaintro-img-box {
+    display: flex;
+}
+
+.masalaintro-img-box img {
+    object-fit: contain;
+}
+
+.masalaintro-img-box-left {
+    width: 431px;
+    height: 604px;
+    margin-right: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.masalaintro-content {
+    text-align: center;
+    width: 488px;
+    height: 633px;
+    background-image: url(./image/product/product-masalaintro-content-bk.png);
+    background-size: contain;
     background-repeat: no-repeat;
-    background-color: var(--f5e9e4);
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 70px;
 }
 
+.masalaintro-content p{
+    width: 405px;
+    font-size: 1.25rem;
+    margin-top: 43px;
+    line-height: 1.5;
+}
+
+/* menu-tag */
+#menu-tag {
+    width: 100%;
+    height: 322px;
+    background-color: #EADFD0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15%;
+}
 
 .tag-box {
-    height: 200px;
-    background-color: var(--9f4800);
     display: flex;
-    
-    justify-content: center;
-    align-items: end;
-    padding-bottom: 5%;
-}
-.tag{
-    display: flex;
-    border-bottom: 2px solid #CA8C60;
-    padding-bottom: 13px;
-}
-.tag li a{
-    color: var(--f5e9e4);
-    margin: 0 18px 0 18px;
-    font-size: 1.125rem;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: url(./image/product/product-menu-tag-left-bg.png) left, url(./image/product/product-menu-tag-right-bg.png) right;
+    background-repeat: no-repeat;
 }
 
-.tag li a:hover {
-    border-bottom: 2px solid #FACFB7;
-    padding-bottom: 13px;
+.tag-box h1 {
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 56px;
+    margin-top: 138px;
+}
+
+.tag {
+    width: 795px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tag li {
+    display: block;
+    width: 139px;
+    height: 46px;
+    background-color: #F3E9DC;
+    text-align: center;
+    line-height: 46px;
+    font-size: 1.125rem;
+    border-radius: 20px;
+}
+
+.tag li a {
+    color: #09302B;
 }
 
 /* product */
 
 
-
 #product-content {
     padding: 100px 18%;
-    background-color: #FFF3E0;
+    background-color: #EADFD0;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
 
-    background-image: url(./image/product/product-content-bk.png);
+    /* background-image: url(./image/product/product-content-bk.png);
     background-position: bottom;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 
-.product-content-card{
+.product-content-card {
     width: 233px;
     height: 313px;
     background-color: #F8f8f8;
@@ -276,17 +365,21 @@ a {
     position: relative;
 }
 
+.product-content-card figure {
+    margin-top: 20px;
+}
+
 .product-content-card-title {
     font-size: 0.875rem;
 }
 
-.price{
+.price {
     display: flex;
     align-items: center;
     font-weight: bold;
 }
 
-.price small{
+.price small {
     font-size: 0.75rem;
     margin: 8px;
 }
@@ -298,17 +391,18 @@ a {
 
 .weight {
     color: #b3b3b3;
-    align-self: flex-start;
-    margin: 20px 10px;
+    margin: 20px 0;
 }
 
-.card-buy{
+.card-buy {
     z-index: 10;
     position: absolute;
 
     width: 100%;
     height: 100%;
-    background-color: #616161;
+    padding-top: 20px;
+
+    background-color: #CC9F57;
     border-radius: 20px;
 
     display: flex;
@@ -329,12 +423,12 @@ a {
     cursor: pointer;
 }
 
-.card-hover-number{
+.card-hover-number {
     width: 181px;
     height: 70px;
 
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
 
     background-color: white;
@@ -350,6 +444,15 @@ a {
     color: white;
 }
 
+.card-buy button {
+    width: 91px;
+    height: 35px;
+    font-size: 0.75rem;
+    border: none;
+    background-color: #F7E7CE;
+    border-radius: 41px;
+}
+
 .price-hover {
     display: flex;
     align-items: center;
@@ -357,7 +460,7 @@ a {
     color: white;
 }
 
-.price-hover small{
+.price-hover small {
     font-size: 0.75rem;
     margin: 8px;
 }
@@ -367,36 +470,60 @@ a {
     margin-right: 37px;
 }
 
+/* comment */
 
-/* footer */
-
-footer {
-    height: 186px;
-    background-color: var(--9f4800);
+#comment {
+    height: 726px;
+    background-color: #DBC9B2;
+    padding-top: 96px;
     display: flex;
-    padding: 67px 31px 55px 109px;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    background-image: url(./image/product/product-comment-bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
 }
 
-footer .menu{
+#comment h1 {
+    font-size: 2.25rem;
+    margin-bottom: 102px;
+}
+
+.comment-card-box {
+    width: 84%;
     display: flex;
+    justify-content: space-between;
 }
 
-footer .menu li {
-    margin-left: 30px;
+.comment-card {
+    width: 380px;
+    height: 259px;
+    background-color: #F7F7F7;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.125rem;
+
+    padding-top: 27px;
+    padding-left: 19px;
+    padding-right: 19px;
+
+    overflow: hidden;
 }
 
-footer .menu a {
-    color: #FCECCC;
+.comment-card h2 {
+    margin-bottom: 21px;
 }
 
-.copyright {
-    width: 100%;
-    font-size: 0.75rem;
-    color: #FCECCC;
-    text-align: right;
-    padding-right: 78px;
+.comment-card img{
+    width: 173px;
+    object-fit:contain;
+    margin-bottom: 23px;
+}
 
+.comment-card p {
+    /* width: 351px; */
+    text-align: center;
+    line-height: 1.5;
 }
