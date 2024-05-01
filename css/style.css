@@ -173,16 +173,16 @@ body {
     padding-top: 36px;
     padding-bottom: 25px;
     padding-left: 37px;
-    padding-right: 64px; 
+    padding-right: 64px;
     position: fixed;
     z-index: 100;
 }
 
-.topbar a{
+.topbar a {
     color: var(--f5e9e4);
 }
 
-.topbar nav{
+.topbar nav {
     display: flex;
     width: 50%;
     justify-content: space-between;
@@ -190,15 +190,16 @@ body {
 
 .topbar nav ul {
     display: flex;
-    
+
 }
 
-.topbar-member li,.menu li{
+.topbar-member li,
+.menu li {
     margin: 15px;
-    white-space:nowrap;
+    white-space: nowrap;
 }
 
-.topbar .menu{
+.topbar .menu {
     width: 492px;
 }
 
@@ -216,22 +217,22 @@ body {
 }
 
 .banner-text {
-    margin-top: 102px ;
+    margin-top: 102px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.banner-text p{
+.banner-text p {
     text-align: center;
     color: #062F2A;
 }
 
-.banner-text-content{
+.banner-text-content {
     font-size: 1rem;
 }
 
-.banner-text-title{
+.banner-text-title {
     font-size: 2rem;
 }
 
@@ -248,31 +249,36 @@ body {
     height: 800px;
     background-position: bottom;
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size: contain;
     background-color: var(--9f4800);
     display: flex;
     flex-direction: row-reverse;
 }
 
-.news-img, .news-box {
+.news-img,
+.news-box {
     height: 100%;
     width: 50%;
 }
 
-.news-img img{
+.news-img img {
+    position: relative;
     object-fit: contain;
     height: 66.25%;
     width: 73.6%;
     margin-top: 220px;
     margin-left: 172px;
     filter: drop-shadow(-15px 26px 0 #CF9842);
+    z-index: 20;
 }
+
 .news-box {
     display: flex;
     flex-direction: column;
+    z-index: 10;
 }
 
-.news-title{
+.news-title {
     color: var(--f5e9e4);
     display: flex;
     align-items: center;
@@ -280,22 +286,22 @@ body {
     margin-top: 10%;
 }
 
-.news-title *{
+.news-title * {
     margin: 0 40px 6.5% 40px;
 }
 
-.news-content{
+.news-content {
     display: flex;
     flex-direction: column;
     margin-left: 5%;
     font-size: 1.25rem;
 }
 
-.news-content article{
+.news-content article {
     margin-bottom: 45px;
 }
 
-.news-content-date{
+.news-content-date {
     color: #CF9842;
 }
 
@@ -303,7 +309,7 @@ body {
     color: var(--f5e9e4);
 }
 
-.news-more-button a{
+.news-more-button a {
     height: 50px;
     width: 189px;
     background-color: var(--9f4800);
@@ -316,37 +322,51 @@ body {
     margin-top: 16%;
 }
 
+.bird {
+    position: absolute;
+    object-fit: auto;
+    top: 100px;
+    left: 40%;
+    z-index: 10;
+}
+
 /* brand */
 
-.brand{
+.brand {
     position: relative;
     width: 100%;
     height: 800px;
     display: flex;
     background-color: #062F2A;
-    padding-left: 10%;
+    /* padding-left: 10%; */
 }
 
 .brand-box {
     width: 767px;
     padding-left: 135px;
     margin-top: 110px;
+    margin-left: 10%;
+    z-index: 20;
 }
 
 .brand-box * {
     color: #FFFFFF;
 }
 
-.brand-title{
+.brand-title {
     display: flex;
     align-items: center;
 }
 
-.brand-title *{
+.brand-title * {
     margin: 0 40px 60px 40px;
 }
 
-.brand-content h2{
+.brand-content {
+    z-index: 20;
+}
+
+.brand-content h2 {
     font-size: 1.25rem;
     margin-bottom: 38px;
 }
@@ -356,7 +376,7 @@ body {
     line-height: 150%;
 }
 
-.brand-more-button{
+.brand-more-button {
     height: 50px;
     width: 189px;
     background-color: var(--9f4800);
@@ -366,13 +386,54 @@ body {
     justify-content: space-around;
     border-radius: 99px;
     margin-top: 60px;
+    z-index: 10;
 }
 
-.brand-img{
+.brand-img {
     width: 46.73%;
     padding-left: 80px;
     padding-top: 35px;
     filter: drop-shadow(50px 37px 0 var(--9f4800));
+    z-index: 20;
+}
+
+.wave-1-bg {
+    height: 960px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 0;
+}
+
+.wave-2-bg {
+    height: 1137px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 0;
+}
+
+.wave-3-bg {
+    height: 1184px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 0;
+}
+
+.wave-4-bg {
+    height: 1233px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0;
 }
 
 /* product */
@@ -403,7 +464,7 @@ body {
     align-items: center;
 }
 
-.product-title{
+.product-title {
     width: 100%;
     display: flex;
     align-items: center;
@@ -427,7 +488,7 @@ body {
     width: 26.5%;
 }
 
-.product-content h2{
+.product-content h2 {
     font-size: 1.25rem;
     font-weight: bold;
 }
@@ -436,7 +497,7 @@ body {
     line-height: 150%;
 }
 
-.product-more-button a{
+.product-more-button a {
     height: 50px;
     width: 189px;
     background-color: var(--9f4800);
@@ -454,21 +515,26 @@ body {
     bottom: 0;
     z-index: 1;
 }
-.light-bg{
+
+.light-bg {
     position: absolute;
     left: 0;
+    bottom: 29%;
     z-index: 0;
+
 }
 
-.leaf-right-bg{
+.leaf-right-bg {
     position: absolute;
     right: 0;
+    bottom: 0;
     z-index: 0;
 }
 
-.leaf-left-bg{
+.leaf-left-bg {
     position: absolute;
     left: 0;
+    bottom: 0;
     z-index: 0;
 }
 
@@ -479,16 +545,19 @@ body {
 .contact {
     height: 955px;
     padding-top: 15%;
-
+    position: relative;
+    background-color: #FFFAF8;
 }
 
-.contact-title{
+.contact-title {
+    position: relative;
     width: 27%;
     margin-left: 20%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: var(--09302b);
+    z-index: 10;
 }
 
 .contact-box {
@@ -496,13 +565,15 @@ body {
     margin-left: 33%;
     margin-top: 255px;
     color: #FCECCC;
+    position: relative;
+    z-index: 10;
 }
 
-.contact-content{
+.contact-content {
     display: flex;
 }
 
-.contact-box ul{
+.contact-box ul {
     display: flex;
     flex-direction: column;
 }
@@ -513,8 +584,35 @@ body {
     margin-right: 53px;
 }
 
-.fqa{
+.fqa {
     display: flex;
+}
+
+.dessert-bg{
+    height: 800px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 0;
+}
+.elephant{
+    position: absolute;
+    right: 20%;
+    top: 20%;
+    z-index: 1;
+}
+
+.lefthand {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+.righthand{
+    position: absolute;
+    left: 320px;
+    bottom: 0;
+    z-index: 1;
 }
 
 /* footer */
@@ -529,7 +627,7 @@ footer {
     flex-wrap: wrap;
 }
 
-footer .menu{
+footer .menu {
     display: flex;
 }
 
