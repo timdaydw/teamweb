@@ -205,6 +205,17 @@ body {
 
 /* main */
 
+/* title */
+.numbertitle {
+    font-size: 2.5rem;
+}
+.entitle {
+    font-size: 4rem;
+}
+.fqa h1{
+    margin-right: 90px;
+}
+
 /* banner */
 .banner {
     height: 800px;
