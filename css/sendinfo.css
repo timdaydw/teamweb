@@ -171,7 +171,7 @@ body {
     align-items: center;
     background-color: #FFFAF8;
     padding-bottom: 96px;
-    padding-top: 74px;
+    padding-top: 104px;
 }
 
 
@@ -251,14 +251,17 @@ label ,fieldset p{
 }
 
 /* topbar */
-.topbar {
-    width: 100%;
-    height: 92px;
-}
 
 .topbar iframe {
     width: 100%;
-    height: 92px;
+    height: 250px;
     position: fixed;
     z-index: 100;
+}
+
+/* footer */ 
+
+.footer  iframe{
+    width: 100%;
+    height: 254px;
 }

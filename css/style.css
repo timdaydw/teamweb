@@ -600,36 +600,3 @@ body {
     bottom: 0;
     z-index: 1;
 }
-
-/* footer */
-
-footer {
-    height: 186px;
-    background-color: var(--9f4800);
-    display: flex;
-    padding: 67px 31px 55px 109px;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-footer .menu {
-    display: flex;
-}
-
-footer .menu li {
-    margin-left: 30px;
-}
-
-footer .menu a {
-    color: #FCECCC;
-}
-
-.copyright {
-    width: 100%;
-    font-size: 0.75rem;
-    color: #FCECCC;
-    text-align: right;
-    padding-right: 78px;
-
-}

@@ -162,7 +162,6 @@ a {
     height: 840px;
     background: url(./image/product/product-banner-top-left-bg.png) no-repeat, #FCFBF9;
     position: relative;
-    
     padding-top: 310px;
     padding-left: 163px;
 }
@@ -529,14 +528,17 @@ a {
 }
 
 /* topbar */
-.topbar {
-    width: 100%;
-    height: 92px;
-}
 
 .topbar iframe {
     width: 100%;
-    height: 92px;
+    height: 250px;
     position: fixed;
     z-index: 100;
+}
+
+/* footer */ 
+
+.footer  iframe{
+    width: 100%;
+    height: 254px;
 }
