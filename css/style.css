@@ -548,7 +548,7 @@ body {
 
 .contact-box {
     display: flex;
-    margin-left: 33%;
+    margin-left: 30%;
     margin-top: 255px;
     color: #FCECCC;
     position: relative;
@@ -557,6 +557,10 @@ body {
 
 .contact-content {
     display: flex;
+}
+
+.contact-content img {
+    margin-right: 28px;
 }
 
 .contact-box ul {
