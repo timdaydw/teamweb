@@ -175,8 +175,19 @@ a {
 
 .topbar a {
     color: var(--f5e9e4);
+    transition: 0.3s;
 }
 
+
+.topbar a:hover {
+    padding-bottom: 3px;
+    border-bottom:1px solid #F5E9E4;
+}
+
+.logo a:hover{
+    padding-bottom: 0;
+    border-bottom:none;
+}
 
 .topbar nav ul {
     display: flex;
@@ -190,9 +201,40 @@ a {
 
 .topbar-member {
     display: flex;
+    align-items: center;
+    height: 92px;
 }
 
 .topbar .menu {
     display: flex;
     width: 492px;
+}
+
+.member {
+    height: 92px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.member-box {
+    margin-top: 112px;
+    position: absolute;
+    display: none;
+}
+
+.member-box li {
+    width: 86px;
+    height: 31px;
+    margin: 0;
+    background-color: var(--d59c41);
+    text-align: center;
+    line-height: 31px;
+    
+}
+
+
+.member:hover .member-box{
+    display: block;
 }
