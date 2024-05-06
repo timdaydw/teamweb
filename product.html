@@ -13,47 +13,6 @@
 </head>
 
 <body>
-    <div class="topbar">
-        <iframe src="./topbar.html" frameBorder="0" scrolling="no"></iframe>
-    </div>
-    <main>
-
-        <section id="banner">
-            <div class="banner-content">
-                <div class="banner-content-title">
-                    <h1>瑪莎拉雞肉咖哩</h1>
-                    <small>Chicken Masala Curry</small>
-                </div>
-                <p>品嚐正宗印度風味的瑪莎拉雞肉咖哩！每一口都充滿了深邃的香料風味，搭配著椰奶的濃郁口感，絕對是您晚餐時光的完美選擇。</p>
-                <a href="">前往購買</a>
-            </div>
-            <img src="./image/product/product-banner-right-img.png" alt="" class="right">
-            <img src="./image/product/product-banner-masalaspice-img.png" alt="" class="banner-content-img1">
-            <img src="./image/product/product-banner-coconutmilk-img.png" alt="" class="banner-content-img2">
-            <img src="./image/product/product-banner-freshchicken-img.png" alt="" class="banner-content-img3">
-            <img src="./image/product/product-banner-freshtomatoes-img.png" alt="" class="banner-content-img4">
-        </section>
-
-        <section id="masalaintro">
-            <div class="masalaintro-img-box">
-                <div class="masalaintro-img-box-left">
-                    <img src="./image/product/product-masalaintro-img1.png" alt="">
-                    <img src="./image/product/product-masalaintro-img2.png" alt="">
-                </div>
-                <img src="./image/product/product-masalaintro-img3.png" alt="">
-            </div>
-            <div class="masalaintro-content">
-                <h1>什麼是瑪莎拉香料？</h1>
-                <small>What is masala spice?</small>
-                <p>
-                    瑪莎拉香料起源於印度南部的瑪莎拉地區，擁有悠久的香料製作傳統和獨特的地理環境。
-                    <br><br>
-                    我們精心挑選的瑪莎拉香料混合了多種來自印度及其他地區的香料，包括孜然、肉桂、丁香、芫荽等，每一種都散發著獨特的香氣和風味。這些香料的組合給予了瑪莎拉香料濃郁而迷人的味道。
-                </p>
-            </div>
-        </section>
-
-    </main>
     <div id="root"></div>
     <script type="text/babel">
         const { useState } = React;
@@ -108,7 +67,42 @@
         }
         function MyApp() {
             return <>
+            <Topbar/>
                 <main>
+                    <section id="banner">
+                        <div className="banner-content">
+                            <div className="banner-content-title">
+                                <h1>瑪莎拉雞肉咖哩</h1>
+                                <small>Chicken Masala Curry</small>
+                            </div>
+                            <p>品嚐正宗印度風味的瑪莎拉雞肉咖哩！每一口都充滿了深邃的香料風味，搭配著椰奶的濃郁口感，絕對是您晚餐時光的完美選擇。</p>
+                            <a href="">前往購買</a>
+                        </div>
+                        <img src="./image/product/product-banner-right-img.png" alt="" className="right" />
+                        <img src="./image/product/product-banner-masalaspice-img.png" alt="" className="banner-content-img1" />
+                        <img src="./image/product/product-banner-coconutmilk-img.png" alt="" className="banner-content-img2" />
+                        <img src="./image/product/product-banner-freshchicken-img.png" alt="" className="banner-content-img3" />
+                        <img src="./image/product/product-banner-freshtomatoes-img.png" alt="" className="banner-content-img4" />
+                    </section>
+                    <section id="masalaintro">
+                        <div className="masalaintro-img-box">
+                            <div className="masalaintro-img-box-left">
+                                <img src="./image/product/product-masalaintro-img1.png" alt="" />
+                                <img src="./image/product/product-masalaintro-img2.png" alt="" />
+                            </div>
+                            <img src="./image/product/product-masalaintro-img3.png" alt="" />
+                        </div>
+                        <div className="masalaintro-content">
+                            <h1>什麼是瑪莎拉香料？</h1>
+                            <small>What is masala spice?</small>
+                            <p>
+                                瑪莎拉香料起源於印度南部的瑪莎拉地區，擁有悠久的香料製作傳統和獨特的地理環境。
+                                <br /><br />
+                                我們精心挑選的瑪莎拉香料混合了多種來自印度及其他地區的香料，包括孜然、肉桂、丁香、芫荽等，每一種都散發著獨特的香氣和風味。這些香料的組合給予了瑪莎拉香料濃郁而迷人的味道。
+                            </p>
+                        </div>
+                    </section>
+
                     <section id="menu-tag">
                         <div className="tag-box">
                             <h1>MENU</h1>

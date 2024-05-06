@@ -153,11 +153,23 @@
 
     <div id="root"></div>
     <script type="text/babel">
-        function MyApp() {
+        const Topbar = () => {
             return <>
                 <div className="topbar">
                     <iframe src="./topbar.html" frameBorder="0" scrolling="no"></iframe>
                 </div>
+            </>
+        }
+        const Footer = () => {
+            return <>
+            <div className="footer">
+                    <iframe src="./footer.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+        function MyApp() {
+            return <>
+                <Topbar/>
                 <main>
                     <section className="banner">
                         <div className="banner-text">
@@ -288,9 +300,7 @@
                         <img src="./image/dessert-bg.png" alt="" className="dessert-bg smoove" />
                     </section>
                 </main>
-                <div className="footer">
-                    <iframe src="./footer.html" frameBorder="0" scrolling="no"></iframe>
-                </div>
+                <Footer/>
             </>;
         }
 
