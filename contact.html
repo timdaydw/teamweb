@@ -14,117 +14,125 @@
 </head>
 
 <body>
-    <div class="topbar">
-        <iframe src="./topbar.html" frameborder="0" scrolling="no"></iframe>
-    </div>
-    <main>
-        <section id="contact">
-            <div class="contact-info-title">
-                <h1>Contact & FQA</h1>
-                <h2>聯絡我們 與 問答</h2>
-            </div>
-            <div class="contact-info-box">
-                <div>
-                    <h3>客服電話</h3>
-                    <p>02-2222-6666</p>
-                </div>
-                <div>
-                    <h3>官方Email</h3>
-                    <p>kalikali666@gmail.com</p>
-                </div>
-                <div>
-                    <h3>客服服務時間</h3>
-                    <p>MON-SAT . 11:00~20:00</p>
-                </div>
-            </div>
-        </section>
-        <section id="shop-qa">
-            <div class="shop-qa-box">
-                <div class="qa-box">
-                    <p>我可以在你們的網站上訂購嗎？</p>
-                    <img src="./image/contact/add.png" alt="">
-                </div>
-                <div class="qa-box">
-                    <p>我可以取消或修改已經下單的訂單嗎？</p>
-                    <img src="./image/contact/add.png" alt="">
-                </div>
-                <div class="qa-box">
-                    <p>我可以在網站上追蹤我的訂單嗎？</p>
-                    <img src="./image/contact/add.png" alt="">
-                </div>
-                <div class="qa-box">
-                    <p>我可以使用哪些付款方式購物？</p>
-                    <img src="./image/contact/add.png" alt="">
-                </div>
-                <div class="qa-box">
-                    <p>訂單遇到問題該怎麼辦？</p>
-                    <img src="./image/contact/add.png" alt="">
-                </div>
-            </div>
-            <div class="shop-qa-title">
-                <h1>Shopping Guidelines</h1>
-                <h2>購物需知</h2>
-            </div>
-        </section>
-        <section id="transport-qa">
-            <div class="transport-qa-box">
-                <div class="qa-box">
-                    <p>運費如何計算？</p>
-                    <img src="./image/contact/add.png" alt="">
-                </div>
-                <div class="qa-box">
-                    <p>是否有免運費的優惠？</p>
-                    <img src="./image/contact/add.png" alt="">
-                </div>
-                <div class="qa-box">
-                    <p>我可以選擇配送方式嗎？</p>
-                    <img src="./image/contact/add.png" alt="">
-                </div>
-                <div class="qa-box">
-                    <p>我可以在哪些地區購買您的產品？</p>
-                    <img src="./image/contact/add.png" alt="">
-                </div>
-            </div>
-            <div class="transport-qa-title">
-                <h1>Shipping Information</h1>
-                <h2>運費需知</h2>
-            </div>
-        </section>
-        <section id="product-qa">
-            <div class="product-qa-title">
-                <h1>Product Instructions</h1>
-                <h2>產品需知</h2>
-            </div>
-            <div class="product-qa-box">
-                <div class="qa-box">
-                    <p>調理包該如何使用？</p>
-                    <img src="./image/contact/add.png" alt="">
-                </div>
-                <div class="qa-box">
-                    <p>產品包含了哪些成分？</p>
-                    <img src="./image/contact/add.png" alt="">
-                </div>
-                <div class="qa-box">
-                    <p>產品是否適合素食者或特殊飲食需求者？</p>
-                    <img src="./image/contact/add.png" alt="">
-                </div>
-                <div class="qa-box">
-                    <p>產品是否含有防腐劑或人工添加劑？</p>
-                    <img src="./image/contact/add.png" alt="">
-                </div>
-            </div>
-        </section>
-    </main>
-    <div class="footer">
-        <iframe src="./footer.html" frameborder="0" scrolling="no"></iframe>
-    </div>
-
-
-
     <div id="root"></div>
     <script type="text/babel">
+        const Topbar = () => {
+            return <>
+                <div className="topbar">
+                    <iframe src="./topbar.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+        const Footer = () => {
+            return <>
+                <div className="footer">
+                    <iframe src="./footer.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
         function MyApp() {
-            return <></>;
+            return <>
+                <Topbar />
+                <main>
+                    <section id="contact">
+                        <div className="contact-info-title">
+                            <h1>Contact & FQA</h1>
+                            <h2>聯絡我們 與 問答</h2>
+                        </div>
+                        <div className="contact-info-box">
+                            <div>
+                                <h3>客服電話</h3>
+                                <p>02-2222-6666</p>
+                            </div>
+                            <div>
+                                <h3>官方Email</h3>
+                                <p>kalikali666@gmail.com</p>
+                            </div>
+                            <div>
+                                <h3>客服服務時間</h3>
+                                <p>MON-SAT . 11:00~20:00</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="shop-qa">
+                        <div className="shop-qa-box">
+                            <div className="qa-box">
+                                <p>我可以在你們的網站上訂購嗎？</p>
+                                <img src="./image/contact/add.png" alt="" />
+                            </div>
+                            <div className="qa-box">
+                                <p>我可以取消或修改已經下單的訂單嗎？</p>
+                                <img src="./image/contact/add.png" alt="" />
+                            </div>
+                            <div className="qa-box">
+                                <p>我可以在網站上追蹤我的訂單嗎？</p>
+                                <img src="./image/contact/add.png" alt="" />
+                            </div>
+                            <div className="qa-box">
+                                <p>我可以使用哪些付款方式購物？</p>
+                                <img src="./image/contact/add.png" alt="" />
+                            </div>
+                            <div className="qa-box">
+                                <p>訂單遇到問題該怎麼辦？</p>
+                                <img src="./image/contact/add.png" alt="" />
+                            </div>
+                        </div>
+                        <div className="shop-qa-title">
+                            <h1>Shopping Guidelines</h1>
+                            <h2>購物需知</h2>
+                        </div>
+                    </section>
+                    <section id="transport-qa">
+                        <div className="transport-qa-box">
+                            <div className="qa-box">
+                                <p>運費如何計算？</p>
+                                <img src="./image/contact/add.png" alt="" />
+                            </div>
+                            <div className="qa-box">
+                                <p>是否有免運費的優惠？</p>
+                                <img src="./image/contact/add.png" alt="" />
+                            </div>
+                            <div className="qa-box">
+                                <p>我可以選擇配送方式嗎？</p>
+                                <img src="./image/contact/add.png" alt="" />
+                            </div>
+                            <div className="qa-box">
+                                <p>我可以在哪些地區購買您的產品？</p>
+                                <img src="./image/contact/add.png" alt="" />
+                            </div>
+                        </div>
+                        <div className="transport-qa-title">
+                            <h1>Shipping Information</h1>
+                            <h2>運費需知</h2>
+                        </div>
+                    </section>
+                    <section id="product-qa">
+                        <div className="product-qa-title">
+                            <h1>Product Instructions</h1>
+                            <h2>產品需知</h2>
+                        </div>
+                        <div className="product-qa-box">
+                            <div className="qa-box">
+                                <p>調理包該如何使用？</p>
+                                <img src="./image/contact/add.png" alt="" />
+                            </div>
+                            <div className="qa-box">
+                                <p>產品包含了哪些成分？</p>
+                                <img src="./image/contact/add.png" alt="" />
+                            </div>
+                            <div className="qa-box">
+                                <p>產品是否適合素食者或特殊飲食需求者？</p>
+                                <img src="./image/contact/add.png" alt="" />
+                            </div>
+                            <div className="qa-box">
+                                <p>產品是否含有防腐劑或人工添加劑？</p>
+                                <img src="./image/contact/add.png" alt="" />
+                            </div>
+                        </div>
+                    </section>
+                </main>
+                <Footer />
+            </>;
         }
 
         const container = document.getElementById('root');

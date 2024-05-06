@@ -15,85 +15,92 @@
 </head>
 
 <body>
-    <div class="topbar">
-        <iframe src="./topbar.html" frameborder="0" scrolling="no"></iframe>
-    </div>
-    <main>
-        <section id="sendinfo">
-            <div class="sendinfo-box">
-                <div class="title">
-                    <h1>購物車</h1>
-                </div>
-                <div class="step">
-                    <img src="./image/shop/step1.png" alt="">
-                    <img src="./image/shop/arrow.png" alt="">
-                    <img src="./image/shop/step2-deep.png" alt="">
-                    <img src="./image/shop/arrow.png" alt="">
-                    <img src="./image/shop/step3.png" alt="">
-                </div>
-                <div class="sendinfo-content">
-                    <form action="">
-                        <div class="name">
-                            <label for="name">收件姓名</label>
-                            <input type="text" id="name">
-                        </div>
-                        <div class="email">
-                            <label for="email">會員信箱</label>
-                            <input type="email" id="email">
-                        </div>
-                        <div class="tel">
-                            <label for="tel">聯絡電話</label>
-                            <input type="tel" id="tel">
-                        </div>
-                        <div class="tel">
-                            <label for="tel">聯絡電話</label>
-                            <input type="tel" id="tel">
-                        </div>
-                        <div class="address">
-                            <label for="address">收貨地址</label>
-                            <input type="text" id="address">
-                        </div>
-                        <fieldset>
-                            <!-- <legend>付款方式</legend> -->
-                            <p>付款方式</p>
-                            <input type="radio" name="pay" id="pay1" title="貨到付款" value="貨到付款">
-                            <label for="other1">貨到付款</label>
-                            <input type="radio" name="pay" id="pay2" title="線上支付" value="線上支付">
-                            <label for="pay2">線上支付</label>
-                        </fieldset>
-                        <div class="creditcard">
-                            <label for="creditcard">信用卡號碼</label>
-                            <input type="text" id="creditcard">
-                        </div>
-                        <fieldset>
-                            <!-- <legend>開立發票</legend> -->
-                            <p>開立發票</p>
-                            <input type="radio" name="pay" id="pay1" title="貨到付款" value="貨到付款">
-                            <label for="other1">雲端載具</label>
-                            <input type="radio" name="pay" id="pay2" title="線上支付" value="線上支付">
-                            <label for="pay2">隨貨附上實體發票</label>
-                        </fieldset>
-                        <div class="vehiclenumber">
-                            <label for="vehiclenumber">載具編號</label>
-                            <input type="text" id="vehiclenumber">
-                        </div>
-                        <button>確認</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <div class="footer">
-        <iframe src="./footer.html" frameborder="0" scrolling="no"></iframe>
-    </div>
-
     <div id="root"></div>
     <script type="text/babel">
-
+        const Topbar = () => {
+            return <>
+                <div className="topbar">
+                    <iframe src="./topbar.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+        const Footer = () => {
+            return <>
+                <div className="footer">
+                    <iframe src="./footer.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
         function MyApp() {
             return <>
+                <Topbar />
+                <main>
 
+                    <section id="sendinfo">
+                        <div className="sendinfo-box">
+                            <div className="title">
+                                <h1>購物車</h1>
+                            </div>
+                            <div className="step">
+                                <img src="./image/shop/step1.png" alt="" />
+                                <img src="./image/shop/arrow.png" alt="" />
+                                <img src="./image/shop/step2-deep.png" alt="" />
+                                <img src="./image/shop/arrow.png" alt="" />
+                                <img src="./image/shop/step3.png" alt="" />
+                            </div>
+                            <div className="sendinfo-content">
+                                <form action="">
+                                    <div className="name">
+                                        <label for="name">收件姓名</label>
+                                        <input type="text" id="name" />
+                                    </div>
+                                    <div className="email">
+                                        <label for="email">會員信箱</label>
+                                        <input type="email" id="email" />
+                                    </div>
+                                    <div className="tel">
+                                        <label for="tel">聯絡電話</label>
+                                        <input type="tel" id="tel" />
+                                    </div>
+                                    <div className="tel">
+                                        <label for="tel">聯絡電話</label>
+                                        <input type="tel" id="tel" />
+                                    </div>
+                                    <div className="address">
+                                        <label for="address">收貨地址</label>
+                                        <input type="text" id="address" />
+                                    </div>
+                                    <fieldset>
+                                        {/* legend */}
+                                        <p>付款方式</p>
+                                        <input type="radio" name="pay" id="pay1" title="貨到付款" value="貨到付款" />
+                                        <label for="other1">貨到付款</label>
+                                        <input type="radio" name="pay" id="pay2" title="線上支付" value="線上支付" />
+                                        <label for="pay2">線上支付</label>
+                                    </fieldset>
+                                    <div className="creditcard">
+                                        <label for="creditcard">信用卡號碼</label>
+                                        <input type="text" id="creditcard" />
+                                    </div>
+                                    <fieldset>
+                                        {/* legend */}
+                                        <p>開立發票</p>
+                                        <input type="radio" name="pay" id="pay1" title="貨到付款" value="貨到付款" />
+                                        <label for="other1">雲端載具</label>
+                                        <input type="radio" name="pay" id="pay2" title="線上支付" value="線上支付" />
+                                        <label for="pay2">隨貨附上實體發票</label>
+                                    </fieldset>
+                                    <div className="vehiclenumber">
+                                        <label for="vehiclenumber">載具編號</label>
+                                        <input type="text" id="vehiclenumber" />
+                                    </div>
+                                    <button>確認</button>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+                <Footer />
             </>;
         }
 

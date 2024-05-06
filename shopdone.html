@@ -11,35 +11,42 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/shopdone.css">
-    
+
 </head>
 
 <body>
-    <div class="topbar">
-        <iframe src="./topbar.html" frameborder="0" scrolling="no"></iframe>
-    </div>
-    <main>
-        <section id="shopdone">
-            <div class="shopdone-box">
-                <figure><img src="./image/shop/done.png" alt=""></figure>
-                <h1>感謝您的購買!</h1>
-                <div class="btn">
-                    <button>返回首頁</button>
-                    <button>查詢訂單</button>
-                </div>
-            </div>
-        </section>
-    </main>
-    <div class="footer">
-        <iframe src="./footer.html" frameborder="0" scrolling="no"></iframe>
-    </div>
-
     <div id="root"></div>
     <script type="text/babel">
-        
+        const Topbar = () => {
+            return <>
+                <div className="topbar">
+                    <iframe src="./topbar.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+        const Footer = () => {
+            return <>
+                <div className="footer">
+                    <iframe src="./footer.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
         function MyApp() {
             return <>
-                
+                <Topbar />
+                <main>
+                    <section id="shopdone">
+                        <div className="shopdone-box">
+                            <figure><img src="./image/shop/done.png" alt="" /></figure>
+                            <h1>感謝您的購買!</h1>
+                            <div className="btn">
+                                <button>返回首頁</button>
+                                <button>查詢訂單</button>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+                <Footer />
             </>;
         }
 

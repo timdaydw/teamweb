@@ -11,87 +11,94 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/shoplist.css">
-    
+
 </head>
 
 <body>
-    <div class="topbar">
-        <iframe src="./topbar.html" frameborder="0" scrolling="no"></iframe>
-    </div>
-    <main>
-        <section id="shoplist">
-            <div class="shoplist-box">
-                <div class="title">
-                    <h1>購物車</h1>
-                </div>
-                <div class="step">
-                    <img src="./image/shop/step1-deep.png" alt="">
-                    <img src="./image/shop/arrow.png" alt="">
-                    <img src="./image/shop/step2.png" alt="">
-                    <img src="./image/shop/arrow.png" alt="">
-                    <img src="./image/shop/step3.png" alt="">
-                </div>
-                <div class="shoplist-content">
-                    <div class="order-title-box">
-                        <div class="w359"><h2>商品資料</h2></div>
-                        <div class="w269"><h2>優惠</h2></div>
-                        <div class="w208"><h2>單件價格</h2></div>
-                        <div class="w181"><h2>數量</h2></div>
-                        <div class="w325"><h2>小計</h2></div>
-                    </div>
-                    <div class="order-row">
-                        <div class="w359">
-                            <img src="./image/member/orderinfo-img.png" alt="" />
-                            <div class="h1">
-                                <h1>起司奶油咖哩(蛋奶素)</h1>
-                            </div>
-                        </div>
-                        <div class="discount w269">
-                            <div class="discount-banner"><p>任選優惠</p></div>
-                            <div>
-                                <p>
-                                    06/01~06/30期間內<br />
-                                    調理包買一送一
-                                </p>
-                            </div>
-                        </div>
-                        <div class="w208"><p>NT$100</p></div>
-                        <div class="w181 amount"><p>2</p></div>
-                        <div class="w325 total"><p>NT$100</p></div>
-                    </div>
-                </div>
-                <div class="total-box">
-                    <div>
-                        <div class="total-l"><h2>小計 :</h2></div>
-                        <div class="total-r"><p>NT$ 1000</p></div>
-                    </div>
-                    <div>
-                        <div class="total-l"><h2>折扣優惠 :</h2></div>
-                        <div class="total-r"><p>NT$ 420</p></div>
-                    </div>
-                    <div>
-                        <div class="total-l"><h2>運費 :</h2></div>
-                        <div class="total-r"><p>NT$ 100</p></div>
-                    </div>
-                    <div>
-                        <div class="total-l"><h2>合計 :</h2></div>
-                        <div class="total-r"><p>NT$ 680</p></div>
-                    </div>
-                    <button>下一步</button>
-                </div>
-            </div>
-        </section>
-    </main>
-    <div class="footer">
-        <iframe src="./footer.html" frameborder="0" scrolling="no"></iframe>
-    </div>
-
     <div id="root"></div>
     <script type="text/babel">
-        
+        const Topbar = () => {
+            return <>
+                <div className="topbar">
+                    <iframe src="./topbar.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+        const Footer = () => {
+            return <>
+                <div className="footer">
+                    <iframe src="./footer.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
         function MyApp() {
             return <>
-                
+                <Topbar />
+                <main>
+                    <section id="shoplist">
+                        <div className="shoplist-box">
+                            <div className="title">
+                                <h1>購物車</h1>
+                            </div>
+                            <div className="step">
+                                <img src="./image/shop/step1-deep.png" alt="" />
+                                <img src="./image/shop/arrow.png" alt="" />
+                                <img src="./image/shop/step2.png" alt="" />
+                                <img src="./image/shop/arrow.png" alt="" />
+                                <img src="./image/shop/step3.png" alt="" />
+                            </div>
+                            <div className="shoplist-content">
+                                <div className="order-title-box">
+                                    <div className="w359"><h2>商品資料</h2></div>
+                                    <div className="w269"><h2>優惠</h2></div>
+                                    <div className="w208"><h2>單件價格</h2></div>
+                                    <div className="w181"><h2>數量</h2></div>
+                                    <div className="w325"><h2>小計</h2></div>
+                                </div>
+                                <div className="order-row">
+                                    <div className="w359">
+                                        <img src="./image/member/orderinfo-img.png" alt="" />
+                                        <div className="h1">
+                                            <h1>起司奶油咖哩(蛋奶素)</h1>
+                                        </div>
+                                    </div>
+                                    <div className="discount w269">
+                                        <div className="discount-banner"><p>任選優惠</p></div>
+                                        <div>
+                                            <p>
+                                                06/01~06/30期間內<br />
+                                                調理包買一送一
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="w208"><p>NT$100</p></div>
+                                    <div className="w181 amount"><p>2</p></div>
+                                    <div className="w325 total"><p>NT$100</p></div>
+                                </div>
+                            </div>
+                            <div className="total-box">
+                                <div>
+                                    <div className="total-l"><h2>小計 :</h2></div>
+                                    <div className="total-r"><p>NT$ 1000</p></div>
+                                </div>
+                                <div>
+                                    <div className="total-l"><h2>折扣優惠 :</h2></div>
+                                    <div className="total-r"><p>NT$ 420</p></div>
+                                </div>
+                                <div>
+                                    <div className="total-l"><h2>運費 :</h2></div>
+                                    <div className="total-r"><p>NT$ 100</p></div>
+                                </div>
+                                <div>
+                                    <div className="total-l"><h2>合計 :</h2></div>
+                                    <div className="total-r"><p>NT$ 680</p></div>
+                                </div>
+                                <button>下一步</button>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+                <Footer />
             </>;
         }
 

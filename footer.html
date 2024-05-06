@@ -13,28 +13,27 @@
 </head>
 
 <body>
-    
-    <footer>
-        <div class="icon">
-        <figure><img src="./image/footer-logo.png" alt=""></figure>
-            <a href="" target="_top"><img src="./image/facebook-icon.png" alt=""></a>
-            <a href="" target="_top"><img src="./image/instagram-icon.png" alt=""></a>
-        </div>
-        <img src="./image/footer-hr.png" alt="" class="footer-hr">
-        <ul class="menu">
-            <li><a href="#" target="_top">News</a></li>
-            <li><a href="./guided.html" target="_top">Brand & Culture</a></li>
-            <li><a href="#" target="_top">Recipe</a></li>
-            <li><a href="./product.html" target="_top">Product</a></li>
-            <li><a href="./contact.html" target="_top">Contact / FAQ</a></li>
-        </ul>
-        <small class="copyright">© Kali Kali  2024 copyright</small>
-    </footer>
-
     <div id="root"></div>
     <script type="text/babel">
         function MyApp() {
-            return <></>;
+            return <>
+                <footer>
+                    <div className="icon">
+                        <figure><img src="./image/footer-logo.png" alt="" /></figure>
+                        <a href="" target="_top"><img src="./image/facebook-icon.png" alt="" /></a>
+                        <a href="" target="_top"><img src="./image/instagram-icon.png" alt="" /></a>
+                    </div>
+                    <img src="./image/footer-hr.png" alt="" className="footer-hr" />
+                    <ul className="menu">
+                        <li><a href="#" target="_top">News</a></li>
+                        <li><a href="./guided.html" target="_top">Brand & Culture</a></li>
+                        <li><a href="#" target="_top">Recipe</a></li>
+                        <li><a href="./product.html" target="_top">Product</a></li>
+                        <li><a href="./contact.html" target="_top">Contact / FAQ</a></li>
+                    </ul>
+                    <small className="copyright">© Kali Kali  2024 copyright</small>
+                </footer>
+            </>;
         }
 
         const container = document.getElementById('root');
