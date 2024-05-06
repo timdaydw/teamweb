@@ -18,6 +18,59 @@
     <script type="text/babel">
         const { useState } = React;
 
+        const products = [
+            {
+                id: 1,
+                title: '起司奶油咖哩(蛋奶素)',
+                price: 150,
+            },
+            {
+                id: 2,
+                title: '瑪莎拉香料雞肉咖哩',
+            },
+            {
+                id: 3,
+                title: '椰奶鮮蝦風味咖哩',
+            },
+            {
+                id: 4,
+                title: '雞肉野菜湯咖哩',
+            },
+            {
+                id: 5,
+                title: '叻沙海鮮風味湯',
+            },
+            {
+                id: 6,
+                title: '濃郁奶油雞肉咖哩',
+            },
+            {
+                id: 7,
+                title: '綠咖哩風味粉',
+            },
+            {
+                id: 8,
+                title: '馬來咖哩風味粉',
+            },
+            {
+                id: 9,
+                title: '辣椒大豆咖哩(素食)',
+            },
+            {
+                id: 10,
+                title: '印度咖哩風味粉',
+            },
+
+            {
+                id: 11,
+                title: '日式咖哩風味粉',
+            },
+            {
+                id: 12,
+                title: '辣味菠菜雞肉咖哩',
+            },
+        ]
+
         const Topbar = () => {
             return <>
                 <div className="topbar">
@@ -34,12 +87,13 @@
             </>
         }
 
-        const Card = () => {
+        const Card = (props) => {
             const [num, setNum] = useState(0);
+            const { title } = props;
             return <>
                 <div className="product-content-card">
-                    <figure><img src="./image/product/product-content-img.png" alt="" /></figure>
-                    <p className="product-content-card-title">起司奶油咖哩(蛋奶素)</p>
+                    <figure><img src={`./image/product/product-content-img/${title}.png`} alt="" /></figure>
+                    <p className="product-content-card-title">{title}</p>
                     <div className="price">
                         <small>NT$</small><h2>150</h2><a href=""></a>
                     </div>
@@ -57,18 +111,46 @@
                             }} />
                         </div>
                         <button>加入購物車</button>
-                        <p className="product-hover-number-title">起司奶油咖哩(蛋奶素)</p>
+                        <p className="product-hover-number-title">{title}</p>
                         <div className="price-hover">
                             <small>NT$</small><h2>150</h2>
                         </div>
-                        <small className="weight">200g</small>
+                        <small className="weight-2">200g</small>
                     </div>
+                </div>
+            </>
+        }
+
+        const comment = [
+            {
+                id: 1,
+                name: 'Brian Wu',
+                content: '瑪莎拉雞肉調理包讓我對印度菜的魅力有了全新的理解！它的香料混合得恰到好處，不會太辣但又帶有一絲辛香，起司奶油咖哩也很特別，讓人難以忘懷。'
+            },
+            {
+                id: 2,
+                name: 'Chang',
+                content: '這是我在台灣吃過最好吃的印度咖哩！它的風味豐富，而且份量十足，非常適合與朋友一起分享。我已經向我的朋友們推薦了這家，下次還會購買！'
+            }, {
+                id: 3,
+                name: 'Jessica Lin',
+                content: '食用上很方便！只需要加熱，雞肉軟嫩多汁，搭配著椰奶的濃郁口感，簡直就是完美的組合。非常推薦給上班族，真的超級方便！下次想試試看辣味菠菜咖哩。'
+            },
+
+        ]
+        const CommentCard = (props) => {
+            const { name, content } = props;
+            return <>
+                <div className="comment-card">
+                    <h2>{name}</h2>
+                    <img src="./image/product/product-comment-fivestar.png" alt="" />
+                    <p>{content}</p>
                 </div>
             </>
         }
         function MyApp() {
             return <>
-            <Topbar/>
+                <Topbar />
                 <main>
                     <section id="banner">
                         <div className="banner-content">
@@ -117,19 +199,21 @@
                         </div>
                     </section>
                     <section id="product-content">
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
+                        {
+                            products.map((products) => {
+                                return <Card key={products.id} title={products.title} />
+                            })
+                        }
+                    </section>
+                    <section id="comment">
+                        <h1>顧客好評</h1>
+                        <div className="comment-card-box">
+                            {
+                                comment.map((comment) => {
+                                    return <CommentCard key={comment.id} name={comment.name} content={comment.content}/>
+                                })
+                            }
+                        </div>
                     </section>
                 </main>
             </>;
@@ -150,26 +234,7 @@
         https://react.dev/learn/add-react-to-an-existing-project
     -->
 
-    <section id="comment">
-        <h1>顧客好評</h1>
-        <div class="comment-card-box">
-            <div class="comment-card">
-                <h2>Brian Wu</h2>
-                <img src="./image/product/product-comment-fivestar.png" alt="">
-                <p>瑪莎拉雞肉調理包讓我對印度菜的魅力有了全新的理解！它的香料混合得恰到好處，不會太辣但又帶有一絲辛香，起司奶油咖哩也很特別，讓人難以忘懷。</p>
-            </div>
-            <div class="comment-card">
-                <h2>Brian Wu</h2>
-                <img src="./image/product/product-comment-fivestar.png" alt="">
-                <p>瑪莎拉雞肉調理包讓我對印度菜的魅力有了全新的理解！它的香料混合得恰到好處，不會太辣但又帶有一絲辛香，起司奶油咖哩也很特別，讓人難以忘懷。</p>
-            </div>
-            <div class="comment-card">
-                <h2>Brian Wu</h2>
-                <img src="./image/product/product-comment-fivestar.png" alt="">
-                <p>瑪莎拉雞肉調理包讓我對印度菜的魅力有了全新的理解！它的香料混合得恰到好處，不會太辣但又帶有一絲辛香，起司奶油咖哩也很特別，讓人難以忘懷。</p>
-            </div>
-        </div>
-    </section>
+
 </body>
 
 </html>

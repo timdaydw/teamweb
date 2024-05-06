@@ -37,6 +37,7 @@
 
 
         function MyApp() {
+            const [num, setNum] = useState(0);
             return <>
                 <Topbar />
                 <main>
@@ -64,9 +65,17 @@
                                     <small>06/01~06/30期間內 調理包買一送一</small>
                                     <h1>NT$150</h1>
                                     <p>數量</p>
-                                    <h3 className="buy-number"><a href="#">
-                                        <p>-</p>
-                                    </a>1<a href="#">+</a></h3>
+                                    <h3 className="buy-number">
+                                        <img src="./image/product/product-card-hover-sub.png" alt="" onClick={() => {
+                                            // num--;
+                                            setNum(num - 1);
+                                        }} />
+                                        <p>{num}</p>
+                                        <img src="./image/product/product-card-hover-add.png" alt="" onClick={() => {
+                                            // num+;
+                                            setNum(num + 1);
+                                        }} />
+                                    </h3>
                                     <button className="buynow">立即購買</button>
                                     <button className="addshop">加入購物車</button>
                                     <h2 className="payinfo">付款與運送</h2>
