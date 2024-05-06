@@ -160,6 +160,10 @@ body {
     margin: auto;
 }
 
+button {
+    cursor: pointer;
+}
+
 /* topbar */
 
 
