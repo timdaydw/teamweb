@@ -33,7 +33,7 @@
                             <p>品嚐叻沙海鮮湯咖哩，風味獨特，即將上市！</p>
                         </div>
                         <div>
-                            <a href="">
+                            <a href="./news-content.html">
 
                                 <img src="./image/news/more-icon.png" alt="" />
                                 <p>more...</p>
@@ -56,7 +56,7 @@
                             <p>品嚐叻沙海鮮湯咖哩，風味獨特，即將上市！</p>
                         </div>
                         <div>
-                            <a href="">
+                            <a href="./news-content.html">
 
                                 <img src="./image/news/more-icon-dark.png" alt="" />
                                 <p>more...</p>
@@ -83,12 +83,14 @@
         }
         function MyApp() {
             return <>
+                <Topbar />
                 <main>
+                    <div className="topbar-h"></div>
                     <section id="banner">
                         <h1>NEWS</h1>
                         <h2>最新消息</h2>
-                        <img src="./image/news/bird.png" alt="" class="news-banner-img1" />
-                        <img src="./image/news/news-banner-bg.png" alt="" class="news-banner-img2" />
+                        <img src="./image/news/bird.png" alt="" className="news-banner-img1" />
+                        <img src="./image/news/news-banner-bg.png" alt="" className="news-banner-img2" />
                     </section>
                     <section id="content">
                         <div className="filter">
@@ -105,10 +107,10 @@
                             </div>
                         </div>
                         <div className="content-box">
-                            <Card1/>
-                            <Card2/>
-                            <Card1/>
-                            <Card2/>
+                            <Card1 />
+                            <Card2 />
+                            <Card1 />
+                            <Card2 />
                             <div className="pagechange">
                                 <a href=""><img src="./image/news/before.png" alt="" /></a>
                                 <a href="">1</a>
@@ -119,6 +121,7 @@
 
                     </section>
                 </main>
+                <Footer />
             </>;
         }
 

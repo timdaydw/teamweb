@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>KALI KALI</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/news.css">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        const Topbar = () => {
+            return <>
+                <div className="topbar">
+                    <iframe src="./topbar.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+        const Footer = () => {
+            return <>
+                <div className="footer">
+                    <iframe src="./footer.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+        function MyApp() {
+            return <>
+                <Topbar/>
+                <main>
+                    <div className="topbar-h"></div>
+                    <section id="banner">
+                        <h1>NEWS</h1>
+                        <h2>最新消息</h2>
+                        <img src="./image/news/bird.png" alt="" className="news-banner-img1" />
+                        <img src="./image/news/news-banner-bg.png" alt="" className="news-banner-img2" />
+                    </section>
+                    <section id="news-text">
+                        <div className="date">
+                            <h2>2024.03.04</h2>
+                        </div>
+                        <div className="news-text-content">
+                            <img src="./image/news/news-content-banner.png" alt="" />
+                            <h1>【 品嚐叻沙海鮮湯咖哩，風味獨特，即將上市！ 】</h1>
+                            <p>樂聞佳音！香氣撲鼻、味蕾驚艷的新品即將登場！這個春季，我們將推出令人期待已久的創新美食：叻沙海鮮湯咖哩！這款獨特的料理結合了香濃的叻沙湯底和濃郁的咖哩風味，為您帶來一場美味的驚喜之旅。
+                                <br /><br />
+                                這道菜色的靈感源自於東南亞的美食文化，我們將傳統的叻沙湯和咖哩調味融合在一起，打造出一道別樹一幟的料理。在湯底中，您可以品嚐到新鮮海鮮的鮮甜，搭配上濃稠的咖哩湯汁，豐富的香料和香氣四溢的椰奶，每一口都是對味蕾的極致享受。
+                                <br /><br />
+                                無論是對於叻沙湯還是咖哩的愛好者，這道菜都將滿足您的味蕾。它融合了兩種獨特的風味，為您帶來前所未有的口味體驗。無論您是在享用美食的過程中還是在感受它的豐富風味，都能夠感受到我們對料理的用心和熱情。
+                                <br /><br />
+                                這道叻沙海鮮湯咖哩將成為我們菜單中的一顆明星，它不僅僅是一道美食，更是對飲食文化的一次創新嘗試。我們相信，它將成為您最愛的料理之一，讓您每一次品嚐都能感受到美食的魅力和溫暖。
+                                <br /><br />
+                                不要錯過這個令人興奮的上市消息！讓我們一起期待叻沙海鮮湯咖哩的登場，一起探索食物的奇妙世界，一起創造美好的味覺回憶！</p>
+                        </div>
+                    </section>
+                </main>
+                <Footer/>
+            </>;
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    </script>
+    <!--
+        Note: this page is a great way to try React but it's not suitable for production.
+        It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+        Read this page for starting a new React project with JSX:
+        https://react.dev/learn/start-a-new-react-project
+
+        Read this page for adding React with JSX to an existing project:
+        https://react.dev/learn/add-react-to-an-existing-project
+    -->
+
+    <!-- jquery -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <!-- jquery-smoove -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+    <!-- js -->
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
