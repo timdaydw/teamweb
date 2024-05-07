@@ -91,6 +91,7 @@
             const [num, setNum] = useState(0);
             const { title } = props;
             return <>
+
                 <div className="product-content-card">
                     <figure><img src={`./image/product/product-content-img/${title}.png`} alt="" /></figure>
                     <p className="product-content-card-title">{title}</p>
@@ -153,6 +154,7 @@
             return <>
                 <Topbar />
                 <main>
+                    <div className="topbar-h"></div>
                     <section id="banner">
                         <div className="banner-content">
                             <div className="banner-content-title">
@@ -185,10 +187,12 @@
                                 我們精心挑選的瑪莎拉香料混合了多種來自印度及其他地區的香料，包括孜然、肉桂、丁香、芫荽等，每一種都散發著獨特的香氣和風味。這些香料的組合給予了瑪莎拉香料濃郁而迷人的味道。
                             </p>
                         </div>
+                        <img src="./image/product/masalaintro-content-bg.png" alt=""/>
                     </section>
 
                     <section id="menu-tag">
                         <div className="tag-box">
+                            <img src="./image/product/menu-img.png" alt=""/>
                             <h1>MENU</h1>
                             <ul className="tag">
                                 <li><a href="#">所有商品</a></li>
