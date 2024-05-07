@@ -22,7 +22,9 @@
             const { name, listContent1, listContent2, listContent3, listContent4 } = props;
             return <>
                 <div className="topinfo">
-                    <figure><img src="./image/product/producteachcontent-content-img-1.png" alt="" /></figure>
+                    <div className="carousel">
+                        <iframe src={`./產品圖/${name}/carousel-${name}.html`} frameBorder="0" scrolling="no"></iframe>
+                    </div>
                     <div className="buy-card">
                         <h2 className="buy-card-title">{name}</h2>
                         <small>06/01~06/30期間內 調理包買一送一</small>

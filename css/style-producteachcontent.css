@@ -1,5 +1,9 @@
 /* main */
 
+body {
+    background-color: #EEE6DA;
+}
+
 /* banner */
 #banner {
     
@@ -9,7 +13,7 @@
     background-position: bottom;
     background-size:auto;
     background-repeat: no-repeat;
-    background-color: #FCECCC;
+    background-color: #EFE3BA;
 }
 
 /* content */
@@ -62,7 +66,6 @@
     width: 100%;
     display: flex;
     padding-top: 100px;
-    justify-content: center;
     padding-left: 43px;
 }
 
@@ -198,3 +201,14 @@
     font-size: 1.25rem;
     color: #09302b;
 }
+
+.carousel{
+    width: 450px;
+    height: 426px;
+}
+
+.carousel iframe{
+    width: 450px;
+    height: 426px;
+}
+

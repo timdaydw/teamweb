@@ -93,13 +93,14 @@
             return <>
 
                 <div className="product-content-card">
-                    <figure><img src={`./image/product/product-content-img/${title}.png`} alt="" /></figure>
+                    <a href=""><figure><img src={`./image/product/product-content-img/${title}.png`} alt="" /></figure>
                     <p className="product-content-card-title">{title}</p>
                     <div className="price">
                         <small>NT$</small><h2>150</h2><a href=""></a>
                     </div>
-                    <small className="weight">200g</small>
+                    <small className="weight">200g</small></a>
                     <div className="card-buy">
+                        <form action="" name="shop" id="shop" title="加入購物車" method="post" className="card-buy-form">
                         <div className="card-hover-number">
                             <img src="./image/product/product-card-hover-sub.png" alt="" onClick={() => {
                                 // num--;
@@ -111,13 +112,8 @@
                                 setNum(num + 1);
                             }} />
                         </div>
-                        <button>加入購物車</button>
-                        <div className="buy-link"><a href="#">前往購買</a></div>
-                        <p className="product-hover-number-title">{title}</p>
-                        <div className="price-hover">
-                            <small>NT$</small><h2>150</h2>
-                        </div>
-                        <small className="weight-2">200g</small>
+                        <button><img src="./image/product/shop-img.png" alt=""/></button>
+                        </form>
                     </div>
                 </div>
             </>
@@ -187,12 +183,12 @@
                                 我們精心挑選的瑪莎拉香料混合了多種來自印度及其他地區的香料，包括孜然、肉桂、丁香、芫荽等，每一種都散發著獨特的香氣和風味。這些香料的組合給予了瑪莎拉香料濃郁而迷人的味道。
                             </p>
                         </div>
-                        <img src="./image/product/masalaintro-content-bg.png" alt=""/>
+                        <img src="./image/product/masalaintro-content-bg.png" alt="" />
                     </section>
 
                     <section id="menu-tag">
                         <div className="tag-box">
-                            <img src="./image/product/menu-img.png" alt=""/>
+                            <img src="./image/product/menu-img.png" alt="" />
                             <h1>MENU</h1>
                             <ul className="tag">
                                 <li><a href="#">所有商品</a></li>
@@ -215,7 +211,7 @@
                         <div className="comment-card-box">
                             {
                                 comment.map((comment) => {
-                                    return <CommentCard key={comment.id} name={comment.name} content={comment.content}/>
+                                    return <CommentCard key={comment.id} name={comment.name} content={comment.content} />
                                 })
                             }
                         </div>
@@ -238,7 +234,41 @@
         Read this page for adding React with JSX to an existing project:
         https://react.dev/learn/add-react-to-an-existing-project
     -->
+    <!-- const Card = (props) => {
+        const [num, setNum] = useState(0);
+        const { title } = props;
+        return <>
 
+            <div className="product-content-card">
+                <figure><img src={`./image/product/product-content-img/${title}.png`} alt="" /></figure>
+                <p className="product-content-card-title">{title}</p>
+                <div className="price">
+                    <small>NT$</small><h2>150</h2><a href=""></a>
+                </div>
+                <small className="weight">200g</small>
+                <div className="card-buy">
+                    <div className="card-hover-number">
+                        <img src="./image/product/product-card-hover-sub.png" alt="" onClick={() => {
+                            // num--;
+                            setNum(num - 1);
+                        }} />
+                        <p>{num}</p>
+                        <img src="./image/product/product-card-hover-add.png" alt="" onClick={() => {
+                            // num+;
+                            setNum(num + 1);
+                        }} />
+                    </div>
+                    <button>加入購物車</button>
+                    <div className="buy-link"><a href="#">前往購買</a></div>
+                    <p className="product-hover-number-title">{title}</p>
+                    <div className="price-hover">
+                        <small>NT$</small><h2>150</h2>
+                    </div>
+                    <small className="weight-2">200g</small>
+                </div>
+            </div>
+        </>
+    } -->
 
 </body>
 

@@ -213,17 +213,23 @@ body {
     background-color: #F8f8f8;
     border-radius: 20px;
     box-shadow: 8px 11px 10px #b3b3b3;
-    color: #09302b;
+
 
     margin: 50px 7%;
 
+
+
+    position: relative;
+}
+
+.product-content-card a{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-
-    position: relative;
+    color: #09302b;
 }
+
 
 .product-content-card figure {
     margin-top: 20px;
@@ -254,47 +260,42 @@ body {
     margin: 20px 0;
 }
 
-.weight-2 {
-    color: white;
-    margin: 20px 0;
-}
-
 .card-buy {
     z-index: 10;
     position: absolute;
-
+    bottom: 0;
     width: 100%;
-    height: 100%;
-    padding-top: 20px;
-
-    background-color: #CC9F57;
-    border-radius: 20px;
-
+    height: 90px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-
+    justify-content: flex-end;
+    background-color: #CC9F57;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 0 10px;
     opacity: 0;
     transition: all 0.7s;
 }
 
-.card-buy button:active {
-    background-color: #6f5730;
-}
 
 .card-buy:hover {
     opacity: 1;
 }
 
+.card-buy-form{
+    display: flex;
+    /* justify-content: flex-end; */
+}
+
 .card-hover-number img {
     /* 滑鼠游標圖案:超連結手指 */
     cursor: pointer;
+    width: 14px;
 }
 
 .card-hover-number {
-    width: 181px;
-    height: 70px;
+    width: 97px;
+    height: 36px;
 
     display: flex;
     justify-content: space-around;
@@ -308,48 +309,12 @@ body {
     font-weight: bolder;
 }
 
-.buy-link {
-    background-color: #F7E7CE;
-    border-radius: 41px;
-    width: 91px;
-    height: 35px;
-    text-align: center;
-    line-height: 35px;
-}
 
-.buy-link a {
-    color: black;
-}
-
-.product-hover-number-title {
-    font-size: 0.875rem;
-    color: white;
-}
 
 .card-buy button {
-    width: 91px;
-    height: 35px;
-    font-size: 0.75rem;
+    background: none;
     border: none;
-    background-color: #F7E7CE;
-    border-radius: 41px;
-}
-
-.price-hover {
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    color: white;
-}
-
-.price-hover small {
-    font-size: 0.75rem;
-    margin: 8px;
-}
-
-.price-hover h2 {
-    font-size: 1.25rem;
-    margin-right: 37px;
+    margin-left: 20px;
 }
 
 /* comment */
