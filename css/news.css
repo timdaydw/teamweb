@@ -1,0 +1,162 @@
+body {
+    background-color: #FFF6F2;
+}
+
+/* banner */
+
+#banner {
+    height: 314px;
+    position: relative;
+
+    color: #052F2A;
+    
+    padding-top: 108px;
+    text-align: center;
+}
+
+#banner img {
+    position: absolute;
+}
+
+#banner .news-banner-img1 {
+    top: 20%;
+    left: 30%;
+    z-index: 10;
+}
+
+#banner .news-banner-img2 {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#banner h1{
+    font-size: 1.75rem;
+}
+#banner h2{
+    font-size: 1.5rem;
+}
+
+/* content */
+
+#content {
+    height: 687px;
+    position: relative;
+    display: flex;
+}
+
+.filter {
+    height: 100%;
+    width: 30%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.filter .filter-box {
+    height: 691px;
+    width: 275px;
+    background-image: url(./image/news/filter-bg.png);
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 165px 0 0 30px;
+    position: absolute;
+    bottom: 45px;
+}
+
+.filter-box a{
+    color: #F5E9E4;
+    margin-bottom: 33px;
+}
+
+.news-card ,.news-card2 {
+    height: 104px;
+    width: 854px;
+    background-color: #9F4800;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 24px;
+    padding-right: 36px;
+}
+.news-card2 {
+    background-color: #D59C41;
+}
+
+.news-card h3 {
+    color: #D59C41;
+    font-size: 1.125rem;
+}
+
+.news-card img {
+    width: 24px;
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: #F5E9E4;
+}
+
+.card-content>p{
+    justify-self:start;
+}
+
+.card-content div:first-child{
+    display: flex;
+}
+
+.card-content div:first-child div{
+    width: 98px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 25px;
+}
+
+.card-content div:last-child a{
+    display: flex;
+    align-items:center;
+    color: #F5E9E4;
+}
+
+.news-card2 h3{
+    color: #F5E9E4;
+    font-size: 1.125rem;
+}
+.news-card2 p ,.news-card2 a{
+    color: #062F2A;
+}
+
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 59px;
+}
+
+.pagechange {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagechange img {
+    height: 1rem;
+}
+
+.pagechange a {
+    color: #D59C41;
+    margin: 7px;
+}
+
+.pagechange a:hover{
+    color: #9F4800;
+    border-bottom: 1px solid #9F4800;
+}

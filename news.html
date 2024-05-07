@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>KALI KALI</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/news.css">
+</head>
+
+<body>
+
+
+
+
+    <div id="root"></div>
+    <script type="text/babel">
+        const Card1 = () => {
+            return <>
+                <div className="news-card">
+                    <h3>2024.03.04</h3>
+                    <div className="card-content">
+                        <div>
+                            <div>
+                                <p>新品介紹</p>
+                                <p>/</p>
+                            </div>
+                            <p>品嚐叻沙海鮮湯咖哩，風味獨特，即將上市！</p>
+                        </div>
+                        <div>
+                            <a href="">
+
+                                <img src="./image/news/more-icon.png" alt="" />
+                                <p>more...</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </>
+        }
+        const Card2 = () => {
+            return <>
+                <div className="news-card2">
+                    <h3>2024.03.04</h3>
+                    <div className="card-content">
+                        <div>
+                            <div>
+                                <p>新品介紹</p>
+                                <p>/</p>
+                            </div>
+                            <p>品嚐叻沙海鮮湯咖哩，風味獨特，即將上市！</p>
+                        </div>
+                        <div>
+                            <a href="">
+
+                                <img src="./image/news/more-icon-dark.png" alt="" />
+                                <p>more...</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </>
+        }
+
+        const Topbar = () => {
+            return <>
+                <div className="topbar">
+                    <iframe src="./topbar.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+        const Footer = () => {
+            return <>
+                <div className="footer">
+                    <iframe src="./footer.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+        function MyApp() {
+            return <>
+                <main>
+                    <section id="banner">
+                        <h1>NEWS</h1>
+                        <h2>最新消息</h2>
+                        <img src="./image/news/bird.png" alt="" class="news-banner-img1" />
+                        <img src="./image/news/news-banner-bg.png" alt="" class="news-banner-img2" />
+                    </section>
+                    <section id="content">
+                        <div className="filter">
+                            <div className="filter-box">
+                                <a href="#">
+                                    <h1>全部消息</h1>
+                                </a>
+                                <a href="#">
+                                    <h1>新品介紹</h1>
+                                </a>
+                                <a href="#">
+                                    <h1>優惠情報</h1>
+                                </a>
+                            </div>
+                        </div>
+                        <div className="content-box">
+                            <Card1/>
+                            <Card2/>
+                            <Card1/>
+                            <Card2/>
+                            <div className="pagechange">
+                                <a href=""><img src="./image/news/before.png" alt="" /></a>
+                                <a href="">1</a>
+                                <a href="">2</a>
+                                <a href=""><img src="./image/news/after.png" alt="" /></a>
+                            </div>
+                        </div>
+
+                    </section>
+                </main>
+            </>;
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    </script>
+    <!--
+        Note: this page is a great way to try React but it's not suitable for production.
+        It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+        Read this page for starting a new React project with JSX:
+        https://react.dev/learn/start-a-new-react-project
+
+        Read this page for adding React with JSX to an existing project:
+        https://react.dev/learn/add-react-to-an-existing-project
+    -->
+
+    <!-- jquery -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <!-- jquery-smoove -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+    <!-- js -->
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
