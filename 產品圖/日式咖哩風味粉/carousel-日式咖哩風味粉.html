@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #slideshow img {
+            width: 436px;
+            height: 300px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* 用途:輪播按鈕對位 */
+        .box {
+            width: 436px;
+            height: 300px;
+            position: relative;
+        }
+
+        /* 輪播導覽列 */
+
+        a {
+            text-decoration: none;
+            margin: 1px;
+        }
+
+        #nav {
+            width: 436px;
+        }
+
+        #nav {
+            margin: auto 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #nav li {
+            width: 95px;
+            height: 86px;
+            margin: 8px;
+            list-style: none;
+        }
+
+        #nav a {
+            width: 95px;
+            height: 86px;
+            padding: 3px;
+            display: block;
+        }
+
+
+        
+        #nav img {
+            border: none;
+            display: block;
+        }
+        #nav a:focus {
+            outline: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- 圖片自動輪播 -->
+    <div class="box">
+        <div id="slideshow">
+            <img src="./0c112d44-7f3b-4524-bfca-a1ccd766bbf3.jpeg" alt="">
+            <img src="./Homemade Sambar Powder - Pepper Delight.jpeg" alt="">
+            <img src="./Vadouvan (French-style Curry) Powder.jpeg" alt="">
+            <img src="./“Turmeric Latte” Golden Milk Recipe (Vegan Options).jpeg" alt="">
+        </div>
+
+    </div>
+    <!-- jquery -->
+    <script src="../jquery-3.7.1.min.js"></script>
+    <!-- 圖片輪播主程式 -->
+    <script src="../jquery.cycle.all.js"></script>
+    <script>
+        $(function () {
+            $('#slideshow').after('<ul id="nav">').cycle({
+                fx: 'fade',
+                timeout: 3000,
+                pager: '#nav',
+                // callback fn that creates a thumbnail to use as pager anchor
+                pagerAnchorBuilder: function (idx, slide) {
+                    return '<li><a href="#"><img src="' + slide.src + '" width="50" height="50" /></a></li>';
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

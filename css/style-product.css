@@ -289,7 +289,17 @@
     color: #606061;
     font-weight: bolder;
 }
-
+.buy-link {
+    background-color: #F7E7CE;
+    border-radius: 41px;
+    width: 91px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+}
+.buy-link a{
+    color: black;
+}
 .product-hover-number-title {
     font-size: 0.875rem;
     color: white;
