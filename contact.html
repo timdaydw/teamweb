@@ -16,6 +16,18 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
+        const QaBox = (props) => {
+            const { content,ans } = props;
+            return <>
+                <div className="qa-box">
+                    <p>{content}</p>
+                    <img src="./image/contact/add.png" alt="" />
+                </div>
+                <div className="ans-box">
+                    <p>{ans}</p>
+                </div>
+            </>
+        }
         const Topbar = () => {
             return <>
                 <div className="topbar">
@@ -56,26 +68,11 @@
                     </section>
                     <section id="shop-qa">
                         <div className="shop-qa-box">
-                            <div className="qa-box">
-                                <p>我可以在你們的網站上訂購嗎？</p>
-                                <img src="./image/contact/add.png" alt="" />
-                            </div>
-                            <div className="qa-box">
-                                <p>我可以取消或修改已經下單的訂單嗎？</p>
-                                <img src="./image/contact/add.png" alt="" />
-                            </div>
-                            <div className="qa-box">
-                                <p>我可以在網站上追蹤我的訂單嗎？</p>
-                                <img src="./image/contact/add.png" alt="" />
-                            </div>
-                            <div className="qa-box">
-                                <p>我可以使用哪些付款方式購物？</p>
-                                <img src="./image/contact/add.png" alt="" />
-                            </div>
-                            <div className="qa-box">
-                                <p>訂單遇到問題該怎麼辦？</p>
-                                <img src="./image/contact/add.png" alt="" />
-                            </div>
+                            <QaBox content={"我可以在你們的網站上訂購嗎？"} ans={"如果您需要取消或修改訂單，請在我們的客服工作時間內盡快聯繫我們。我們將盡力協助您處理，但請注意，一旦訂單已經發貨，我們將無法進行取消或修改。"}/>
+                            <QaBox content={"我可以取消或修改已經下單的訂單嗎？"} ans={"如果您需要取消或修改訂單，請在我們的客服工作時間內盡快聯繫我們。我們將盡力協助您處理，但請注意，一旦訂單已經發貨，我們將無法進行取消或修改。"} />
+                            <QaBox content={"我可以在網站上追蹤我的訂單嗎？"} ans={"是的，您可以透過登入我們官網的會員帳戶來查詢您的訂單狀態。一旦您的訂單被確認，您可以在會員中心找到相關的訂單資訊。"} />
+                            <QaBox content={"我可以使用哪些付款方式購物？"} ans={"目前我們僅接受貨到付款及線上支付這兩種付款方式。您可以在結帳時選擇最符合您需求的付款方式進行支付。"} />
+                            <QaBox content={"訂單遇到問題該怎麼辦？"} ans={"如果您的訂單遇到任何問題，請立即聯繫我們的客服團隊。您可以通過電子郵件或電話與我們取得聯繫，我們將竭誠為您解決問題。"} />
                         </div>
                         <div className="shop-qa-title">
                             <h1>Shopping Guidelines</h1>
@@ -84,22 +81,10 @@
                     </section>
                     <section id="transport-qa">
                         <div className="transport-qa-box">
-                            <div className="qa-box">
-                                <p>運費如何計算？</p>
-                                <img src="./image/contact/add.png" alt="" />
-                            </div>
-                            <div className="qa-box">
-                                <p>是否有免運費的優惠？</p>
-                                <img src="./image/contact/add.png" alt="" />
-                            </div>
-                            <div className="qa-box">
-                                <p>我可以選擇配送方式嗎？</p>
-                                <img src="./image/contact/add.png" alt="" />
-                            </div>
-                            <div className="qa-box">
-                                <p>我可以在哪些地區購買您的產品？</p>
-                                <img src="./image/contact/add.png" alt="" />
-                            </div>
+                            <QaBox content={"運費如何計算？"} ans={"我們的運費政策是統一消費未滿1000元的訂單收取100元的運費。若您的訂單金額達到或超過1000元，則可享受免運費優惠。"} />
+                            <QaBox content={"是否有免運費的優惠？"} ans={"是的，當您的訂單金額達到或超過1000元時，即可享有免運費的優惠。這項優惠適用於所有地區的訂單，讓您在購物時更加方便省錢。"} />
+                            <QaBox content={"我可以選擇配送方式嗎？"} ans={"目前我們僅提供宅配服務，無法提供超商取貨等其他配送方式。我們將根據您的配送地址和訂單內容，選擇適合的宅配方式進行配送。"} />
+                            <QaBox content={"我可以在哪些地區購買您的產品？"} ans={"目前我們僅能夠配送至台灣本島地區。對於台灣以外的地區，我們暫時無法提供服務。感謝您的理解與支持。"} />
                         </div>
                         <div className="transport-qa-title">
                             <h1>Shipping Information</h1>
@@ -112,22 +97,10 @@
                             <h2>產品需知</h2>
                         </div>
                         <div className="product-qa-box">
-                            <div className="qa-box">
-                                <p>調理包該如何使用？</p>
-                                <img src="./image/contact/add.png" alt="" />
-                            </div>
-                            <div className="qa-box">
-                                <p>產品包含了哪些成分？</p>
-                                <img src="./image/contact/add.png" alt="" />
-                            </div>
-                            <div className="qa-box">
-                                <p>產品是否適合素食者或特殊飲食需求者？</p>
-                                <img src="./image/contact/add.png" alt="" />
-                            </div>
-                            <div className="qa-box">
-                                <p>產品是否含有防腐劑或人工添加劑？</p>
-                                <img src="./image/contact/add.png" alt="" />
-                            </div>
+                            <QaBox content={"調理包該如何使用？"} ans={"我們的咖哩調理包配有詳細的使用說明，包括烹飪步驟和所需食材清單。請按照包裝上的指示進行操作，即可輕鬆烹製美味的咖哩料理。"} />
+                            <QaBox content={"產品包含了哪些成分？"} ans={"我們的產品使用新鮮且高品質的食材，並遵循嚴格的製造標準。您可以在每個產品的包裝上找到成分列表和適用過敏警告。"} />
+                            <QaBox content={"產品是否適合素食者或特殊飲食需求者？"} ans={"我們的一些產品適合素食者，但並非所有產品都是。請查看每個產品的產品描述以確定是否符合您的飲食需求。"} />
+                            <QaBox content={"產品是否含有防腐劑或人工添加劑？"} ans={"我們的產品不含人工添加劑或防腐劑。我們致力於提供健康、美味且高品質的產品。"} />
                         </div>
                     </section>
                 </main>
