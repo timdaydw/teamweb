@@ -185,12 +185,14 @@ body {
     background-color: #F3E9DC;
     text-align: center;
     line-height: 46px;
-    font-size: 1.125rem;
     border-radius: 20px;
 }
 
-.tag li a {
+.tag li button {
     color: #09302B;
+    background: none;
+    border: none;
+    font-size: 1.125rem;
 }
 
 /* product */

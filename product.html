@@ -17,12 +17,12 @@
     <div id="root"></div>
     <script type="text/babel">
         const { useState } = React;
-
+        
         const products = [
             {
                 id: 1,
                 title: '起司奶油咖哩(蛋奶素)',
-                price: 150,
+                type: 10
             },
             {
                 id: 2,
@@ -70,11 +70,11 @@
                 title: '辣味菠菜雞肉咖哩',
             },
         ]
-
+        const cardType = products;
         const Topbar = () => {
             return <>
                 <div className="topbar">
-                    <iframe src="./topbar.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe src="./topbar.html" frameBorder="0" scrolling="no"></iframe>
                 </div>
             </>
         }
@@ -93,10 +93,10 @@
             return <>
 
                 <div className="product-content-card">
-                    <a href=""><figure><img src={`./image/product/product-content-img/${title}.png`} alt="" /></figure>
+                    <a href="#"><figure><img src={`./image/product/product-content-img/${title}.png`} alt="" /></figure>
                         <p className="product-content-card-title">{title}</p>
                         <div className="price">
-                            <small>NT$</small><h2>150</h2><a href=""></a>
+                            <small>NT$</small><h2>150</h2>
                         </div>
                         <small className="weight">200g</small></a>
                     <div className="card-buy">
@@ -193,18 +193,21 @@
                             <img src="./image/product/menu-img.png" alt="" />
                             <h1>MENU</h1>
                             <ul className="tag">
-                                <li><a href="#">所有商品</a></li>
-                                <li><a href="#">咖哩調理包</a></li>
-                                <li><a href="#">湯品調理包</a></li>
-                                <li><a href="#">素食料理</a></li>
-                                <li><a href="#">調味粉</a></li>
+                                <li><button onClick={()=>{
+                                    const [cardType,setCardType] = useState(products);
+                                    
+                                }}>所有商品</button></li>
+                                <li><button>咖哩調理包</button></li>
+                                <li><button>湯品調理包</button></li>
+                                <li><button>素食料理</button></li>
+                                <li><button>調味粉</button></li>
                             </ul>
                         </div>
                     </section>
                     <section id="product-content">
                         {
-                            products.map((products) => {
-                                return <Card key={products.id} title={products.title} />
+                            cardType.map((cardType) => {
+                                return <Card key={cardType.id} title={cardType.title} />
                             })
                         }
                     </section>
