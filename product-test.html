@@ -18,69 +18,7 @@
     <script type="text/babel">
         const { useState } = React;
 
-        const products = [
-            {
-                id: 1,
-                title: '起司奶油咖哩(蛋奶素)',
-                type: 10
-            },
-            {
-                id: 2,
-                title: '瑪莎拉香料雞肉咖哩',
-                type: 10
-            },
-            {
-                id: 3,
-                title: '椰奶鮮蝦風味咖哩',
-                type: 10
-            },
-            {
-                id: 4,
-                title: '雞肉野菜湯咖哩',
-                type: 10
-            },
-            {
-                id: 5,
-                title: '叻沙海鮮風味湯',
-                type: 1
-            },
-            {
-                id: 6,
-                title: '濃郁奶油雞肉咖哩',
-                type: 1
-            },
-            {
-                id: 7,
-                title: '綠咖哩風味粉',
-                type: 1
-            },
-            {
-                id: 8,
-                title: '馬來咖哩風味粉',
-                type: 1
-            },
-            {
-                id: 9,
-                title: '辣椒大豆咖哩(素食)',
-                type: 1
-            },
-            {
-                id: 10,
-                title: '印度咖哩風味粉',
-                type: 1
-            },
 
-            {
-                id: 11,
-                title: '日式咖哩風味粉',
-                type: 1
-            },
-            {
-                id: 12,
-                title: '辣味菠菜雞肉咖哩',
-                type: 1
-            },
-        ]
         // const cardType = products;
         const Topbar = () => {
             return <>
@@ -160,6 +98,71 @@
             </>
         }
         function MyApp() {
+            const cardType = [
+                {
+                    id: 1,
+                    title: '起司奶油咖哩(蛋奶素)',
+                    type: 1
+                },
+                {
+                    id: 2,
+                    title: '瑪莎拉香料雞肉咖哩',
+                    type: 10
+                },
+                {
+                    id: 3,
+                    title: '椰奶鮮蝦風味咖哩',
+                    type: 10
+                },
+                {
+                    id: 4,
+                    title: '雞肉野菜湯咖哩',
+                    type: 10
+                },
+                {
+                    id: 5,
+                    title: '叻沙海鮮風味湯',
+                    type: 1
+                },
+                {
+                    id: 6,
+                    title: '濃郁奶油雞肉咖哩',
+                    type: 1
+                },
+                {
+                    id: 7,
+                    title: '綠咖哩風味粉',
+                    type: 1
+                },
+                {
+                    id: 8,
+                    title: '馬來咖哩風味粉',
+                    type: 1
+                },
+                {
+                    id: 9,
+                    title: '辣椒大豆咖哩(素食)',
+                    type: 1
+                },
+                {
+                    id: 10,
+                    title: '印度咖哩風味粉',
+                    type: 1
+                },
+
+                {
+                    id: 11,
+                    title: '日式咖哩風味粉',
+                    type: 1
+                },
+                {
+                    id: 12,
+                    title: '辣味菠菜雞肉咖哩',
+                    type: 1
+                },
+            ]
+            const [products, setProducts] = useState(cardType)
+            console.log(products);
             return <>
                 <Topbar />
                 <main>
@@ -206,21 +209,24 @@
                             <ul className="tag">
                                 <li><button onClick={() => {
                                     const temp = []
-                                    // const [cardType, setCardType] = useState(products);
-                                    // products.map((products)=>{
-                                    //     if(products.type===10){
-                                    //         temp = products
-                                    //     }
-                                    //     return setCardType(temp);
-                                    // })
-                                    // for (let i=0;i<cardType.length; i++){
-                                    //     if (cardType[i].type== 10){
-                                    //         temp.push(cardType[i]);
-                                    //     }
-                                    // }
-                                    // console.log(temp);
+                                    for (let i=0;i<cardType.length; i++){
+                                        if (cardType[i].type== 10){
+                                            temp.push(cardType[i]);
+                                        }
+                                    }
+                                    console.log(temp);
+                                    setProducts(temp);
                                 }}>所有商品</button></li>
-                                <li><button>咖哩調理包</button></li>
+                                <li><button onClick={() => {
+                                    const temp = []
+                                    for (let i=0;i<cardType.length; i++){
+                                        if (cardType[i].type== 1){
+                                            temp.push(cardType[i]);
+                                        }
+                                    }
+                                    console.log(temp);
+                                    setProducts(temp);
+                                }}>咖哩調理包</button></li>
                                 <li><button>湯品調理包</button></li>
                                 <li><button>素食料理</button></li>
                                 <li><button>調味粉</button></li>
