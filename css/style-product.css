@@ -280,7 +280,7 @@ body {
 }
 
 
-.card-buy:hover {
+.product-content-card:hover .card-buy{
     opacity: 1;
 }
 
