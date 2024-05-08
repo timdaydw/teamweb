@@ -162,15 +162,41 @@
         }
         const Footer = () => {
             return <>
-            <div className="footer">
+                <div className="footer">
                     <iframe src="./footer.html" frameBorder="0" scrolling="no"></iframe>
                 </div>
             </>
         }
         function MyApp() {
             return <>
-                <Topbar/>
-                <main>
+                <Topbar />
+                <main onLoad={() => {
+                    $(function () {
+
+                    });
+
+                    // 啟用smoove 共用區 (一定要單獨寫在最外面)
+                    $('.smoove').smoove({
+                        offset: '30%',
+                    });
+
+                    $('.star').smoove({
+                        offset: '90%',
+                    });
+
+                    $('.leaf-left-bg').smoove({
+                        offset: '40%',
+                    });
+                    $('.leaf-right-bg').smoove({
+                        offset: '10%',
+                    });
+                    $('.light-bg').smoove({
+                        offset: '10%',
+                    });
+                    $('.product-title').smoove({
+                        offset: '50%',
+                    });
+                }}>
                     <section className="banner">
                         <div className="banner-text">
                             <p className="banner-text-title">spice up your life</p>
@@ -178,7 +204,7 @@
                             <p className="banner-text-content">
                                 一個"咖哩調理包及調味粉品牌"<br />
                                 以方便美味的香料為您的菜餚帶來地道的味道。<br />
-                                從傳統的印度咖哩到創意的融合食譜，讓您的烹飪更添美味。<br/>
+                                從傳統的印度咖哩到創意的融合食譜，讓您的烹飪更添美味。<br />
                             </p>
                         </div>
                     </section>
@@ -275,14 +301,14 @@
                         <div className="contact-box">
                             <div className="contact-content">
                                 <ul>
-                                    <li><img src="./image/contact-icon.png" alt=""/>客服電話</li>
-                                    <li><img src="./image/contact-icon.png" alt=""/>官方Email</li>
-                                    <li><img src="./image/contact-icon.png" alt=""/>客服服務時間</li>
+                                    <li><img src="./image/contact-icon.png" alt="" />客服電話</li>
+                                    <li><img src="./image/contact-icon.png" alt="" />官方Email</li>
+                                    <li><img src="./image/contact-icon.png" alt="" />客服服務時間</li>
                                 </ul>
                                 <ul>
-                                    <li><img src="./image/contact-icon.png" alt=""/>02-2222-6666</li>
-                                    <li><img src="./image/contact-icon.png" alt=""/>kalikali666@gmail.com</li>
-                                    <li><img src="./image/contact-icon.png" alt=""/>MON-SAT . 11:00~20:00</li>
+                                    <li><img src="./image/contact-icon.png" alt="" />02-2222-6666</li>
+                                    <li><img src="./image/contact-icon.png" alt="" />kalikali666@gmail.com</li>
+                                    <li><img src="./image/contact-icon.png" alt="" />MON-SAT . 11:00~20:00</li>
                                 </ul>
                             </div>
                             <div className="fqa">
@@ -300,7 +326,7 @@
                         <img src="./image/dessert-bg.png" alt="" className="dessert-bg smoove" />
                     </section>
                 </main>
-                <Footer/>
+                <Footer />
             </>
         }
 
