@@ -193,6 +193,8 @@ body {
     background: none;
     border: none;
     font-size: 1.125rem;
+    width: 139px;
+    height: 46px;
 }
 
 /* product */
@@ -279,6 +281,11 @@ body {
     transition: all 0.7s;
 }
 
+.card-buy button {
+    background: none;
+    border: none;
+    margin-left: 20px;
+}
 
 .product-content-card:hover .card-buy{
     opacity: 1;
@@ -309,14 +316,6 @@ body {
     font-size: 1.75rem;
     color: #606061;
     font-weight: bolder;
-}
-
-
-
-.card-buy button {
-    background: none;
-    border: none;
-    margin-left: 20px;
 }
 
 /* comment */
