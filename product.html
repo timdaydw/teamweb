@@ -10,7 +10,7 @@
     <!-- Don't use this in production: -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/style-product.css">
+    <link rel="stylesheet" href="./css/product.css">
 </head>
 
 <body>
@@ -19,70 +19,70 @@
         const { useState } = React;
 
         const cardType = [
-                {
-                    id: 1,
-                    title: '起司奶油咖哩(蛋奶素)',
-                    type1: 1,
-                    type3: 1,
-                },
-                {
-                    id: 2,
-                    title: '瑪莎拉香料雞肉咖哩',
-                    type1: 1,
-                },
-                {
-                    id: 3,
-                    title: '椰奶鮮蝦風味咖哩',
-                    type1: 1,
-                },
-                {
-                    id: 4,
-                    title: '雞肉野菜湯咖哩',
-                    type2: 1,
-                },
-                {
-                    id: 5,
-                    title: '叻沙海鮮風味湯',
-                    type2: 1,
-                },
-                {
-                    id: 6,
-                    title: '濃郁奶油雞肉咖哩',
-                    type1: 1,
-                },
-                {
-                    id: 7,
-                    title: '綠咖哩風味粉',
-                    type4: 1
-                },
-                {
-                    id: 8,
-                    title: '馬來咖哩風味粉',
-                    type4: 1
-                },
-                {
-                    id: 9,
-                    title: '辣椒大豆咖哩(素食)',
-                    type1: 1,
-                    type3: 1,
-                },
-                {
-                    id: 10,
-                    title: '印度咖哩風味粉',
-                    type4: 1
-                },
+            {
+                id: 1,
+                title: '起司奶油咖哩(蛋奶素)',
+                type1: 1,
+                type3: 1,
+            },
+            {
+                id: 2,
+                title: '瑪莎拉香料雞肉咖哩',
+                type1: 1,
+            },
+            {
+                id: 3,
+                title: '椰奶鮮蝦風味咖哩',
+                type1: 1,
+            },
+            {
+                id: 4,
+                title: '雞肉野菜湯咖哩',
+                type2: 1,
+            },
+            {
+                id: 5,
+                title: '叻沙海鮮風味湯',
+                type2: 1,
+            },
+            {
+                id: 6,
+                title: '濃郁奶油雞肉咖哩',
+                type1: 1,
+            },
+            {
+                id: 7,
+                title: '綠咖哩風味粉',
+                type4: 1
+            },
+            {
+                id: 8,
+                title: '馬來咖哩風味粉',
+                type4: 1
+            },
+            {
+                id: 9,
+                title: '辣椒大豆咖哩(素食)',
+                type1: 1,
+                type3: 1,
+            },
+            {
+                id: 10,
+                title: '印度咖哩風味粉',
+                type4: 1
+            },
 
-                {
-                    id: 11,
-                    title: '日式咖哩風味粉',
-                    type4: 1
-                },
-                {
-                    id: 12,
-                    title: '辣味菠菜雞肉咖哩',
-                    type1: 1,
-                },
-            ]
+            {
+                id: 11,
+                title: '日式咖哩風味粉',
+                type4: 1
+            },
+            {
+                id: 12,
+                title: '辣味菠菜雞肉咖哩',
+                type1: 1,
+            },
+        ]
 
         const Topbar = () => {
             return <>
@@ -166,7 +166,10 @@
             const [products, setProducts] = useState(cardType)
             return <>
                 <Topbar />
-                <main>
+                <main onLoad={() => {
+                    $(function () {
+                    });
+                }}>
                     <div className="topbar-h"></div>
                     <section id="banner">
                         <div className="banner-content">
@@ -175,13 +178,13 @@
                                 <small>Chicken Masala Curry</small>
                             </div>
                             <p>品嚐正宗印度風味的瑪莎拉雞肉咖哩！每一口都充滿了深邃的香料風味，搭配著椰奶的濃郁口感，絕對是您晚餐時光的完美選擇。</p>
-                            <a href="">前往購買</a>
+                            <a href="#">前往購買</a>
                         </div>
                         <img src="./image/product/product-banner-right-img.png" alt="" className="right" />
-                        <img src="./image/product/product-banner-masalaspice-img.png" alt="" className="banner-content-img1" />
-                        <img src="./image/product/product-banner-coconutmilk-img.png" alt="" className="banner-content-img2" />
-                        <img src="./image/product/product-banner-freshchicken-img.png" alt="" className="banner-content-img3" />
-                        <img src="./image/product/product-banner-freshtomatoes-img.png" alt="" className="banner-content-img4" />
+                        <img src="./image/product/product-banner-masalaspice-img.png" alt="" className="banner-content-img1"/>
+                        <img src="./image/product/product-banner-coconutmilk-img.png" alt="" className="banner-content-img2"/>
+                        <img src="./image/product/product-banner-freshchicken-img.png" alt="" className="banner-content-img3"/>
+                        <img src="./image/product/product-banner-freshtomatoes-img.png" alt="" className="banner-content-img4"/>
                     </section>
                     <section id="masalaintro">
                         <div className="masalaintro-img-box">
@@ -213,8 +216,8 @@
                                 }}>所有商品</button></li>
                                 <li><button onClick={() => {
                                     const temp = []
-                                    for (let i=0;i<cardType.length; i++){
-                                        if (cardType[i].type1== 1){
+                                    for (let i = 0; i < cardType.length; i++) {
+                                        if (cardType[i].type1 == 1) {
                                             temp.push(cardType[i]);
                                         }
                                     }
@@ -222,8 +225,8 @@
                                 }}>咖哩調理包</button></li>
                                 <li><button onClick={() => {
                                     const temp = []
-                                    for (let i=0;i<cardType.length; i++){
-                                        if (cardType[i].type2== 1){
+                                    for (let i = 0; i < cardType.length; i++) {
+                                        if (cardType[i].type2 == 1) {
                                             temp.push(cardType[i]);
                                         }
                                     }
@@ -231,8 +234,8 @@
                                 }}>湯品調理包</button></li>
                                 <li><button onClick={() => {
                                     const temp = []
-                                    for (let i=0;i<cardType.length; i++){
-                                        if (cardType[i].type3== 1){
+                                    for (let i = 0; i < cardType.length; i++) {
+                                        if (cardType[i].type3 == 1) {
                                             temp.push(cardType[i]);
                                         }
                                     }
@@ -240,8 +243,8 @@
                                 }}>素食料理</button></li>
                                 <li><button onClick={() => {
                                     const temp = []
-                                    for (let i=0;i<cardType.length; i++){
-                                        if (cardType[i].type4== 1){
+                                    for (let i = 0; i < cardType.length; i++) {
+                                        if (cardType[i].type4 == 1) {
                                             temp.push(cardType[i]);
                                         }
                                     }
@@ -275,52 +278,8 @@
         const root = ReactDOM.createRoot(container);
         root.render(<MyApp />);
     </script>
-    <!--
-        Note: this page is a great way to try React but it's not suitable for production.
-        It slowly compiles JSX with Babel in the browser and uses a large development build of React.
-
-        Read this page for starting a new React project with JSX:
-        https://react.dev/learn/start-a-new-react-project
-
-        Read this page for adding React with JSX to an existing project:
-        https://react.dev/learn/add-react-to-an-existing-project
-    -->
-    <!-- const Card = (props) => {
-        const [num, setNum] = useState(0);
-        const { title } = props;
-        return <>
-
-            <div className="product-content-card">
-                <figure><img src={`./image/product/product-content-img/${title}.png`} alt="" /></figure>
-                <p className="product-content-card-title">{title}</p>
-                <div className="price">
-                    <small>NT$</small><h2>150</h2><a href=""></a>
-                </div>
-                <small className="weight">200g</small>
-                <div className="card-buy">
-                    <div className="card-hover-number">
-                        <img src="./image/product/product-card-hover-sub.png" alt="" onClick={() => {
-                            // num--;
-                            setNum(num - 1);
-                        }} />
-                        <p>{num}</p>
-                        <img src="./image/product/product-card-hover-add.png" alt="" onClick={() => {
-                            // num+;
-                            setNum(num + 1);
-                        }} />
-                    </div>
-                    <button>加入購物車</button>
-                    <div className="buy-link"><a href="#">前往購買</a></div>
-                    <p className="product-hover-number-title">{title}</p>
-                    <div className="price-hover">
-                        <small>NT$</small><h2>150</h2>
-                    </div>
-                    <small className="weight-2">200g</small>
-                </div>
-            </div>
-        </>
-    } -->
-
+    <!-- jquery -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
 </body>
 
 </html>

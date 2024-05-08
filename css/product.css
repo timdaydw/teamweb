@@ -186,6 +186,7 @@ body {
     text-align: center;
     line-height: 46px;
     border-radius: 20px;
+    transition: all 0.35s;
 }
 
 .tag li button {
@@ -195,6 +196,10 @@ body {
     font-size: 1.125rem;
     width: 139px;
     height: 46px;
+}
+
+.tag li:active {
+    background-color: #b5905f;
 }
 
 /* product */
@@ -217,12 +222,7 @@ body {
     background-color: #F8f8f8;
     border-radius: 20px;
     box-shadow: 8px 11px 10px #b3b3b3;
-
-
     margin: 50px 7%;
-
-
-
     position: relative;
 }
 
