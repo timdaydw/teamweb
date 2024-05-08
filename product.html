@@ -94,25 +94,27 @@
 
                 <div className="product-content-card">
                     <a href=""><figure><img src={`./image/product/product-content-img/${title}.png`} alt="" /></figure>
-                    <p className="product-content-card-title">{title}</p>
-                    <div className="price">
-                        <small>NT$</small><h2>150</h2><a href=""></a>
-                    </div>
-                    <small className="weight">200g</small></a>
+                        <p className="product-content-card-title">{title}</p>
+                        <div className="price">
+                            <small>NT$</small><h2>150</h2><a href=""></a>
+                        </div>
+                        <small className="weight">200g</small></a>
                     <div className="card-buy">
                         <form action="" name="shop" id="shop" title="加入購物車" method="post" className="card-buy-form">
-                        <div className="card-hover-number">
-                            <img src="./image/product/product-card-hover-sub.png" alt="" onClick={() => {
-                                // num--;
-                                setNum(num - 1);
-                            }} />
-                            <p>{num}</p>
-                            <img src="./image/product/product-card-hover-add.png" alt="" onClick={() => {
-                                // num+;
-                                setNum(num + 1);
-                            }} />
-                        </div>
-                        <button><img src="./image/product/shop-img.png" alt=""/></button>
+                            <div className="card-hover-number">
+                                <img src="./image/product/product-card-hover-sub.png" alt="" onClick={() => {
+                                    // num--;
+                                    if (num > 0) {
+                                        setNum(num - 1);
+                                    }
+                                }} />
+                                <p>{num}</p>
+                                <img src="./image/product/product-card-hover-add.png" alt="" onClick={() => {
+                                    // num+;
+                                    setNum(num + 1);
+                                }} />
+                            </div>
+                            <button><img src="./image/product/shop-img.png" alt="" /></button>
                         </form>
                     </div>
                 </div>

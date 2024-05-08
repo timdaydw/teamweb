@@ -33,7 +33,9 @@
                         <h3 className="buy-number">
                             <img src="./image/product/product-card-hover-sub.png" alt="" onClick={() => {
                                 // num--;
-                                setNum(num - 1);
+                                if (num>0){
+                                    setNum(num - 1);
+                                }
                             }} />
                             <p>{num}</p>
                             <img src="./image/product/product-card-hover-add.png" alt="" onClick={() => {
