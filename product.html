@@ -128,7 +128,7 @@
             </>
         }
         function MyApp() {
-            const [shopNum, setShopNum] = useState(0);
+            const [shopNum, setShopNum] = useState(shopList.length);
             const Card = (props) => {
                 const [num, setNum] = useState(0);
                 const { title } = props;
