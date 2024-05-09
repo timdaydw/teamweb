@@ -17,7 +17,7 @@
     <div id="root"></div>
     <script type="text/babel">
         const { useState } = React;
-
+        const shopList = [];
         const cardType = [
             {
                 id: 1,
@@ -100,40 +100,6 @@
             </>
         }
 
-        const Card = (props) => {
-            const [num, setNum] = useState(0);
-            const { title } = props;
-            return <>
-
-                <div className="product-content-card">
-                    <a href="#"><figure><img src={`./image/product/product-content-img/${title}.png`} alt="" /></figure>
-                        <p className="product-content-card-title">{title}</p>
-                        <div className="price">
-                            <small>NT$</small><h2>150</h2>
-                        </div>
-                        <small className="weight">200g</small></a>
-                    <div className="card-buy">
-                        <form action="" name="shop" id="shop" title="加入購物車" method="post" className="card-buy-form">
-                            <div className="card-hover-number">
-                                <img src="./image/product/product-card-hover-sub.png" alt="" onClick={() => {
-                                    // num--;
-                                    if (num > 0) {
-                                        setNum(num - 1);
-                                    }
-                                }} />
-                                <p>{num}</p>
-                                <img src="./image/product/product-card-hover-add.png" alt="" onClick={() => {
-                                    // num+;
-                                    setNum(num + 1);
-                                }} />
-                            </div>
-                            <button><img src="./image/product/shop-img.png" alt="" /></button>
-                        </form>
-                    </div>
-                </div>
-            </>
-        }
-
         const comment = [
             {
                 id: 1,
@@ -162,8 +128,48 @@
             </>
         }
         function MyApp() {
-
-            const [products, setProducts] = useState(cardType)
+            const [shopNum, setShopNum] = useState(0);
+            const Card = (props) => {
+                const [num, setNum] = useState(0);
+                const { title } = props;
+                return <>
+                    <div className="product-content-card">
+                        <a href="#"><figure><img src={`./image/product/product-content-img/${title}.png`} alt="" /></figure>
+                            <p className="product-content-card-title">{title}</p>
+                            <div className="price">
+                                <small>NT$</small><h2>150</h2>
+                            </div>
+                            <small className="weight">200g</small></a>
+                        <div className="card-buy">
+                            <form action="" name="shop" id="shop" title="加入購物車" method="post" className="card-buy-form">
+                                <div className="card-hover-number">
+                                    <img src="./image/product/product-card-hover-sub.png" alt="" onClick={() => {
+                                        // num--;
+                                        if (num > 0) {
+                                            setNum(num - 1);
+                                        }
+                                    }} />
+                                    <p>{num}</p>
+                                    <img src="./image/product/product-card-hover-add.png" alt="" onClick={() => {
+                                        // num+;
+                                        setNum(num + 1);
+                                    }} />
+                                </div>
+                                <a href="##"  onClick={()=>{
+                                    if (num>0) {
+                                        shopList.push({title,num});
+                                        setShopNum(shopNum+1);
+                                    }else {
+                                        return
+                                    }
+                                    console.log(shopList)
+                                }}><img src="./image/product/shop-img.png" alt="" /></a>
+                            </form>
+                        </div>
+                    </div>
+                </>
+            }
+            const [products, setProducts] = useState(cardType);
             return <>
                 <Topbar />
                 <main onLoad={() => {
@@ -181,10 +187,10 @@
                             <a href="#">前往購買</a>
                         </div>
                         <img src="./image/product/product-banner-right-img.png" alt="" className="right" />
-                        <img src="./image/product/product-banner-masalaspice-img.png" alt="" className="banner-content-img1"/>
-                        <img src="./image/product/product-banner-coconutmilk-img.png" alt="" className="banner-content-img2"/>
-                        <img src="./image/product/product-banner-freshchicken-img.png" alt="" className="banner-content-img3"/>
-                        <img src="./image/product/product-banner-freshtomatoes-img.png" alt="" className="banner-content-img4"/>
+                        <img src="./image/product/product-banner-masalaspice-img.png" alt="" className="banner-content-img1" />
+                        <img src="./image/product/product-banner-coconutmilk-img.png" alt="" className="banner-content-img2" />
+                        <img src="./image/product/product-banner-freshchicken-img.png" alt="" className="banner-content-img3" />
+                        <img src="./image/product/product-banner-freshtomatoes-img.png" alt="" className="banner-content-img4" />
                     </section>
                     <section id="masalaintro">
                         <div className="masalaintro-img-box">
@@ -270,6 +276,7 @@
                             }
                         </div>
                     </section>
+                    <div className="shop-num"><a href="./orderinfo.html"><img src="./image/product/shop-img.png" alt="" /><p>{shopNum}</p></a></div>
                 </main>
             </>;
         }
