@@ -161,7 +161,7 @@
     text-align: center;
 }
 
-.total-box button{
+.total-box a button{
     float: right;
     width: 163px;
     height: 32px;
