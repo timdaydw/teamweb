@@ -154,10 +154,15 @@ table {
 a {
     text-decoration: none;
 }
+body{
+    width: 100%;
+}
 
 
 /* header */
-
+header {
+    width: 100%;
+}
 .topbar {
     width: 100%;
     height: 92px;
@@ -169,8 +174,9 @@ a {
     padding-bottom: 25px;
     padding-left: 37px;
     padding-right: 37px;
-    position: fixed;
+    /* position: fixed; */
     z-index: 100;
+    /* overflow-x: hidden; */
 }
 
 .topbar a {
@@ -179,14 +185,9 @@ a {
 }
 
 
-.topbar a:hover{
+.topbar a:hover {
     padding-bottom: 3px;
-    border-bottom:1px solid #F5E9E4;
-}
-
-.logo a:hover{
-    padding-bottom: 0;
-    border-bottom:none;
+    border-bottom: 1px solid #F5E9E4;
 }
 
 .topbar nav ul {
@@ -202,7 +203,6 @@ a {
 .topbar-member {
     display: flex;
     align-items: center;
-
 }
 
 .topbar .menu {
@@ -240,6 +240,75 @@ a {
 }
 
 
-.member:hover .member-box{
+.member:hover .member-box {
     display: block;
+}
+
+.home {
+    display: none;
+}
+
+/* RWD斷點 */
+/* 大型設備(桌機) */
+@media (min-width:821px) {}
+
+/* 中型設備(平板) */
+@media (max-width:820px) {
+    .logo img {
+        width: 100px;
+    }
+
+    .topbar .menu {
+        width: 400px;
+    }
+
+    .member:active .member-box {
+        display: block;
+    }
+
+    .topbar {
+        height: 80px;
+        padding: 25px 37px;
+    }
+}
+
+/* 小型設備(手機) */
+@media (max-width:640px) {
+    .logo {
+        display: none;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        height: 70px;
+    }
+    .menu {
+        margin: 0;
+    }
+
+    .topbar-member li,
+    .menu li {
+        margin: 10px;
+    }
+    .member-box {
+        padding-top: 5px;
+    }
+    .home {
+        display: block;
+    }
+    .rwd-s-n{
+        display: none;
+    }
+    .topbar-member {
+        height:16px;
+        align-self: flex-end;
+    }
+    .member {
+        height: 100%;
+    }
+    .member a{
+        padding: 0;
+    }
 }

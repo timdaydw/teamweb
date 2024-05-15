@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>KALI KALI</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
@@ -12,7 +14,7 @@
     <link rel="stylesheet" href="./css/topbar.css">
 </head>
 
-<body>
+<body>  
     <div id="root"></div>
     <script type="text/babel">
         function MyApp() {
@@ -23,10 +25,12 @@
                     </h1>
 
                     <ul className="menu">
+                        <li className="home"><a href="./index.html" target="_top">Home</a></li>
                         <li><a href="./news.html" target="_top">News</a></li>
                         <li><a href="./guided.html" target="_top">Brand & Culture</a></li>
                         <li><a href="./product.html" target="_top">Product</a></li>
-                        <li><a href="./contact.html" target="_top">Contact / FAQ</a></li>
+                        <li className="rwd-s-n"><a href="./contact.html" target="_top">Contact / FAQ</a></li>
+                        <li className="home rwd-s"><a href="./contact.html" target="_top">Contact<br/>FAQ</a></li>
                     </ul>
                     <ul className="topbar-member">
                         <li className="member">
