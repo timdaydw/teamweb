@@ -17,6 +17,7 @@ body {
     position: absolute;
     right: 0;
     top: 7%;
+    z-index: 10;
 }
 
 .banner-content {
@@ -26,7 +27,8 @@ body {
     height: 384px;
     justify-content: space-between;
     align-items: center;
-
+    position: relative;
+    z-index: 50;
 }
 
 .banner-content-title {
@@ -62,24 +64,62 @@ body {
     position: absolute;
     top: 2%;
     right: 22%;
+    z-index: 10;
 }
 
 .banner-content-img2 {
     position: absolute;
     top: 15%;
     right: 31%;
+    z-index: 10;
 }
 
 .banner-content-img3 {
     position: absolute;
     top: 33%;
     right: 33%;
+    z-index: 10;
 }
 
 .banner-content-img4 {
     position: absolute;
     top: 70%;
     right: 27%;
+    z-index: 10;
+}
+
+
+/* RWD斷點 */
+/* 大型設備(桌機) */
+@media (min-width:821px) {}
+
+/* 中型設備(平板) */
+@media (max-width:820px) {
+    #banner img {
+        right: 0;
+    }
+
+    #banner .right {
+        display: none;
+    }
+
+    #banner {
+        padding-left: 100px;
+    }
+}
+
+/* 小型設備(手機) */
+@media (max-width:640px) {
+    #banner img {
+        display: none;
+    }
+
+    #banner {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 /* masalaintro */
@@ -137,6 +177,54 @@ body {
     font-size: 1.25rem;
     margin-top: 43px;
     line-height: 1.5;
+}
+
+/* RWD斷點 */
+/* 大型設備(桌機) */
+@media (min-width:821px) {}
+
+/* 中型設備(平板) */
+@media (max-width:820px) {
+    #masalaintro {
+        flex-direction: column;
+    }
+
+    .masalaintro-img-box-left img:first-child,
+    .masalaintro-img-box>img {
+        display: none;
+    }
+    .masalaintro-img-box-left img{
+        width: 100%;
+    }
+    #masalaintro>img {
+        height: 100%;
+    }
+
+    .masalaintro-img-box-left {
+        width: auto;
+        height: auto;
+        margin: 0;
+    }
+
+    .masalaintro-content {
+        background-size: cover;
+        padding-bottom: 20px;
+    }
+
+    .masalaintro-content p {
+        width: 90%;
+    }
+}
+
+/* 小型設備(手機) */
+@media (max-width:640px) {
+    .masalaintro-content {
+        width: 100%;
+    }
+
+    .masalaintro-content p {
+        text-align: left;
+    }
 }
 
 /* menu-tag */
@@ -202,6 +290,39 @@ body {
     background-color: #b5905f;
 }
 
+/* RWD斷點 */
+/* 大型設備(桌機) */
+@media (min-width:821px) {}
+
+/* 中型設備(平板) */
+@media (max-width:820px) {}
+
+/* 小型設備(手機) */
+@media (max-width:640px) {
+    #menu-tag {
+        height: 500px;
+        background: none;
+    }
+
+    #menu-tag img {
+        display: none;
+    }
+
+    .tag {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tag li {
+        margin: 10px;
+    }
+
+    .tag-box {
+        background-image: none;
+    }
+}
+
 /* product */
 
 
@@ -226,7 +347,7 @@ body {
     position: relative;
 }
 
-.product-content-card a{
+.product-content-card a {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -285,11 +406,11 @@ body {
     margin-left: 35px;
 }
 
-.product-content-card:hover .card-buy{
+.product-content-card:hover .card-buy {
     opacity: 1;
 }
 
-.card-buy-form{
+.card-buy-form {
     display: flex;
     /* justify-content: flex-end; */
 }
@@ -315,6 +436,25 @@ body {
     color: #606061;
     font-weight: bolder;
 }
+
+
+/* RWD斷點 */
+/* 大型設備(桌機) */
+@media (min-width:821px) {}
+
+/* 中型設備(平板) */
+@media (max-width:820px) {
+    #product-content {
+        padding: 100px 10%;
+    }
+
+    .product-content-card {
+        margin: 50px 6%;
+    }
+}
+
+/* 小型設備(手機) */
+@media (max-width:640px) {}
 
 /* comment */
 
@@ -378,7 +518,8 @@ body {
     bottom: 10%;
     right: 10%;
 }
-.shop-num a{
+
+.shop-num a {
     display: flex;
     align-items: center;
     background-color: brown;
@@ -387,6 +528,36 @@ body {
     border-radius: 99px;
 }
 
-main{
+main {
     position: relative;
 }
+
+/* RWD斷點 */
+/* 大型設備(桌機) */
+@media (min-width:821px) {}
+
+/* 中型設備(平板) */
+@media (max-width:820px) {
+    .comment-card:nth-child(n+3) {
+        display: none;
+    }
+
+    .comment-card {
+        margin: 5px;
+    }
+
+}
+
+/* 小型設備(手機) */
+@media (max-width:640px) {}
+
+
+/* RWD斷點 */
+/* 大型設備(桌機) */
+@media (min-width:821px) {}
+
+/* 中型設備(平板) */
+@media (max-width:820px) {}
+
+/* 小型設備(手機) */
+@media (max-width:640px) {}

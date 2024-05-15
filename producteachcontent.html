@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>KALI KALI </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
@@ -14,6 +16,7 @@
 </head>
 
 <body>
+
     <div id="root"></div>
     <script type="text/babel">
         const { useState } = React;
@@ -22,6 +25,7 @@
             const { name, listContent1, listContent2, listContent3, listContent4 } = props;
             return <>
                 <div className="topinfo">
+                    <img src={`./產品圖/${name}/1.jpeg`} alt="" className="topinfo-rwd-img" />
                     <div className="carousel">
                         <iframe src={`./產品圖/${name}/carousel-${name}.html`} frameBorder="0" scrolling="no"></iframe>
                     </div>
@@ -33,7 +37,7 @@
                         <h3 className="buy-number">
                             <img src="./image/product/product-card-hover-sub.png" alt="" onClick={() => {
                                 // num--;
-                                if (num>0){
+                                if (num > 0) {
                                     setNum(num - 1);
                                 }
                             }} />

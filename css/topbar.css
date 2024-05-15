@@ -287,6 +287,9 @@ header {
     .menu {
         margin: 0;
     }
+    .topbar .menu {
+        width: 100%;
+    }
 
     .topbar-member li,
     .menu li {

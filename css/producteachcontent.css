@@ -53,6 +53,21 @@ body {
     color: var(--09302b);
 }
 
+/* RWD斷點 */
+/* 大型設備(桌機) */
+@media (min-width:821px) {}
+
+/* 中型設備(平板) */
+@media (max-width:820px) {
+    #content {
+        padding: 0;
+        flex-direction: row-reverse;
+    }
+}
+
+/* 小型設備(手機) */
+@media (max-width:640px) {}
+
 .recipe h1 {
     width: 80px;
     font-size: 1.25rem;
@@ -67,6 +82,10 @@ body {
     display: flex;
     padding-top: 100px;
     padding-left: 43px;
+}
+
+.topinfo-rwd-img{
+    display: none;
 }
 
 .buy-card {
@@ -135,6 +154,64 @@ body {
 .payinfo {
     font-size: 1.125rem; 
     font-weight: bold;
+}
+
+.content-content {
+    width: 100%;
+}
+
+/* RWD斷點 */
+/* 大型設備(桌機) */
+@media (min-width:821px) {}
+
+/* 中型設備(平板) */
+@media (max-width:820px) {
+    .content-content {
+        display: flex;
+        flex-direction: column;
+    }
+    .topinfo{
+        padding: 30px 50px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .buy-card {
+        padding: 0;
+    }
+    .content-contenttext{
+        width: 90%;
+    }
+}
+
+/* 小型設備(手機) */
+@media (max-width:640px) {
+    .carousel{
+        display: none;
+    }
+    #banner {
+        display: none;
+    }
+    .topinfo-rwd-img {
+        display: block;
+        width: 100%;
+        margin: 100px 0 20px 0;
+    }
+
+    .content-recommend div div:nth-child(n+2){
+        display: none;
+    }
+    .content-recommend>div{
+        justify-content: center;
+    }
+    .content-contenttext{
+        width: 100%;
+    }
+    .content-contenttext h1{
+        width: 100%;
+    }
+    .content-contenttext li {
+        width: 90%;
+    }
 }
 
 .content-contenttext h1{
@@ -212,3 +289,21 @@ body {
     height: 426px;
 }
 
+@media (max-width:1540px){
+    .tag{
+        display: none;
+    }
+    .tag-box{
+        display: none;
+    }
+}
+
+/* RWD斷點 */
+/* 大型設備(桌機) */
+@media (min-width:821px) {}
+
+/* 中型設備(平板) */
+@media (max-width:820px) {}
+
+/* 小型設備(手機) */
+@media (max-width:640px) {}
