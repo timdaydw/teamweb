@@ -160,13 +160,13 @@
                                 <a href="##"  onClick={()=>{
                                     if (num>0) {
                                         shopList.push({title,num});
-                                        setShopNum(shopNum+1);
+                                        setShopNum(shopNum+num);
                                         window.alert(`"${title}"共${num}份，已放入購物車`)
                                     }else {
                                         return
                                     }
                                     // console.log(shopList)
-                                }}><img src="./image/product/shop-img.png" alt="" /></a>
+                                }}><img src="./image/product/shop-img.png" alt="" className="shopAdd"/></a>
                             </form>
                         </div>
                     </div>
