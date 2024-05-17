@@ -327,9 +327,9 @@ body {
 
 
 #product-content {
-    padding: 100px 18%;
+    padding: 100px 10%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
 
     /* background-image: url(./image/product/product-content-bk.png);
@@ -342,8 +342,8 @@ body {
     height: 313px;
     background-color: #F8f8f8;
     border-radius: 20px;
-    box-shadow: 8px 11px 10px #b3b3b3;
-    margin: 50px 7%;
+    box-shadow: -6px 14px 12px rgb(255, 233, 200,0.35);
+    margin: 50px 3%;
     position: relative;
 }
 

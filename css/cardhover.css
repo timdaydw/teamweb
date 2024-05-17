@@ -19,6 +19,8 @@ body {
 
 .page-content {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     margin: 0 auto;
     font-family: var(--font-sans);
 }
@@ -48,7 +50,7 @@ body {
     background-color: whitesmoke;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
-    margin-right: 14px;
+    margin: 7px;
 }
 
 /* @media (min-width: 600px) {
@@ -187,7 +189,7 @@ span{
     font-weight: bold;
 }
 
-@media (max-width: 1380px) {
+/* @media (max-width: 1380px) {
     .card:nth-child(n+4) {
         display: none;
     }
@@ -201,4 +203,4 @@ span{
     .card:nth-child(n+2) {
         display: none;
     }
-}
+} */
