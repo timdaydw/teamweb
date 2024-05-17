@@ -14,10 +14,37 @@
     <link rel="stylesheet" href="./css/topbar.css">
 </head>
 
-<body>  
+<body>
     <div id="root"></div>
     <script type="text/babel">
+        const { useState } = React;
+
         function MyApp() {
+            const [loginCheck, setLoginCheck] = useState(true);
+            const MemberCheck = () => {
+                if (loginCheck == true) {
+                    return <>
+                        <a href="./member-log.html" target="_top">會員</a>
+                        <ul className="member-box">
+                            <li>
+                                <a href="./memberinfo.html" target="_top">會員資料</a>
+                            </li>
+                            <li>
+                                <a href="./pastorder.html" target="_top">訂單紀錄</a>
+                            </li>
+                            <li>
+                                <a href="##" target="_top" onClick={()=>{
+                                    setLoginCheck(false);
+                                }}>會員登出</a>
+                            </li>
+                        </ul>
+                    </>
+                } else if (loginCheck == false) {
+                    return <>
+                        <a href="./member-log.html" target="_top">會員</a>
+                    </>
+                }
+            }
             return <>
                 <header className="topbar">
                     <h1 className="logo">
@@ -30,16 +57,11 @@
                         <li><a href="./guided.html" target="_top">Brand & Culture</a></li>
                         <li><a href="./product.html" target="_top">Product</a></li>
                         <li className="rwd-s-n"><a href="./contact.html" target="_top">Contact / FAQ</a></li>
-                        <li className="home rwd-s"><a href="./contact.html" target="_top">Contact<br/>FAQ</a></li>
+                        <li className="home rwd-s"><a href="./contact.html" target="_top">Contact<br />FAQ</a></li>
                     </ul>
                     <ul className="topbar-member">
                         <li className="member">
-                            <a href="./member-log.html" target="_top">會員</a>
-                            <ul className="member-box">
-                                <li>
-                                    <a href="./member-log.html" target="_top">會員登入</a>
-                                </li>
-                            </ul>
+                            <MemberCheck />
                         </li>
                         <li><a href="./shoplist.html" target="_top">購物車</a></li>
                     </ul>
