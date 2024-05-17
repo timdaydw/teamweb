@@ -33,7 +33,8 @@
                                 <a href="./pastorder.html" target="_top">訂單紀錄</a>
                             </li>
                             <li>
-                                <a href="##" target="_top" onClick={()=>{
+                                <a className="logout" target="_top" onClick={()=>{
+                                    window.alert("您已經登出");
                                     setLoginCheck(false);
                                 }}>會員登出</a>
                             </li>

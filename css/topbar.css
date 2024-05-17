@@ -326,3 +326,7 @@ header {
         margin: 0px;
     }
 }
+
+.logout{
+    cursor: pointer;
+}
