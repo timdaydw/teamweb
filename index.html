@@ -17,6 +17,30 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
+        const { useEffect } = React;
+        const smoovePhoto = () => {
+            $(function () {
+            });
+            // 啟用smoove 共用區 (一定要單獨寫在最外面)
+            $('.smoove').smoove({
+                offset: '30%',
+            });
+            $('.star').smoove({
+                offset: '90%',
+            });
+            // $('.leaf-left-bg').smoove({
+            //     offset: '40%',
+            // });
+            $('.leaf-right-bg').smoove({
+                offset: '10%',
+            });
+            $('.light-bg').smoove({
+                offset: '10%',
+            });
+            $('.product-title').smoove({
+                offset: '50%',
+            });
+        }
         const Topbar = () => {
             return <>
                 <div className="topbar">
@@ -32,35 +56,12 @@
             </>
         }
         function MyApp() {
+            useEffect(() => {
+                smoovePhoto();
+            }, []);
             return <>
                 <Topbar />
-                <main onLoad={() => {
-                    $(function () {
-
-                    });
-
-                    // 啟用smoove 共用區 (一定要單獨寫在最外面)
-                    $('.smoove').smoove({
-                        offset: '30%',
-                    });
-
-                    $('.star').smoove({
-                        offset: '90%',
-                    });
-
-                    // $('.leaf-left-bg').smoove({
-                    //     offset: '40%',
-                    // });
-                    $('.leaf-right-bg').smoove({
-                        offset: '10%',
-                    });
-                    $('.light-bg').smoove({
-                        offset: '10%',
-                    });
-                    $('.product-title').smoove({
-                        offset: '50%',
-                    });
-                }}>
+                <main>
                     <section className="banner">
                         <div className="banner-text">
                             <p className="banner-text-title">spice up your life</p>
