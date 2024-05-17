@@ -253,6 +253,7 @@ body {
 
 .content-recommend>div{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .content-recommend div div {
