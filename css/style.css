@@ -221,6 +221,7 @@ button {
 .banner {
     height: 800px;
     background-image: url(./image/Carousel.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
