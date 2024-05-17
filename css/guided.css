@@ -473,6 +473,17 @@ main {
     align-items: center;
 }
 
+.cardhover{
+    width: 100%;
+    height: 800px;
+}
+
+.cardhover iframe{
+    height: 800px;
+    width: 100%;
+}
+
+
 /* RWD斷點 */
 /* 大型設備(桌機) */
 @media (min-width:821px) {}
