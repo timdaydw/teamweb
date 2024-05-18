@@ -13,20 +13,31 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/contact.css">
+
+    <script src="./js/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
     <div id="root"></div>
     <script type="text/babel">
         const QaBox = (props) => {
-            const { content,ans } = props;
+            const { content, ans } = props;
+            const randomClassName = Math.floor(Math.random() * 1000000);
             return <>
-                <div className="qa-box">
-                    <p>{content}</p>
-                    <img src="./image/contact/add.png" alt="" />
-                </div>
-                <div className="ans-box">
-                    <p>{ans}</p>
+                <div onLoad={() => {
+                    $(`.slideQ-${randomClassName}`).click(function () {
+                        $(`.slideA-${randomClassName}`).slideToggle("slow");
+                    });
+                }}>
+                    <div className={`qa-box slideQ-${randomClassName}`}>
+                        <p>{content}</p>
+                        <a href="##">
+                            <img src="./image/contact/add.png" alt="" />
+                        </a>
+                    </div>
+                    <div className={`ans-box slideA-${randomClassName}`}>
+                        <p>{ans}</p>
+                    </div>
                 </div>
             </>
         }
@@ -70,7 +81,7 @@
                     </section>
                     <section id="shop-qa">
                         <div className="shop-qa-box">
-                            <QaBox content={"我可以在你們的網站上訂購嗎？"} ans={"如果您需要取消或修改訂單，請在我們的客服工作時間內盡快聯繫我們。我們將盡力協助您處理，但請注意，一旦訂單已經發貨，我們將無法進行取消或修改。"}/>
+                            <QaBox content={"我可以在你們的網站上訂購嗎？"} ans={"如果您需要取消或修改訂單，請在我們的客服工作時間內盡快聯繫我們。我們將盡力協助您處理，但請注意，一旦訂單已經發貨，我們將無法進行取消或修改。"} />
                             <QaBox content={"我可以取消或修改已經下單的訂單嗎？"} ans={"如果您需要取消或修改訂單，請在我們的客服工作時間內盡快聯繫我們。我們將盡力協助您處理，但請注意，一旦訂單已經發貨，我們將無法進行取消或修改。"} />
                             <QaBox content={"我可以在網站上追蹤我的訂單嗎？"} ans={"是的，您可以透過登入我們官網的會員帳戶來查詢您的訂單狀態。一旦您的訂單被確認，您可以在會員中心找到相關的訂單資訊。"} />
                             <QaBox content={"我可以使用哪些付款方式購物？"} ans={"目前我們僅接受貨到付款及線上支付這兩種付款方式。您可以在結帳時選擇最符合您需求的付款方式進行支付。"} />
