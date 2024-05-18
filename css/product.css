@@ -29,10 +29,12 @@ body {
     align-items: center;
     position: relative;
     z-index: 50;
+    color: #B9773E;
 }
 
 .banner-content-title {
     text-align: center;
+    color: #9F4800;
 }
 
 .banner-content h1,
@@ -40,6 +42,7 @@ body {
     font-size: 2.25rem;
     font-weight: bold;
     margin-bottom: 18px;
+    color: #9F4800;
 }
 
 .banner-content p {
@@ -131,6 +134,9 @@ body {
     justify-content: space-around;
     position: relative;
 }
+#masalaintro small{
+    color: #9F4800;
+}
 
 #masalaintro>img {
     position: absolute;
@@ -170,6 +176,7 @@ body {
     align-items: center;
     justify-content: flex-end;
     padding-bottom: 70px;
+    color:  #B9773E;
 }
 
 .masalaintro-content p {
@@ -393,17 +400,21 @@ body {
     height: 90px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
     background-color: #CC9F57;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    padding: 0 10px;
+    padding: 0 30px;
     opacity: 0;
     transition: all 0.7s;
 }
+.card-buy a{
+    width: 43px;
+    height: 43px;
+}
 
-.card-buy a {
-    margin-left: 35px;
+.card-buy a img{
+    /* margin-left: 35px; */
+    width: 100%;
 }
 
 .product-content-card:hover .card-buy {
@@ -411,8 +422,10 @@ body {
 }
 
 .card-buy-form {
+    width: 100%;
     display: flex;
-    /* justify-content: flex-end; */
+    align-items: center;
+    justify-content: space-between;
 }
 
 .card-hover-number img {
@@ -495,6 +508,7 @@ body {
     padding-right: 19px;
 
     overflow: hidden;
+    margin: 5px;
 }
 
 .comment-card h2 {
