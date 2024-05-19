@@ -68,7 +68,6 @@
                 <Topbar />
                 <main onLoad={() => {
                     $(function () {
-
                     });
 
                     // 啟用smoove 共用區 (一定要單獨寫在最外面)
@@ -94,14 +93,8 @@
                     });
                 }}>
                     <section className="banner">
-                        <div className="banner-text">
-                            <p className="banner-text-title">spice up your life</p>
-                            <figure className="banner-text-logo"><img src="./image/Carousel-logo.jpg" alt="" /></figure>
-                            <p className="banner-text-content">
-                                一個"咖哩調理包及調味粉品牌"<br />
-                                以方便美味的香料為您的菜餚帶來地道的味道。<br />
-                                從傳統的印度咖哩到創意的融合食譜，讓您的烹飪更添美味。<br />
-                            </p>
+                        <div className="carousel">
+                            <iframe src="./carousel.html" frameBorder="0"></iframe>
                         </div>
                     </section>
                     <section className="news">
@@ -245,6 +238,8 @@
     <script src="./js/jquery-3.7.1.min.js"></script>
     <!-- jquery-smoove -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+    <!-- bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.js"></script>
     <!-- js -->
     <script src="./js/script.js"></script>
 </body>

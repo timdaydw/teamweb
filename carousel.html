@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css">
+
+    <style>
+        .carousel-fade .carousel-inner .item {
+            transition-property: opacity;
+        }
+
+        .carousel-fade .carousel-inner .item,
+        .carousel-fade .carousel-inner .active.left,
+        .carousel-fade .carousel-inner .active.right {
+            opacity: 0;
+        }
+
+        .carousel-fade .carousel-inner .active,
+        .carousel-fade .carousel-inner .next.left,
+        .carousel-fade .carousel-inner .prev.right {
+            opacity: 1;
+        }
+
+        .carousel-fade .carousel-inner .next,
+        .carousel-fade .carousel-inner .prev,
+        .carousel-fade .carousel-inner .active.left,
+        .carousel-fade .carousel-inner .active.right {
+            left: 0;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .carousel-fade .carousel-control {
+            z-index: 2;
+        }
+
+        html,
+        body,
+        .carousel,
+        .carousel-inner,
+        .carousel-inner .item {
+            height: 100%;
+        }
+
+        .item:nth-child(1) {
+            background-image: url(./image/Carousel-1.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .item:nth-child(2) {
+            background-image: url(./image/Carousel-2.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .item:nth-child(3) {
+            background-image: url(./image/Carousel-3.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .item:nth-child(4) {
+            background-image: url(./image/Carousel-4.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .left,
+        .right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+            <li data-target="#carousel" data-slide-to="3"></li>
+        </ol>
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            <div class="active item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#carousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a>
+    </div>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.js"></script>
+    <script>
+        $('.carousel').carousel();
+    </script>
+</body>
+
+</html>
