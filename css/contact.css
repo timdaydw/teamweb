@@ -3,7 +3,7 @@
 main {
     background-image: url(./image/contact/main-bg.png);
     background-repeat: no-repeat;
-    background-size: contain cover;
+    background-size: cover;
     background-position: bottom;
 }
 
