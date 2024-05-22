@@ -168,7 +168,7 @@
                                 </div>
                                 <a href="##" onClick={() => {
                                     if (num > 0) {
-                                        setShopNum(shopList + num);
+                                        setShopNum(shopNum + num);
 
                                         if (window.localStorage.getItem(title)!=undefined){
                                             window.localStorage.setItem(title,Number(window.localStorage.getItem(title))+num);

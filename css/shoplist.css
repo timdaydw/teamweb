@@ -5,11 +5,11 @@
 #shoplist{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     background-color: #FFFAF8;
     padding-bottom: 96px;
     padding-top: 104px;
+    min-height: 100vh;
 }
 
 
