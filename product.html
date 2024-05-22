@@ -18,9 +18,11 @@
 
 <body>
     <div id="root"></div>
+    <script>
+    </script>
     <script type="text/babel">
         const { useState } = React;
-        const shopList = [];
+
         const cardType = [
             {
                 id: 1,
@@ -86,6 +88,12 @@
                 type1: 1,
             },
         ]
+        let shopList = 0;
+        for (let i = 0; i < cardType.length; i++) {
+            if (window.localStorage.getItem(cardType[i].title)!=undefined){
+                shopList = shopList+Number(window.localStorage.getItem(cardType[i].title));
+            }
+        }
 
         const Topbar = () => {
             return <>
@@ -131,7 +139,7 @@
             </>
         }
         function MyApp() {
-            const [shopNum, setShopNum] = useState(shopList.length);
+            const [shopNum, setShopNum] = useState(shopList);
             const Card = (props) => {
                 const [num, setNum] = useState(0);
                 const { title } = props;
@@ -158,16 +166,21 @@
                                         setNum(num + 1);
                                     }} />
                                 </div>
-                                <a href="##"  onClick={()=>{
-                                    if (num>0) {
-                                        shopList.push({title,num});
-                                        setShopNum(shopNum+num);
-                                        window.alert(`"${title}"共${num}份，已放入購物車`)
-                                    }else {
+                                <a href="##" onClick={() => {
+                                    if (num > 0) {
+                                        setShopNum(shopList + num);
+
+                                        if (window.localStorage.getItem(title)!=undefined){
+                                            window.localStorage.setItem(title,Number(window.localStorage.getItem(title))+num);
+                                        }else {
+                                            window.localStorage.setItem(title,num);
+                                        }
+                                        window.alert(`"${title}"共${num}份，已放入購物車`);
+                                    } else {
                                         return
                                     }
                                     // console.log(shopList)
-                                }}><img src="./image/product/shop-cart.png" alt="" className="shopAdd"/></a>
+                                }}><img src="./image/product/shop-cart.png" alt="" className="shopAdd" /></a>
                             </form>
                         </div>
                     </div>
@@ -279,7 +292,7 @@
                     </section>
                     <div className="shop-num"><a href="./shoplist.html"><img src="./image/product/shop-img.png" alt="" /><p>{shopNum}</p></a></div>
                 </main>
-                <Footer/>
+                <Footer />
             </>;
         }
 

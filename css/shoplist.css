@@ -72,6 +72,11 @@
     height: 104px;
     background-color: var(--f5e9e4);
     margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.order-row del{
+    color: #B3B3B3;
 }
 
 
@@ -143,6 +148,7 @@
 .total-box {
     align-self: flex-end;
     margin-top: 28px;
+    font-weight: 600;
 }
 
 .total-box>div{

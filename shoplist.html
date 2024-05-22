@@ -18,6 +18,69 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
+        const { useState } = React;
+        const cardType = [
+            {
+                id: 1,
+                title: '起司奶油咖哩(蛋奶素)',
+            },
+            {
+                id: 2,
+                title: '瑪莎拉香料雞肉咖哩',
+            },
+            {
+                id: 3,
+                title: '椰奶鮮蝦風味咖哩',
+            },
+            {
+                id: 4,
+                title: '雞肉野菜湯咖哩',
+            },
+            {
+                id: 5,
+                title: '叻沙海鮮風味湯',
+            },
+            {
+                id: 6,
+                title: '濃郁奶油雞肉咖哩',
+            },
+            {
+                id: 7,
+                title: '綠咖哩風味粉',
+            },
+            {
+                id: 8,
+                title: '馬來咖哩風味粉',
+            },
+            {
+                id: 9,
+                title: '辣椒大豆咖哩(素食)',
+            },
+            {
+                id: 10,
+                title: '印度咖哩風味粉',
+            },
+
+            {
+                id: 11,
+                title: '日式咖哩風味粉',
+            },
+            {
+                id: 12,
+                title: '辣味菠菜雞肉咖哩',
+            },
+        ]
+        let totalPrice = 0;
+        let shopList = [];
+        for (let i = 0; i < cardType.length; i++) {
+            if (window.localStorage.getItem(cardType[i].title) != undefined) {
+                // window.localStorage.setItem(title, Number(window.localStorage.getItem(title)) + num);
+                shopList.push({ "title": cardType[i].title, "num": Number(window.localStorage.getItem(cardType[i].title)) });
+                totalPrice = totalPrice + Number(window.localStorage.getItem(cardType[i].title)) * 75;
+            } else {
+            }
+        }
+        console.log(shopList);
         const Topbar = () => {
             return <>
                 <div className="topbar">
@@ -32,7 +95,33 @@
                 </div>
             </>
         }
+        const OrderRow = (props) => {
+            const { title, num } = props;
+            return <>
+                <div className="order-row">
+                    <div className="w359">
+                        <img src={`./產品圖/${title}/1.jpeg`} alt="" />
+                        <div className="h1">
+                            <h1>{title}</h1>
+                        </div>
+                    </div>
+                    <div className="discount w269">
+                        <div className="discount-banner"><p>任選優惠</p></div>
+                        <div>
+                            <p>
+                                06/01~06/30期間內<br />
+                                調理包買一送一
+                            </p>
+                        </div>
+                    </div>
+                    <div className="w208"><p><del>NT $150</del><br/>NT $75</p></div>
+                    <div className="w181 amount"><p>{num}</p></div>
+                    <div className="w325 total"><p>NT$ {num * 75}</p></div>
+                </div>
+            </>
+        }
         function MyApp() {
+
             return <>
                 <Topbar />
                 <main>
@@ -56,35 +145,20 @@
                                     <div className="w181"><h2>數量</h2></div>
                                     <div className="w325"><h2>小計</h2></div>
                                 </div>
-                                <div className="order-row">
-                                    <div className="w359">
-                                        <img src="./image/member/orderinfo-img.png" alt="" />
-                                        <div className="h1">
-                                            <h1>起司奶油咖哩(蛋奶素)</h1>
-                                        </div>
-                                    </div>
-                                    <div className="discount w269">
-                                        <div className="discount-banner"><p>任選優惠</p></div>
-                                        <div>
-                                            <p>
-                                                06/01~06/30期間內<br />
-                                                調理包買一送一
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="w208"><p>NT$100</p></div>
-                                    <div className="w181 amount"><p>2</p></div>
-                                    <div className="w325 total"><p>NT$100</p></div>
-                                </div>
+                                {
+                                    shopList.map((shopList) => {
+                                        return <OrderRow key={shopList.title} title={shopList.title} num={shopList.num} />
+                                    })
+                                }
                             </div>
                             <div className="total-box">
                                 <div>
                                     <div className="total-l"><h2>小計 :</h2></div>
-                                    <div className="total-r"><p>NT$ 1000</p></div>
+                                    <div className="total-r"><p>NT$ {totalPrice}</p></div>
                                 </div>
                                 <div>
                                     <div className="total-l"><h2>折扣優惠 :</h2></div>
-                                    <div className="total-r"><p>NT$ 420</p></div>
+                                    <div className="total-r"><p>NT$ {Math.round(totalPrice/2)}</p></div>
                                 </div>
                                 <div>
                                     <div className="total-l"><h2>運費 :</h2></div>
@@ -92,7 +166,7 @@
                                 </div>
                                 <div>
                                     <div className="total-l"><h2>合計 :</h2></div>
-                                    <div className="total-r"><p>NT$ 680</p></div>
+                                    <div className="total-r"><p>NT$ {totalPrice+100}</p></div>
                                 </div>
                                 <a href="./sendinfo.html"><button>下一步</button></a>
                             </div>
@@ -102,7 +176,6 @@
                 <Footer />
             </>;
         }
-
         const container = document.getElementById('root');
         const root = ReactDOM.createRoot(container);
         root.render(<MyApp />);
