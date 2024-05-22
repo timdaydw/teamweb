@@ -19,34 +19,41 @@
     <div id="root"></div>
     <script type="text/babel">
         const { useState } = React;
-
-        function MyApp() {
-            const [loginCheck, setLoginCheck] = useState(true);
-            const MemberCheck = () => {
-                if (loginCheck == true) {
-                    return <>
-                        <a href="./member-log.html" target="_top">會員</a>
-                        <ul className="member-box">
-                            <li>
-                                <a href="./memberinfo.html" target="_top">會員資料</a>
-                            </li>
-                            <li>
-                                <a href="./pastorder.html" target="_top">訂單紀錄</a>
-                            </li>
-                            <li>
-                                <a className="logout" target="_top" onClick={()=>{
-                                    window.alert("您已經登出");
-                                    setLoginCheck(false);
-                                }}>會員登出</a>
-                            </li>
-                        </ul>
-                    </>
-                } else if (loginCheck == false) {
-                    return <>
-                        <a href="./member-log.html" target="_top">會員</a>
-                    </>
-                }
+        let checkLog = "";
+        if (window.localStorage.getItem("logCheck") == undefined) {
+            checkLog = "notLog";
+        } else {
+            checkLog = window.localStorage.getItem("logCheck");
+        }
+        const MemberCheck = () => {
+            const [loginCheck, setLoginCheck] = useState(checkLog);
+            if (loginCheck == "logAlready") {
+                return <>
+                    <a href="./member-log.html" target="_top">會員</a>
+                    <ul className="member-box">
+                        <li>
+                            <a href="./memberinfo.html" target="_top">會員資料</a>
+                        </li>
+                        <li>
+                            <a href="./pastorder.html" target="_top">訂單紀錄</a>
+                        </li>
+                        <li>
+                            <a className="logout" target="_top" onClick={() => {
+                                window.alert("您已經登出");
+                                setLoginCheck("notLog");
+                                window.localStorage.setItem("logCheck", "notLog");
+                            }}>會員登出</a>
+                        </li>
+                    </ul>
+                </>
+            } else if (loginCheck == "notLog") {
+                return <>
+                    <a href="./member-log.html" target="_top">會員</a>
+                </>
             }
+        }
+        function MyApp() {
+
             return <>
                 <header className="topbar">
                     <h1 className="logo">
