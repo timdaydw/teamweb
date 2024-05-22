@@ -90,11 +90,13 @@ label ,fieldset p{
 
 .sendinfo-content fieldset{
     width: 642px;
+    margin-bottom: 24px;
 }
 
 .sendinfo-content fieldset label{
     /* display: block; */
     height: 52px;
+    width: 250px;
     background-color: #F5E9E4;
     line-height: 52px;
     text-align: center;
