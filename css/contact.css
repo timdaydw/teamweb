@@ -242,7 +242,7 @@ main {
 }
 
 .transport-qa-title h2 {
-    color: #062F2A;
+    color: #F5E9E4;
 }
 
 /* RWD斷點 */
@@ -255,9 +255,6 @@ main {
         flex-direction: column-reverse;
     }
 
-    .transport-qa-title h2 {
-        color: #F5E9E4;
-    }
 }
 
 /* 小型設備(手機) */
