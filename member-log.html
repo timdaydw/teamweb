@@ -17,6 +17,7 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
+        const { useState } = React;
         const Topbar = () => {
             return <>
                 <div className="topbar">
@@ -33,6 +34,7 @@
             </>
         }
         function MyApp() {
+            const [link, setLink] = useState("./memberinfo.html")
             return <>
                 <Topbar />
                 <main>
@@ -42,14 +44,26 @@
                                 <h1>會員登入</h1>
                                 <form action="">
                                     <div className="acc">
-                                        <label htmlFor="acc">會員信箱</label>
-                                        <input type="text" id="acc" />
+                                        <label htmlFor="email">會員信箱</label>
+                                        <input type="text" id="email" />
                                     </div>
                                     <div className="pass">
                                         <label htmlFor="pass">會員密碼</label>
                                         <input type="password" id="pass" />
                                     </div>
-                                    <button>登入</button>
+                                    <a href={link}>
+                                        <button type="button" onClick={() => {
+                                            // console.log(window.localStorage.getItem("email"),window.localStorage.getItem("password"))
+                                            if (document.getElementById("email").value != window.localStorage.getItem("email")) {
+                                                window.alert("信箱輸入錯誤，請重新輸入");
+                                                setLink("./member-log.html");
+                                            } else if (document.getElementById("pass").value != window.localStorage.getItem("password")) {
+                                                window.alert("密碼輸入錯誤，請重新輸入");
+                                                setLink("./member-log.html");
+                                            } else {
+                                                window.localStorage.setItem("logCheck", "logAlready");
+                                            }
+                                        }}>登入</button></a>
                                 </form>
                                 <a href="./forgetpass.html"><small>忘記密碼FORGOT PASSWORD</small></a>
                                 <h2>快速登入</h2>
