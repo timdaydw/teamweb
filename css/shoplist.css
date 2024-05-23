@@ -169,11 +169,12 @@
 
 .total-box a button{
     float: right;
-    width: 163px;
-    height: 32px;
+    width: 217px;
+    height: 48px;
     background-color: var(--d59c41);
     border: none;
     text-align: center;
-
+    font-weight: 600;
+    font-size: 1.25rem;
     margin-top: 22px;
 }

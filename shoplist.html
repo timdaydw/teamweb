@@ -120,8 +120,17 @@
                 </div>
             </>
         }
+        let checkLog = "";
+        if (window.localStorage.getItem("logCheck") == undefined) {
+            checkLog = "notLog";
+        } else {
+            checkLog = window.localStorage.getItem("logCheck");
+        }
         function MyApp() {
-
+            const [link, setLink] = useState("./sendinfo.html");
+            const CheckLog=()=>{
+                
+            }
             return <>
                 <Topbar />
                 <main>
@@ -164,7 +173,9 @@
                                     <div className="total-l"><h2>合計 :</h2></div>
                                     <div className="total-r"><p>NT$ {totalPrice+100}</p></div>
                                 </div>
-                                <a href="./sendinfo.html"><button>下一步</button></a>
+                                <a href={link}><button onClick={()=>{
+
+                                }}>下一步</button></a>
                             </div>
                         </div>
                     </section>
