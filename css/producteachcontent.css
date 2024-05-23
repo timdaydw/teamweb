@@ -204,9 +204,9 @@ body {
         margin: 100px 0 20px 0;
     }
 
-    .content-recommend div div:nth-child(n+2){
+    /* .content-recommend div div:nth-child(n+2){
         display: none;
-    }
+    } */
     .content-recommend>div{
         justify-content: center;
     }
@@ -233,6 +233,9 @@ body {
     line-height: 1.5;
     padding-left: 50px;
     margin-bottom: 30px;
+}
+.content-contenttext li {
+    margin-bottom: 3px;
 }
 
 .content-text-explain-title {
@@ -269,7 +272,7 @@ body {
 
 .content-recommend div div {
     width: 278px;
-    margin: 0 7.5px;
+    margin: 5px 7.5px;
     text-align: center;
 }
 

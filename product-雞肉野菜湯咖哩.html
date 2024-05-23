@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>雞肉野菜湯咖哩</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/producteachcontent.css">
+    <link rel="icon" href="./favicon.ico">
+</head>
+
+<body>
+
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+        const cardType = [
+            {
+                id: 1,
+                title: '起司奶油咖哩(蛋奶素)',
+                type1: 1,
+                type3: 1,
+            },
+            {
+                id: 2,
+                title: '瑪莎拉香料雞肉咖哩',
+                type1: 1,
+            },
+            {
+                id: 3,
+                title: '椰奶鮮蝦風味咖哩',
+                type1: 1,
+            },
+            {
+                id: 4,
+                title: '雞肉野菜湯咖哩',
+                type2: 1,
+            },
+            {
+                id: 5,
+                title: '叻沙海鮮風味湯',
+                type2: 1,
+            },
+            {
+                id: 6,
+                title: '濃郁奶油雞肉咖哩',
+                type1: 1,
+            },
+            {
+                id: 7,
+                title: '綠咖哩風味粉',
+                type4: 1
+            },
+            {
+                id: 8,
+                title: '馬來咖哩風味粉',
+                type4: 1
+            },
+            {
+                id: 9,
+                title: '辣椒大豆咖哩(素食)',
+                type1: 1,
+                type3: 1,
+            },
+            {
+                id: 10,
+                title: '印度咖哩風味粉',
+                type4: 1
+            },
+
+            {
+                id: 11,
+                title: '日式咖哩風味粉',
+                type4: 1
+            },
+            {
+                id: 12,
+                title: '辣味菠菜雞肉咖哩',
+                type1: 1,
+            },
+        ]
+
+        const Recommend = (props) => {
+            const { name1, name2, name3, name4 } = props;
+            return <>
+                <div className="content-recommend">
+                    <h1 className="content-text-explain-title">推薦商品</h1>
+                    <div>
+                        <div>
+                            <a href={`./product-${name1}.html`}>
+                                <img src={`./產品圖/${name1}/1.jpeg`} alt="" />
+                                <h2>{name1}</h2>
+                                <h1>NT$150</h1>
+                            </a>
+                        </div>
+                        <div>
+                            <a href={`./product-${name2}.html`}>
+                                <img src={`./產品圖/${name2}/1.jpeg`} alt="" />
+                                <h2>{name2}</h2>
+                                <h1>NT$150</h1>
+                            </a>
+                        </div>
+                        <div>
+                            <a href={`./product-${name3}.html`}>
+                                <img src={`./產品圖/${name3}/1.jpeg`} alt="" />
+                                <h2>{name3}</h2>
+                                <h1>NT$150</h1>
+                            </a>
+                        </div>
+                        <div>
+                            <a href={`./product-${name4}.html`}>
+                                <img src={`./產品圖/${name4}/1.jpeg`} alt="" />
+                                <h2>{name4}</h2>
+                                <h1>NT$150</h1>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </>
+        }
+
+        const Topbar = () => {
+            return <>
+                <div className="topbar">
+                    <iframe src="./topbar.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+
+        const Footer = () => {
+            return <>
+                <div className="footer">
+                    <iframe src="./footer.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+
+        let shopList = 0;
+        for (let i = 0; i < cardType.length; i++) {
+            if (window.localStorage.getItem(cardType[i].title) != undefined) {
+                shopList = shopList + Number(window.localStorage.getItem(cardType[i].title));
+            }
+        }
+
+        function MyApp() {
+            const [shopNum, setShopNum] = useState(shopList);
+            const ContentCard = (props) => {
+                const [num, setNum] = useState(0);
+                const { name, listContent1, listContent2, listContent3, listContent4 } = props;
+                return <>
+                    <div className="topinfo">
+                        <img src={`./產品圖/${name}/1.jpeg`} alt="" className="topinfo-rwd-img" />
+                        <div className="carousel">
+                            <iframe src={`./產品圖/${name}/carousel-${name}.html`} frameBorder="0" scrolling="no"></iframe>
+                        </div>
+                        <div className="buy-card">
+                            <h2 className="buy-card-title">{name}</h2>
+                            <small>06/01~06/30期間內 調理包買一送一</small>
+                            <h1>NT$150</h1>
+                            <p>數量</p>
+                            <h3 className="buy-number">
+                                <img src="./image/product/product-card-hover-sub.png" alt="" onClick={() => {
+                                    // num--;
+                                    if (num > 0) {
+                                        setNum(num - 1);
+                                    }
+                                }} />
+                                <p>{num}</p>
+                                <img src="./image/product/product-card-hover-add.png" alt="" onClick={() => {
+                                    // num+;
+                                    setNum(num + 1);
+                                }} />
+                            </h3>
+                            <a href="./shoplist.html">
+                                <button className="buynow" onClick={() => {
+                                    if (num > 0) {
+                                        setShopNum(shopNum + num);
+                                        if (window.localStorage.getItem(name) != undefined) {
+                                            window.localStorage.setItem(name, Number(window.localStorage.getItem(name)) + num);
+                                        } else {
+                                            window.localStorage.setItem(name, num);
+                                        }
+                                        window.alert(`"${name}"共${num}份，已放入購物車`);
+                                    } else {
+                                        return
+                                    }
+                                }}>立即購買</button>
+                            </a>
+                            <button className="addshop" onClick={() => {
+                                if (num > 0) {
+                                    setShopNum(shopNum + num);
+                                    if (window.localStorage.getItem(name) != undefined) {
+                                        window.localStorage.setItem(name, Number(window.localStorage.getItem(name)) + num);
+                                    } else {
+                                        window.localStorage.setItem(name, num);
+                                    }
+                                    window.alert(`"${name}"共${num}份，已放入購物車`);
+                                } else {
+                                    return
+                                }
+                            }}>加入購物車</button>
+                            <h2 className="payinfo">付款與運送</h2>
+                            <h3>宅配滿NT$1,000免運</h3>
+                        </div>
+                    </div>
+                    <div className="content-contenttext">
+                        <h1>商品特色</h1>
+                        <ul>
+                            <li>{listContent1}</li>
+                            <li>{listContent2}</li>
+                            <li>{listContent3}</li>
+                            <li>{listContent4}</li>
+                        </ul>
+                    </div>
+                </>
+            }
+            return <>
+                <Topbar />
+                <main>
+                    <section id="banner"></section>
+                    <section id="content">
+                        <div className="tag-box">
+                            <ul className="tag">
+                                <li><a href="./product.html#flag" onClick={() => {
+                                    window.localStorage.setItem("type", "all");
+                                }}>所有商品</a></li>
+                                <li><a href="./product.html#flag" onClick={() => {
+                                    window.localStorage.setItem("type", "1");
+                                }}>咖哩調理包</a></li>
+                                <li><a href="./product.html#flag" onClick={() => {
+                                    window.localStorage.setItem("type", "2");
+                                }}>湯品調理包</a></li>
+                                <li><a href="./product.html#flag" onClick={() => {
+                                    window.localStorage.setItem("type", "3");
+                                }}>素食料理</a></li>
+                                <li><a href="./product.html#flag" onClick={() => {
+                                    window.localStorage.setItem("type", "4");
+                                }}>調味粉</a></li>
+                            </ul>
+                        </div>
+                        <div className="content-content">
+                            <ContentCard
+                                name={"雞肉野菜湯咖哩"}
+                                listContent1={"濃厚香辣：咖哩醬汁融合了豐富的香料和辣椒，帶來濃郁的辛辣風味，令人回味無窮。"}
+                                listContent2={"鮮嫩雞肉：選用新鮮優質的雞肉，口感鮮嫩多汁，與咖哩醬汁完美融合，讓您感受到食材的原汁原味。"}
+                                listContent3={"營養菠菜：加入新鮮的菠菜，為咖哩增添了豐富的營養價值，同時融入了菠菜的清香，使整體口感更加豐富。"}
+                                listContent4={"多種香料：精心挑選並搭配多種香料，如薑、大蒜、洋蔥等，營造出深厚的味道和香氣，讓您享受到正宗的咖哩風味。"}
+                            />
+
+                        </div>
+                    </section>
+                    <Recommend
+                        name1={"起司奶油咖哩(蛋奶素)"}
+                        name2={"辣味菠菜雞肉咖哩"}
+                        name3={"叻沙海鮮風味湯"}
+                        name4={"辣椒大豆咖哩(素食)"}
+                    />
+                    <div className="shop-num"><a href="./shoplist.html"><img src="./image/product/shop-cart.png" alt="" /><p>{shopNum}</p></a></div>
+                </main>
+                <Footer />
+            </>;
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    </script>
+</body>
+
+</html>
