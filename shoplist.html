@@ -80,7 +80,7 @@
             } else {
             }
         }
-        console.log(shopList);
+        // console.log(shopList);
         const Topbar = () => {
             return <>
                 <div className="topbar">
@@ -128,8 +128,12 @@
         }
         function MyApp() {
             const [link, setLink] = useState("./sendinfo.html");
-            const CheckLog=()=>{
-                
+            function CheckLog(){
+                if (checkLog=="notLog") {
+                        window.alert("請先行登入");
+                        setLink("./member-log.html");
+                }else {
+                }
             }
             return <>
                 <Topbar />
@@ -173,9 +177,7 @@
                                     <div className="total-l"><h2>合計 :</h2></div>
                                     <div className="total-r"><p>NT$ {totalPrice+100}</p></div>
                                 </div>
-                                <a href={link}><button onClick={()=>{
-
-                                }}>下一步</button></a>
+                                <a href={link}><button onClick={()=>CheckLog()}>下一步</button></a>
                             </div>
                         </div>
                     </section>
