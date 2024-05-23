@@ -468,6 +468,11 @@ body {
         margin: 50px 6%;
     }
 }
+@media (max-width:1025px) {
+    .card-buy {
+        opacity: 1;
+    }
+}
 
 /* 小型設備(手機) */
 @media (max-width:640px) {}
