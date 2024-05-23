@@ -292,6 +292,9 @@ body {
     width: 139px;
     height: 46px;
 }
+.tag li:hover {
+    background-color: #d5a86e;
+}
 
 .tag li:active {
     background-color: #b5905f;
@@ -532,10 +535,6 @@ body {
     bottom: 10%;
     right: 10%;
     z-index: 99;
-}
-.shop-num img{
-    width: 43px;
-    height: 43px;
 }
 
 .shop-num a {

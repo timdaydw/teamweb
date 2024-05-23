@@ -67,13 +67,6 @@
             background-size: cover;
             background-position: center;
         }
-
-        .left,
-        .right {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
     </style>
 
 </head>
@@ -100,7 +93,10 @@
     <script src="./js/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.js"></script>
     <script>
-        $('.carousel').carousel();
+        $('.carousel').carousel({
+            interval: 2000,
+        });
+
     </script>
 </body>
 

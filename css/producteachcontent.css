@@ -21,16 +21,15 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-right: 10%;
     padding-bottom: 100px;
 }
 
 .tag-box {
     height: 100%;
-    width: 23.5%;
+    width: 35%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .tag{
@@ -55,6 +54,12 @@ body {
 .tag a {
     color: #9F4800;
     font-weight: 600;
+    padding-bottom: 2px;
+    border-bottom: solid 2px transparent;
+    transition: 0.5s;
+}
+.tag a:hover {
+    border-bottom: 2px solid #9F4800;
 }
 
 /* RWD斷點 */
@@ -158,6 +163,7 @@ body {
 .payinfo {
     font-size: 1.125rem; 
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .content-content {
@@ -181,9 +187,6 @@ body {
     }
     .buy-card {
         padding: 0;
-    }
-    .content-contenttext{
-        width: 90%;
     }
 }
 
@@ -254,9 +257,13 @@ body {
 .content-text-explain-img img {
     margin-bottom: 90px
 }
-
+.content-recommend{
+    width: 70%;
+    margin: auto;
+}
 .content-recommend>div{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -294,13 +301,32 @@ body {
     height: 426px;
 }
 
-@media (max-width:1540px){
+@media (max-width:1050px){
     .tag{
         display: none;
     }
     .tag-box{
         display: none;
     }
+    .content-contenttext{
+        width: 90%;
+        margin: auto;
+    }
+}
+
+.shop-num {
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    z-index: 99;
+}
+.shop-num a {
+    display: flex;
+    align-items: center;
+    background-color: brown;
+    color: white;
+    padding: 10px;
+    border-radius: 99px;
 }
 
 /* RWD斷點 */

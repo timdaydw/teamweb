@@ -253,9 +253,9 @@ button {
 
 /* 小型設備(手機) */
 @media (max-width:640px) {
-    .banner {
+    /* .banner {
         display: none;
-    }
+    } */
 }
 
 /* news */
