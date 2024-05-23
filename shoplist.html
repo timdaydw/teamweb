@@ -116,7 +116,7 @@
                     </div>
                     <div className="w208"><p><del>NT $150</del><br/>NT $75</p></div>
                     <div className="w181 amount"><p>{num}</p></div>
-                    <div className="w325 total"><p>NT$ {num * 75}</p></div>
+                    <div className="w325 total"><p><del>NT ${num * 150}</del><br/>NT$ {num * 75}</p></div>
                 </div>
             </>
         }
@@ -155,10 +155,6 @@
                                 <div>
                                     <div className="total-l"><h2>小計 :</h2></div>
                                     <div className="total-r"><p>NT$ {totalPrice}</p></div>
-                                </div>
-                                <div>
-                                    <div className="total-l"><h2>折扣優惠 :</h2></div>
-                                    <div className="total-r"><p>NT$ {Math.round(totalPrice/2)}</p></div>
                                 </div>
                                 <div>
                                     <div className="total-l"><h2>運費 :</h2></div>

@@ -40,8 +40,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #F9F9F9;
     padding: 55px 0;
+
+    background: url(./image/product/producteachcontent-tag-top.jpg),url(./image/product/producteachcontent-tag-bot.jpg);
+    background-position: top,bottom;
+    background-repeat: no-repeat;
 }
 
 .tag li {
@@ -50,7 +53,8 @@ body {
 }
 
 .tag a {
-    color: var(--09302b);
+    color: #9F4800;
+    font-weight: 600;
 }
 
 /* RWD斷點 */

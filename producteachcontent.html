@@ -48,8 +48,21 @@
                                 setNum(num + 1);
                             }} />
                         </h3>
-                        <button className="buynow">立即購買</button>
-                        <button className="addshop">加入購物車</button>
+                        <a href="./shoplist.html">
+                            <button className="buynow">立即購買</button>
+                        </a>
+                        <button className="addshop" onClick={() => {
+                            if (num > 0) {
+                                if (window.localStorage.getItem(name) != undefined) {
+                                    window.localStorage.setItem(name, Number(window.localStorage.getItem(name)) + num);
+                                } else {
+                                    window.localStorage.setItem(name, num);
+                                }
+                                window.alert(`"${name}"共${num}份，已放入購物車`);
+                            } else {
+                                return
+                            }
+                        }}>加入購物車</button>
                         <h2 className="payinfo">付款與運送</h2>
                         <h3>宅配滿NT$1,000免運</h3>
                     </div>
@@ -73,24 +86,32 @@
                     <h1 className="content-text-explain-title">推薦商品</h1>
                     <div>
                         <div>
-                            <img src={`./產品圖/${name1}/1.jpeg`} alt="" />
-                            <h2>{name1}</h2>
-                            <h1>NT$150</h1>
+                            <a href={`./product-${name1}.html`}>
+                                <img src={`./產品圖/${name1}/1.jpeg`} alt="" />
+                                <h2>{name1}</h2>
+                                <h1>NT$150</h1>
+                            </a>
                         </div>
                         <div>
-                            <img src={`./產品圖/${name2}/1.jpeg`} alt="" />
-                            <h2>{name2}</h2>
-                            <h1>NT$150</h1>
+                            <a href={`./product-${name2}.html`}>
+                                <img src={`./產品圖/${name2}/1.jpeg`} alt="" />
+                                <h2>{name2}</h2>
+                                <h1>NT$150</h1>
+                            </a>
                         </div>
                         <div>
-                            <img src={`./產品圖/${name3}/1.jpeg`} alt="" />
-                            <h2>{name3}</h2>
-                            <h1>NT$150</h1>
+                            <a href={`./product-${name3}.html`}>
+                                <img src={`./產品圖/${name3}/1.jpeg`} alt="" />
+                                <h2>{name3}</h2>
+                                <h1>NT$150</h1>
+                            </a>
                         </div>
                         <div>
-                            <img src={`./產品圖/${name4}/1.jpeg`} alt="" />
-                            <h2>{name4}</h2>
-                            <h1>NT$150</h1>
+                            <a href={`./product-${name4}.html`}>
+                                <img src={`./產品圖/${name4}/1.jpeg`} alt="" />
+                                <h2>{name4}</h2>
+                                <h1>NT$150</h1>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -123,14 +144,22 @@
                     <section id="content">
                         <div className="tag-box">
                             <ul className="tag">
-                                <li><a href="#">所有商品</a></li>
-                                <li><a href="#">咖哩調理包</a></li>
-                                <li><a href="#">湯品調理包</a></li>
-                                <li><a href="#">素食料理</a></li>
-                                <li><a href="#">辣味</a></li>
-                                <li><a href="#">調味粉</a></li>
+                                <li><a href="./product.html" onClick={()=>{
+                                    window.localStorage.setItem("type","all");
+                                }}>所有商品</a></li>
+                                <li><a href="./product.html" onClick={()=>{
+                                    window.localStorage.setItem("type","1");
+                                }}>咖哩調理包</a></li>
+                                <li><a href="./product.html" onClick={()=>{
+                                    window.localStorage.setItem("type","2");
+                                }}>湯品調理包</a></li>
+                                <li><a href="./product.html" onClick={()=>{
+                                    window.localStorage.setItem("type","3");
+                                }}>素食料理</a></li>
+                                <li><a href="./product.html" onClick={()=>{
+                                    window.localStorage.setItem("type","4");
+                                }}>調味粉</a></li>
                             </ul>
-
                         </div>
                         <div className="content-content">
                             <ContentCard
