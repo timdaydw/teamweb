@@ -1,5 +1,6 @@
 body {
-    background: linear-gradient(#F3EFE9, #EEE4D8, #D8C5AD);
+    /* background: linear-gradient(#F3EFE9, #EEE4D8, #D8C5AD); */
+    background-color: #FFFAF8;
 }
 
 /* main */
@@ -350,9 +351,9 @@ body {
 .product-content-card {
     width: 233px;
     height: 313px;
-    background-color: #F8f8f8;
+    background-color: #FFFDF6;
     border-radius: 20px;
-    box-shadow: -6px 14px 12px rgb(255, 233, 200,0.35);
+    box-shadow: -6px 14px 12px rgb(255, 233, 200,0.10);
     margin: 50px 3%;
     position: relative;
 }
@@ -400,15 +401,16 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 80px;
+    height: 53px;
     display: flex;
     align-items: center;
     background-color: #CC9F57;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    padding: 0 30px;
+    padding: 0 33px;
     opacity: 0;
     transition: all 0.7s;
+
 }
 .card-buy a{
     width: 43px;
@@ -417,7 +419,8 @@ body {
 
 .card-buy a img{
     /* margin-left: 35px; */
-    width: 100%;
+    width: 30px;
+    height: 30px;
 }
 
 .product-content-card:hover .card-buy {
@@ -434,12 +437,13 @@ body {
 .card-hover-number img {
     /* 滑鼠游標圖案:超連結手指 */
     cursor: pointer;
-    width: 14px;
+    width: 12px;
+    height: 12px;
 }
 
 .card-hover-number {
     width: 97px;
-    height: 36px;
+    height: 30px;
 
     display: flex;
     justify-content: space-around;
@@ -448,7 +452,7 @@ body {
     background-color: white;
     border-radius: 99px;
 
-    font-size: 1.75rem;
+    font-size: 0.75rem;
     color: #606061;
     font-weight: bolder;
 }
@@ -492,8 +496,20 @@ body {
 }
 
 #comment h1 {
-    font-size: 2.25rem;
+    font-size: 1.5rem;
+    color: #642D00;
     margin-bottom: 102px;
+    padding-top: 15px;
+    display: block;
+    height: 66px;
+    width: 181px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./image/product/product-comment-title-bg.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .comment-card-box {
@@ -538,14 +554,14 @@ body {
 .shop-num {
     position: fixed;
     bottom: 10%;
-    right: 10%;
+    right: 2%;
     z-index: 99;
 }
 
 .shop-num a {
     display: flex;
     align-items: center;
-    background-color: brown;
+    background-color: #C00325;
     color: white;
     padding: 10px;
     border-radius: 99px;
