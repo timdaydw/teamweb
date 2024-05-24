@@ -29,7 +29,7 @@
             const [loginCheck, setLoginCheck] = useState(checkLog);
             if (loginCheck == "logAlready") {
                 return <>
-                    <a href="./member-log.html" target="_top">會員</a>
+                    <a href="./member-log.html" target="_top"><img src="./image/member.png" alt="" /><p>會員</p></a>
                     <ul className="member-box">
                         <li>
                             <a href="./memberinfo.html" target="_top">會員資料</a>
@@ -48,7 +48,7 @@
                 </>
             } else if (loginCheck == "notLog") {
                 return <>
-                    <a href="./member-log.html" target="_top">會員</a>
+                    <a href="./member-log.html" target="_top"><img src="./image/member.png" alt="" /><p>會員</p></a>
                 </>
             }
         }
@@ -72,7 +72,7 @@
                         <li className="member">
                             <MemberCheck />
                         </li>
-                        <li><a href="./shoplist.html" target="_top">購物車</a></li>
+                        <li><a href="./shoplist.html" target="_top"><img src="./image/car.png" alt="" /><p>購物車</p></a></li>
                     </ul>
                 </header>
             </>;

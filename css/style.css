@@ -299,12 +299,12 @@ button {
     color: var(--f5e9e4);
     display: flex;
     align-items: center;
-    margin-left: 27.5%;
+    margin-left: 15%;
     margin-top: 10%;
 }
 
 .news-title * {
-    margin: 0 40px 6.5% 40px;
+    margin: 0 40px 25px 40px;
 }
 
 .news-content {
@@ -315,7 +315,7 @@ button {
 }
 
 .news-content article {
-    margin-bottom: 45px;
+    margin-bottom: 20px;
 }
 
 .news-content-date {
@@ -417,7 +417,7 @@ button {
 }
 
 .brand-title * {
-    margin: 0 40px 60px 40px;
+    margin: 0 40px 57px 0;
 }
 
 .brand-content {
@@ -426,6 +426,7 @@ button {
 
 .brand-content h2 {
     font-size: 1.25rem;
+    font-weight: 600;
     margin-bottom: 38px;
 }
 
