@@ -186,6 +186,18 @@ button {
 .borderradius5px{
     border-radius: 5px;
 }
+.borderleftradius5px{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.borderrightradius5px{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+del{
+    color: #B3B3B3;
+}
 
 /* RWD斷點 */
 /* 大型設備(桌機) */

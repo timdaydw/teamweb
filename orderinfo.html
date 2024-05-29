@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>訂單詳情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
@@ -20,7 +22,7 @@
     <script type="text/babel">
         const OrderRow = () => {
             return <>
-                <div className="order-row">
+                <div className="order-row borderradius5px">
                     <div className="w359">
                         <img src="./image/member/orderinfo-img.png" alt="" />
                         <div className="h1">
@@ -36,9 +38,9 @@
                             </p>
                         </div>
                     </div>
-                    <div className="w208"><p>NT$100</p></div>
+                    <div className="w208"><p><del>NT $150</del><br/>NT $75</p></div>
                     <div className="w181 amount"><p>2</p></div>
-                    <div className="w325 total"><p>NT$100</p></div>
+                    <div className="w325 total"><p>NT$150</p></div>
                 </div>
             </>
         }
@@ -73,23 +75,19 @@
                             </div>
                             <OrderRow />
                             <div className="total-box">
-                                <div>
+                                <div className="borderradius5px">
                                     <div className="total-l"><h2>小計 :</h2></div>
-                                    <div className="total-r"><p>NT$ 1000</p></div>
+                                    <div className="total-r"><p>NT$ 150</p></div>
                                 </div>
-                                <div>
-                                    <div className="total-l"><h2>折扣優惠 :</h2></div>
-                                    <div className="total-r"><p>NT$ 420</p></div>
-                                </div>
-                                <div>
+                                <div className="borderradius5px">
                                     <div className="total-l"><h2>運費 :</h2></div>
                                     <div className="total-r"><p>NT$ 100</p></div>
                                 </div>
-                                <div>
+                                <div className="borderradius5px">
                                     <div className="total-l"><h2>合計 :</h2></div>
-                                    <div className="total-r"><p>NT$ 680</p></div>
+                                    <div className="total-r"><p>NT$ 250</p></div>
                                 </div>
-                                <button>再次加入購物車</button>
+                                <button className="borderradius5px">再次加入購物車</button>
                             </div>
 
                         </div>
