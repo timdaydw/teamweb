@@ -353,6 +353,7 @@ body {
     height: 313px;
     background-color: #FFFDF6;
     border-radius: 20px;
+    border: rgba(200, 149, 67, 0.5) 3px solid;
     box-shadow: -6px 14px 12px rgb(255, 233, 200,0.10);
     margin: 50px 3%;
     position: relative;
@@ -405,8 +406,8 @@ body {
     display: flex;
     align-items: center;
     background-color: #CC9F57;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     padding: 0 33px;
     opacity: 0;
     transition: all 0.7s;
