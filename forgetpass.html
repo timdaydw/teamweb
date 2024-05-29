@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>忘記密碼</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
@@ -20,7 +22,7 @@
     <script type="text/babel">
         const Topbar = () => {
             return <>
-                <div class="topbar">
+                <div className="topbar">
                     <iframe src="./topbar.html" frameBorder="0" scrolling="no"></iframe>
                 </div>
             </>
@@ -43,10 +45,16 @@
                         <form action="">
                             <div className="email">
                                 <label htmlFor="email">會員信箱</label>
-                                <input type="email" id="email" />
+                                <input className="borderradius5px" type="email" id="email" />
                             </div>
                         </form>
-                        <button>送出</button>
+                        <button className="borderradius5px" onClick={()=>{
+                            if (document.getElementById("email").value == "") {
+                                window.alert("請輸入信箱");
+                            }else {
+                                window.alert("已將密碼寄到您的信箱中");
+                            }
+                        }}>送出</button>
                     </section>
                 </main>
                 <Footer />

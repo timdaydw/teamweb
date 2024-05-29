@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>註冊會員</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
@@ -47,7 +49,7 @@
 
                                 <div className="name">
                                     <label htmlFor="name">會員姓名</label>
-                                    <input type="text" id="name" placeholder="王小明" />
+                                    <input className="borderradius5px" type="text" id="name" placeholder="王小明" />
                                 </div>
                                 <div className="email">
                                     <label htmlFor="email">會員信箱</label>
@@ -55,18 +57,18 @@
                                 </div>
                                 <div className="password">
                                     <label htmlFor="password">會員密碼</label>
-                                    <input type="password" id="password" placeholder="密碼長度至少8個字元" />
+                                    <input className="borderradius5px" type="password" id="password" placeholder="密碼長度至少8個字元" />
                                 </div>
                                 <div className="tel">
                                     <label htmlFor="tel">會員電話</label>
-                                    <input type="tel" id="tel" placeholder="09xxxxxxxx" />
+                                    <input className="borderradius5px" type="tel" id="tel" placeholder="09xxxxxxxx" />
                                 </div>
                                 <div className="date">
                                     <label htmlFor="date">會員生日</label>
-                                    <input type="date" id="date" />
+                                    <input className="borderradius5px" type="date" id="date" />
                                 </div>
                                 <a href={link}>
-                                    <button type="button" className="register-btn" onClick={() => {
+                                    <button type="button" className="register-btn borderradius5px" onClick={() => {
                                         if (document.getElementById("email").value.search(/^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/) == -1) {
                                             alert("信箱格式錯誤，請重新輸入");
                                             setLink("./register.html");

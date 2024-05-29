@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>會員登入</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
@@ -52,7 +54,7 @@
                                         <input type="password" id="pass" />
                                     </div>
                                     <a href={link}>
-                                        <button type="button" onClick={() => {
+                                        <button className="borderradius5px" type="button" onClick={() => {
                                             // console.log(window.localStorage.getItem("email"),window.localStorage.getItem("password"))
                                             if (document.getElementById("email").value != window.localStorage.getItem("email")) {
                                                 window.alert("信箱輸入錯誤，請重新輸入");
@@ -65,18 +67,18 @@
                                             }
                                         }}>登入</button></a>
                                 </form>
-                                <a href="./forgetpass.html"><small>忘記密碼FORGOT PASSWORD</small></a>
-                                <h2>快速登入</h2>
+                                <a href="./forgetpass.html"><small>忘記密碼?</small></a>
+                                
+                            </div>
+                        </div>
+                        <div className="forgetacc">
+                            <a href="./register.html"><button className="borderradius5px">註冊會員</button></a>
+                            <h2>快速登入</h2>
                                 <ul>
                                     <li><a href="#"><img src="./image/member/member-fb-icon.png" alt="" /></a></li>
                                     <li><a href="#"><img src="./image/member/member-google-icon.png" alt="" /></a></li>
                                     <li><a href="#"><img src="./image/member/member-line-icon.png" alt="" /></a></li>
                                 </ul>
-                            </div>
-                        </div>
-                        <div className="forgetacc">
-                            <h1>尚未註冊會員帳號</h1>
-                            <a href="./register.html"><button>註冊會員</button></a>
                         </div>
                     </section>
                 </main>

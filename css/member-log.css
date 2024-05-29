@@ -1,9 +1,13 @@
 /* main */
-
+main,button {
+    font-weight: 600;
+}
 /* log */
 
 #log {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     min-height: 100vh;
     background-color: #FFFAF8;
@@ -15,11 +19,9 @@
 }
 
 .log-input {
-    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-right: 1px solid #B6B5B5;
 
 }
 
@@ -29,18 +31,22 @@
     align-items: center;
 }
 
+.log-box form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .log-box h1{
     font-size: 1.5rem;
-    font-weight: 500;
     color: var(--09302b);
     margin-bottom: 39px;
-    padding-left: 96px;
+    /* padding-left: 96px; */
 }
 
 .log-box label {
     font-size: 1.125rem;
     color: var(--09302b);
-    font-weight: 500;
     margin-right: 25px;
 }
 
@@ -52,39 +58,40 @@
     text-align: center;
     border: none;
     margin-bottom: 24px;
+    margin-right: 96px;
 }
 
 .log-box button {
     width: 525px;
     height: 53px;
-    margin-left: 100px;
+    
     background-color: var(--d59c41);
+    color: #09302B;
     font-size: 1.5rem;
     border: none;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 
 .log-box>a{
     color: var(--d59c41);
-    align-self: flex-end;
-    margin-bottom: 38px;
+    margin-bottom: 72px;
+    
 }
 
-.log-box h2 {
+.forgetacc h2 {
     color: var(--9f4800);
-    margin-bottom: 28px;
-    margin-left: 96px;
+    margin-bottom:57px;
+    
 }
 
-.log-box ul {
+.forgetacc ul {
     display: flex;
     width: 285px;
     justify-content: space-between;
-    margin-left: 96px;
+    
 }
 
 .forgetacc {
-    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,16 +100,46 @@
 .forgetacc h1{
     font-size: 1.375rem;
     color: var(--9f4800);
-    font-weight: 500;
     margin-bottom: 50px;
 }
 
 .forgetacc button {
-    width: 570px;
+    width: 418px;
     height: 74px;
     color: white;
-    background-color: var(--09302b);
+    background-color: #4F5D30;
     border: none;
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
+    margin-bottom: 53px;
+    
+}
+
+
+/* RWD斷點 */
+/* 大型設備(桌機) */
+@media (min-width:821px) {}
+
+/* 中型設備(平板) */
+@media (max-width:760px) {
+    #log input{
+        width: 300px;
+    }
+    .log-input button{
+        width: 300px;
+    }
+    .forgetacc button{
+        width: 200px;
+    }
+}
+
+/* 小型設備(手機) */
+@media (max-width:640px) {
+    .log-box label{
+        display: flex;
+        flex-direction: column;
+    }
+    .log-box input{
+        margin-right: 0;
+    }
 }

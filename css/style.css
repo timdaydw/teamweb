@@ -183,6 +183,10 @@ button {
     height: 90px;
 }
 
+.borderradius5px{
+    border-radius: 5px;
+}
+
 /* RWD斷點 */
 /* 大型設備(桌機) */
 @media (min-width:821px) {}

@@ -1,11 +1,13 @@
 /* main */
-
+main{
+    font-weight: 600;
+}
 /* member-info */
 #member-info {
-    padding-top: 116px;
-    padding-bottom: 92px;
+
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: #FFFAF8;
@@ -13,10 +15,14 @@
     background-position:90% 90%;
     background-repeat: no-repeat;
 }
+#member-info form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 #member-info h1 {
     font-size: 1.75rem;
-    font-weight: 600;
 }
 
 .title {
@@ -25,7 +31,6 @@
     justify-content: space-around;
     align-items: center;
     margin-bottom: 56px;
-    padding-left: 151px;
 }
 
 #member-info .separator {
@@ -33,7 +38,7 @@
     font-weight: 900;
 }
 
-.none {
+.none a {
     color: #B3B3B3;
 }
 
@@ -53,15 +58,56 @@
     color: var(--09302b);
     border: none;
     margin-left: 30px;
+    margin-right: 96px;
 }
 
 #member-info button {
-    width: 570px;
+    width: 155px;
     height: 52px;
     background-color: var(--d59c41);
+    color: white;
     text-align: center;
     font-size: 1.5rem;
     font-weight: 600;
     border: none;
-    margin-left: 102px;
+}
+
+
+/* RWD斷點 */
+/* 大型設備(桌機) */
+@media (min-width:821px) {}
+
+/* 中型設備(平板) */
+@media (max-width:820px) {
+    #member-info input{
+        width: 400px;
+    }
+    .title{
+        width: 400px;
+    }
+}
+
+/* 小型設備(手機) */
+@media (max-width:640px) {
+    #member-info {
+        padding-top: 55px;
+    }
+    #member-info input{
+        width: 300px;
+    }
+    #member-info form div{
+        display: flex;
+        flex-direction: column;
+    }
+    #member-info input {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    #member-info form div:first-child{
+        display: flex;
+        flex-direction: row;
+    }
+    .title{
+        width: 300px;
+    }
 }

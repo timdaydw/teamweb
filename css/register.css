@@ -1,5 +1,7 @@
 /* main */
-
+main,button {
+    font-weight: 600;
+}
 /* register */
 
 #register {
@@ -22,11 +24,15 @@
     flex-direction: column;
     align-items: center;
 }
-
+.register-box form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 #register h1 {
     font-size: 1.75rem;
     color: var(--09302b);
-    margin-left: 101px;
+    margin-left: 96px;
     margin-bottom: 35px;
 }
 
@@ -46,28 +52,42 @@
 }
 
 .register-btn {
-    width: 570px;
+    width: 155px;
     height: 53px;
     border: none;
-    background-color: var(--09302b);
+    background-color: #4F5D30;
     color: white;
-    margin-left: 101px;
-    margin-bottom: 32px;
-}
-
-#register small {
-    color: var(--9f4800);
     font-size: 1.5rem;
-    margin-left: 101px;
-    margin-bottom: 17px;
+    margin-left: 96px;
 }
 
-.log-btn {
-    width: 330px;
-    height: 74px;
-    border: none;
-    background-color: var(--d59c41);
-    color: var(--09302b);
-    font-size: 1.75rem;
-    margin-left: 101px;
+
+
+/* RWD斷點 */
+/* 大型設備(桌機) */
+@media (min-width:821px) {}
+
+/* 中型設備(平板) */
+@media (max-width:750px) {
+    #register input{
+        width: 400px;
+    }
+
+}
+
+/* 小型設備(手機) */
+@media (max-width:600px) {
+    .register-box form div {
+        display: flex;
+        flex-direction: column;
+    }
+    .register-btn {
+        margin-left: 0px;
+    }
+    #register h1 {
+        margin-left: 0px;
+    }
+    #register input{
+        width: 300px;
+    }
 }

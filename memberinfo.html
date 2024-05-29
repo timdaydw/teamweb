@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>會員資料</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
@@ -56,45 +58,45 @@
                             <div className="title">
                                 <h1>會員資料</h1>
                                 <h1 className="separator">/</h1>
-                                <h1 className="none">歷史訂單</h1>
+                                <h1 className="none"><a href="./pastorder.html">歷史訂單</a></h1>
                             </div>
                             <div className="name">
                                 <label htmlFor="name">會員姓名</label>
-                                <input type="text" id="name" value={name} onChange={(e) => {
+                                <input className="borderradius5px" type="text" id="name" value={name} onChange={(e) => {
                                     setName(e.target.value);
                                 }} />
                             </div>
                             <div className="email">
                                 <label htmlFor="email">會員信箱</label>
-                                <input type="email" id="email" value={email} onChange={(e) => {
+                                <input className="borderradius5px" type="email" id="email" value={email} onChange={(e) => {
                                     setEmail(e.target.value);
                                 }} />
                             </div>
                             <div className="password">
                                 <label htmlFor="password">會員密碼</label>
-                                <input type="password" id="password" value={password} onChange={(e) => {
+                                <input className="borderradius5px" type="password" id="password" value={password} onChange={(e) => {
                                     setPassword(e.target.value);
                                 }} />
                             </div>
                             <div className="tel">
                                 <label htmlFor="tel">會員電話</label>
-                                <input type="tel" id="tel" value={tel} onChange={(e) => {
+                                <input className="borderradius5px" type="tel" id="tel" value={tel} onChange={(e) => {
                                     setTel(e.target.value);
                                 }} />
                             </div>
                             <div className="date">
                                 <label htmlFor="date">會員生日</label>
-                                <input type="date" id="date" value={date} onChange={(e) => {
+                                <input className="borderradius5px" type="date" id="date" value={date} onChange={(e) => {
                                     setDate(e.target.value);
                                 }} />
                             </div>
                             <div className="address">
                                 <label htmlFor="address">收貨地址</label>
-                                <input type="text" id="address" value={address} onChange={(e) => {
+                                <input className="borderradius5px" type="text" id="address" value={address} onChange={(e) => {
                                     setAddress(e.target.value);
                                 }} />
                             </div>
-                            <button type="submit" className="member-info-btn" onClick={() => {
+                            <button type="submit" className="member-info-btn borderradius5px" onClick={() => {
                                 if (document.getElementById("name").value == "") {
                                     window.alert("請輸入姓名");
                                 } else if (document.getElementById("email").value.search(/^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/) == -1) {
