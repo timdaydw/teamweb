@@ -1,5 +1,7 @@
 /* main */
-
+main,button {
+    font-weight: 600;
+}
 /* shoplist */
 
 #shoplist{
@@ -10,11 +12,14 @@
     background-color: #FFFAF8;
     padding-bottom: 96px;
     padding-top: 100px;
+    background-image: url(./image/member/member-bk.png);
+    background-position:90% 90%;
+    background-repeat: no-repeat;
 }
 
 
 .shoplist-box {
-    width: 1342px;
+    /* width: 1342px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -99,8 +104,8 @@
 
 .discount-banner {
     height: 24px;
-    background-color: #09302B;
-    color: white;
+    background-color: white;
+    color: black;
     display: flex;
 
 }
@@ -176,6 +181,7 @@
 
 .memberinfo div {
     display: flex;
+    width: 540px;
     margin-bottom: 58px;
 }
 .memberinfo div p {
@@ -185,7 +191,7 @@
 .memberinfo div h1 {
     display: block;
     width: 158px;
-    text-align: center;
+    /* text-align: center; */
     font-size: 1.125rem;
 }
 
@@ -200,5 +206,133 @@
     height: 48px;
     border: none;
     background-color: var(--d59c41);
+    color: white;
     margin-left: 107px;
+}
+
+@media (min-width:821px) {}
+
+/* 中型設備(平板) */
+@media (max-width:1355px) {
+    .w359{
+        width: 300px;
+    }
+    .w269{
+        width: 200px;
+    }
+    .w208{
+        width: 150px;
+    }
+    .w181{
+        width: 100px;
+    }
+    .w325{
+        width: 250px;
+    }
+}
+@media (max-width:1030px) {
+    .w359{
+        width: 300px;
+    }
+    .w269{
+        width: 200px;
+    }
+    .w208{
+        width: 150px;
+    }
+    .w181{
+        width: 80px;
+    }
+    .w325{
+        width: 150px;
+    }
+}
+@media (max-width:890px) {
+    .order-row {
+        height: 200px;
+    }
+    .order-row div:first-child{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .discount *{
+        width: 100px;
+    }
+    .discount-banner {
+        height: 50px;
+        display: flex;
+    }
+    .w359{
+        width: 200px;
+    }
+    .w269{
+        width: 120px;
+    }
+    .w208{
+        width: 100px;
+    }
+    .w181{
+        width: 80px;
+    }
+    .w325{
+        width: 80px;
+    }
+
+    .total-box{
+        align-self: center;
+    }
+    .memberinfo {
+        align-items: center;
+    }
+    .btn {
+        align-self: center;
+
+    }
+    .btn button{
+        margin-left: 0;
+        margin: 0 20px;
+    }
+}
+
+/* 小型設備(手機) */
+@media (max-width:610px) {
+    .total-box>div{
+        width: 240px;
+    }
+    .discount *{
+        width: 50px;
+    }
+    .total-l{
+        width: 80px;
+    }
+    img {
+        display: none;
+    }
+    .w359{
+        width: 100px;
+    }
+    .w269{
+        width: 80px;
+    }
+    .w208{
+        width: 60px;
+    }
+    .w181{
+        width: 60px;
+    }
+    .w325{
+        width: 80px;
+    }
+    .memberinfo div {
+        width: 300px;
+    }
+    .btn button{
+        width: 150px;
+    }
+    .memberinfo div p {
+        display: block;
+        width: 462px;
+        margin-left: 16px;
+    }
 }

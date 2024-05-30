@@ -1,5 +1,9 @@
 /* main */
+main,button {
+    font-weight: 600;
+}
 
+/* shopdone */
 #shopdone{
     height: 100vh;
     display: flex;
@@ -9,6 +13,9 @@
     padding-top: 110px;
     padding-bottom: 67px;
     background-color: #FFFAF8;
+    background-image: url(./image/member/member-bk.png);
+    background-position:90% 90%;
+    background-repeat: no-repeat;
 }
 
 .shopdone-box {
@@ -31,5 +38,14 @@
     height: 31px;
     border: none;
     background-color: var(--d59c41);
+    color: white;
     margin: 0 35px;
+    font-size: 1rem;
+}
+
+/* 小型設備(手機) */
+@media (max-width:640px) {
+    .shopdone-box .btn button {
+        width: 100px;
+    }
 }

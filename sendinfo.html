@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>填寫配送資料</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
@@ -49,33 +51,29 @@
                 <main>
                     <section id="sendinfo">
                         <div className="sendinfo-box">
-                            <div className="title">
+                            <div className="title borderradius5px">
                                 <h1>填寫資料</h1>
                             </div>
                             <div className="step">
-                                <img src="./image/shop/step1.png" alt="" />
-                                <img src="./image/shop/arrow.png" alt="" />
-                                <img src="./image/shop/step2-deep.png" alt="" />
-                                <img src="./image/shop/arrow.png" alt="" />
-                                <img src="./image/shop/step3.png" alt="" />
+                                <img src="./image/shop/progressbar-sendinfo.png" alt="" />
                             </div>
                             <div className="sendinfo-content">
                                 <form action="">
                                     <div className="name">
                                         <label htmlFor="name">收件姓名</label>
-                                        <input type="text" id="name" value={name} onChange={(e) => {
+                                        <input className="borderradius5px" type="text" id="name" value={name} onChange={(e) => {
                                             setName(e.target.value);
                                         }} />
                                     </div>
                                     <div className="email">
                                         <label htmlFor="email">會員信箱</label>
-                                        <input type="email" id="email" value={email} onChange={(e) => {
+                                        <input className="borderradius5px" type="email" id="email" value={email} onChange={(e) => {
                                             setEmail(e.target.value);
                                         }} />
                                     </div>
                                     <div className="tel">
                                         <label htmlFor="tel">聯絡電話</label>
-                                        <input type="tel" id="tel" value={tel} onChange={(e) => {
+                                        <input className="borderradius5px" type="tel" id="tel" value={tel} onChange={(e) => {
                                             setTel(e.target.value);
                                         }} />
                                     </div>
@@ -91,15 +89,15 @@
                                         <input type="radio" name="pay" id="pay1" title="貨到付款" value="貨到付款" onChange={(e) => {
                                             setPay(e.target.value);
                                         }} />
-                                        <label htmlFor="pay1">貨到付款</label>
+                                        <label htmlFor="pay1" className="borderradius5px">貨到付款</label>
                                         <input type="radio" name="pay" id="pay2" title="線上支付" value="線上支付" onChange={(e) => {
                                             setPay(e.target.value);
                                         }} />
-                                        <label htmlFor="pay2">線上支付</label>
+                                        <label htmlFor="pay2" className="borderradius5px">線上支付</label>
                                     </fieldset>
                                     <div className="creditcard">
                                         <label htmlFor="creditcard">信用卡號碼</label>
-                                        <input type="text" id="creditcard" value={creditcard} onChange={(e) => {
+                                        <input className="borderradius5px" type="text" id="creditcard" value={creditcard} onChange={(e) => {
                                             setCreditcard(e.target.value);
                                         }} />
                                     </div>
@@ -109,21 +107,21 @@
                                         <input type="radio" name="bill" id="bill1" title="雲端載具" value="雲端載具" onChange={(e) => {
                                             setBill(e.target.value);
                                         }} />
-                                        <label htmlFor="bill1">雲端載具</label>
+                                        <label htmlFor="bill1" className="borderradius5px">雲端載具</label>
                                         <input type="radio" name="bill" id="bill2" title="隨貨附上實體發票" value="隨貨附上實體發票" onChange={(e) => {
                                             setBill(e.target.value);
                                         }} />
-                                        <label htmlFor="bill2">隨貨附上實體發票</label>
+                                        <label htmlFor="bill2" className="borderradius5px">隨貨附上實體發票</label>
                                     </fieldset>
                                     <div className="vehiclenumber">
                                         <label htmlFor="vehiclenumber">載具編號</label>
-                                        <input type="text" id="vehiclenumber" value={vehiclenumber} onChange={(e) => {
+                                        <input className="borderradius5px" type="text" id="vehiclenumber" value={vehiclenumber} onChange={(e) => {
                                             setVehiclenumber(e.target.value);
                                         }} />
                                     </div>
                                 </form>
                                 {/* 之後記得往上移一行 */}
-                                <a href={link}><button onClick={() => {
+                                <a href={link}><button className="borderradius5px" onClick={() => {
                                     window.localStorage.setItem("address", document.getElementById("address").value);
                                     window.localStorage.setItem("name", document.getElementById("name").value);
                                     window.localStorage.setItem("email", document.getElementById("email").value);
