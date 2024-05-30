@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@400;900&display=swap');
 
 :root {
     --d: 700ms;
     --e: cubic-bezier(0.19, 1, 0.22, 1);
-    --font-sans: "Italianno", cursive;
+    --font-sans: "Elsie Swash Caps", serif;
     --font-serif: "Cardo", serif;
 }
 
@@ -120,7 +121,7 @@ body {
 }
 
 .title {
-    font-size: 5rem;
+    font-size: 4.25rem;
     font-weight: 100;
     line-height: 1;
     margin: 0 0 200px 0;

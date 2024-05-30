@@ -132,8 +132,10 @@
             const { name, content } = props;
             return <>
                 <div className="comment-card">
-                    <h2>{name}</h2>
-                    <img src="./image/product/product-comment-fivestar.png" alt="" />
+                    <div>
+                        <h2>{name}</h2>
+                        <img src="./image/product/product-comment-fivestar.png" alt="" />
+                    </div>
                     <p>{content}</p>
                 </div>
             </>
@@ -148,26 +150,26 @@
                     choiceTag.push(cardType[i]);
                 }
             }
-        }else if (window.localStorage.getItem("type") == "2") {
+        } else if (window.localStorage.getItem("type") == "2") {
             for (let i = 0; i < cardType.length; i++) {
                 if (cardType[i].type2 == 1) {
                     choiceTag.push(cardType[i]);
                 }
             }
-        }else if (window.localStorage.getItem("type") == "3") {
+        } else if (window.localStorage.getItem("type") == "3") {
             for (let i = 0; i < cardType.length; i++) {
                 if (cardType[i].type3 == 1) {
                     choiceTag.push(cardType[i]);
                 }
             }
-        }else if (window.localStorage.getItem("type") == "4") {
+        } else if (window.localStorage.getItem("type") == "4") {
             for (let i = 0; i < cardType.length; i++) {
                 if (cardType[i].type4 == 1) {
                     choiceTag.push(cardType[i]);
                 }
             }
         }
-        window.localStorage.setItem("type","all");
+        window.localStorage.setItem("type", "all");
         function MyApp() {
             const [shopNum, setShopNum] = useState(shopList);
             const Card = (props) => {
