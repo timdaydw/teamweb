@@ -47,21 +47,33 @@ body {
 }
 
 .banner-content p {
+    text-align: center;
     font-size: 1.25rem;
+    font-weight: 600;
     display: block;
     width: 340px;
+}
+.banner-content small{
+    font-size: 1rem;
+    font-weight: 900;
 }
 
 .banner-content a {
     width: 184px;
     height: 57px;
     background-color: #D79A49;
-    color: black;
+    color: white;
     border: none;
     border-radius: 50px;
     font-size: 1.25rem;
+    font-weight: 600;
     text-align: center;
     line-height: 57px;
+    transition: all 0.35s;
+}
+
+.banner-content a:hover {
+    background-color: #9F4800;
 }
 
 .banner-content-img1 {
@@ -136,6 +148,8 @@ body {
     position: relative;
 }
 #masalaintro small{
+    font-size: 1.25rem;
+    font-weight: 900;
     color: #9F4800;
 }
 
@@ -176,15 +190,17 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    padding-bottom: 70px;
-    color:  #B9773E;
+    padding-bottom: 35px;
+    color:  #9F4800;
 }
 
 .masalaintro-content p {
+    text-align:left;
     width: 405px;
     font-size: 1.25rem;
+    font-weight: 600;
     margin-top: 43px;
-    line-height: 1.5;
+    line-height: 2;
 }
 
 /* RWD斷點 */

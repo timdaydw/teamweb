@@ -8,12 +8,12 @@ body {
 
 /* banner */
 #banner {
-    
+
     width: 100%;
     height: 550px;
     background-image: url(./image/product/producteachcontent-banner-bk.jpg);
     background-position: bottom;
-    background-size:auto;
+    background-size: auto;
     background-repeat: no-repeat;
     background-color: #EFE3BA;
 }
@@ -34,8 +34,8 @@ body {
     align-items: flex-end;
 }
 
-.tag{
-    
+.tag {
+
     margin-top: 132px;
     margin-bottom: 45px;
     display: flex;
@@ -43,15 +43,42 @@ body {
     justify-content: center;
     padding: 55px 0;
 
-    background: url(./image/product/producteachcontent-tag-top.jpg),url(./image/product/producteachcontent-tag-bot.jpg);
-    background-position: top,bottom;
-    background-repeat: no-repeat;
+    /* background: url(./image/product/producteachcontent-tag-top.jpg),url(./image/product/producteachcontent-tag-bot.jpg); */
+    /* background-position: top,bottom;
+    background-repeat: no-repeat; */
 }
 
 .tag li {
+    display: block;
+    height: 48px;
+    width: 234px;
+    text-align: center;
+    line-height: 48px;
+    background: url(./image/product/producteachcontent-tag-li-bg-1.jpg);
+    background-position: left;
+    background-repeat: no-repeat;
     margin: 7px 55px;
     font-size: 1.125rem;
+    transition:all 0.35s;
 }
+.tag li:hover {
+    background: url(./image/product/producteachcontent-tag-li-bg-1-hover.jpg);
+    background-size: 234px 48px;
+    background-position: center;
+}
+/* .tag li:nth-child(2){
+    height: 44px;
+    width: 232px;
+    background: url(./image/product/producteachcontent-tag-li-bg-2.jpg);
+    background-position: left;
+    background-repeat: no-repeat;
+}
+.tag li:nth-child(2):hover {
+    background: url(./image/product/producteachcontent-tag-li-bg-2-hover.jpg);
+    background-size: 232px 44px;
+    background-position: center;
+    background-repeat: no-repeat;
+} */
 
 .tag a {
     color: #9F4800;
@@ -60,8 +87,10 @@ body {
     border-bottom: solid 2px transparent;
     transition: 0.5s;
 }
-.tag a:hover {
-    border-bottom: 2px solid #9F4800;
+
+
+.tag li:hover a {
+    color: white;
 }
 
 /* RWD斷點 */
@@ -84,7 +113,7 @@ body {
     font-size: 1.25rem;
     font-weight: bold;
     padding-bottom: 10px;
-    border-bottom: 3px solid black ;
+    border-bottom: 3px solid black;
     margin-bottom: 12px;
 }
 
@@ -95,7 +124,7 @@ body {
     padding-left: 43px;
 }
 
-.topinfo-rwd-img{
+.topinfo-rwd-img {
     display: none;
 }
 
@@ -103,7 +132,7 @@ body {
     padding-left: 87px;
 }
 
-.buy-card-title{
+.buy-card-title {
     font-weight: bold;
     font-size: 1.25rem;
     color: #0D0C0C;
@@ -115,8 +144,7 @@ body {
     padding: 5px 7px;
     font-size: 0.6875rem;
     color: #800000;
-    background-color: #E7E7E7;
-    
+
 }
 
 .buy-card h1 {
@@ -127,23 +155,37 @@ body {
     margin-bottom: 28px;
 }
 
-.buy-number{
+.buy-number {
     margin-top: 11px;
     margin-bottom: 30px;
+    padding: 0 8px;
     width: 219px;
     height: 52px;
     font-size: 1.125rem;
-    background-color: white;
+    background:linear-gradient(to right,#ECECEC 50%, white 50%);
     border: 1px solid #DADADA;
+    border-radius: 5px;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-
-.buy-number img:first-child,.buy-number img:last-child{
-    cursor: pointer;
-    width: 24px;
+.buy-number p{
+    display: block;
+    line-height: 52px;
+    border-left: 1px solid #DADADA;
+    border-right: 1px solid #DADADA;
+    text-align: center;
+    height: 100%;
+    width: 102px;
+    background-color: white;
 }
+
+.buy-number img:first-child,
+.buy-number img:last-child {
+    cursor: pointer;
+    width: 12px;
+}
+
 
 .buynow {
     width: 184px;
@@ -152,18 +194,21 @@ body {
     color: white;
     border: none;
     margin-bottom: 41px;
+    margin-right: 17px;
+    border-radius: 5px;
 }
 
-.addshop{
+.addshop {
     width: 184px;
     height: 52px;
     background-color: white;
     border: 1px solid #DAD8D8;
     margin-bottom: 11px;
+    border-radius: 5px;
 }
 
 .payinfo {
-    font-size: 1.125rem; 
+    font-size: 1.125rem;
     font-weight: bold;
     margin-bottom: 5px;
 }
@@ -182,11 +227,13 @@ body {
         display: flex;
         flex-direction: column;
     }
-    .topinfo{
+
+    .topinfo {
         padding: 30px 50px;
         flex-direction: column;
         align-items: flex-start;
     }
+
     .buy-card {
         padding: 0;
     }
@@ -194,12 +241,14 @@ body {
 
 /* 小型設備(手機) */
 @media (max-width:640px) {
-    .carousel{
+    .carousel {
         display: none;
     }
+
     #banner {
         display: none;
     }
+
     .topinfo-rwd-img {
         display: block;
         width: 100%;
@@ -209,21 +258,24 @@ body {
     /* .content-recommend div div:nth-child(n+2){
         display: none;
     } */
-    .content-recommend>div{
+    .content-recommend>div {
         justify-content: center;
     }
-    .content-contenttext{
+
+    .content-contenttext {
         width: 100%;
     }
-    .content-contenttext h1{
+
+    .content-contenttext h1 {
         width: 100%;
     }
+
     .content-contenttext li {
         width: 90%;
     }
 }
 
-.content-contenttext h1{
+.content-contenttext h1 {
     font-size: 1.125rem;
     font-weight: bold;
     margin-bottom: 35px;
@@ -236,6 +288,7 @@ body {
     padding-left: 50px;
     margin-bottom: 30px;
 }
+
 .content-contenttext li {
     margin-bottom: 3px;
 }
@@ -253,7 +306,7 @@ body {
     margin-right: 33px;
 }
 
-.content-text-explain-img{
+.content-text-explain-img {
     display: flex;
     flex-direction: column;
     padding-left: 100px;
@@ -262,11 +315,13 @@ body {
 .content-text-explain-img img {
     margin-bottom: 90px
 }
-.content-recommend{
+
+.content-recommend {
     width: 70%;
     margin: auto;
 }
-.content-recommend>div{
+
+.content-recommend>div {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -287,33 +342,36 @@ body {
     margin-bottom: 17px;
 }
 
-.content-recommend div div h2{
+.content-recommend div div h2 {
     color: #09302b;
     margin-bottom: 5px;
 }
-.content-recommend div div h1{
+
+.content-recommend div div h1 {
     font-size: 1.25rem;
     color: #09302b;
 }
 
-.carousel{
+.carousel {
     width: 450px;
     height: 426px;
 }
 
-.carousel iframe{
+.carousel iframe {
     width: 450px;
     height: 426px;
 }
 
-@media (max-width:1050px){
-    .tag{
+@media (max-width:1050px) {
+    .tag {
         display: none;
     }
-    .tag-box{
+
+    .tag-box {
         display: none;
     }
-    .content-contenttext{
+
+    .content-contenttext {
         width: 90%;
         margin: auto;
     }
@@ -325,6 +383,7 @@ body {
     right: 10%;
     z-index: 99;
 }
+
 .shop-num a {
     display: flex;
     align-items: center;
@@ -334,40 +393,43 @@ body {
     border-radius: 99px;
 }
 
-.detail{
+.detail {
     width: 790px;
     margin: auto;
 }
-.detail img{
+
+.detail img {
     /* width: 100%; */
     object-fit: contain;
     margin: 0 12px;
 }
 
-.detail-content{
+.detail-content {
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.detail-content-info{
+.detail-content-info {
     width: 100%;
     display: flex;
     justify-content: space-between;
     /* flex-wrap: wrap; */
 }
+
 /* 中型設備(平板) */
 @media (max-width:820px) {
-    .detail-content-info{
+    .detail-content-info {
         flex-wrap: wrap;
         /* align-items: center; */
         justify-content: center;
     }
 }
+
 /* 小型設備(手機) */
 @media (max-width:640px) {
-    .detail{
+    .detail {
         display: none;
     }
 }
