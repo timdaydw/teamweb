@@ -18,34 +18,6 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
-        // const { useEffect } = React;
-        // const smoovePhoto = () => {
-        //     $(function () {
-
-        //     });
-
-        //     // 啟用smoove 共用區 (一定要單獨寫在最外面)
-        //     $('.smoove').smoove({
-        //         offset: '30%',
-        //     });
-
-        //     $('.star').smoove({
-        //         offset: '90%',
-        //     });
-
-        //     $('.leaf-left-bg').smoove({
-        //         offset: '40%',
-        //     });
-        //     $('.leaf-right-bg').smoove({
-        //         offset: '10%',
-        //     });
-        //     $('.light-bg').smoove({
-        //         offset: '10%',
-        //     });
-        //     $('.product-title').smoove({
-        //         offset: '50%',
-        //     });
-        // }
         const Topbar = () => {
             return <>
                 <div className="topbar">
@@ -61,16 +33,11 @@
             </>
         }
         function MyApp() {
-            // useEffect(() => {
-            //     smoovePhoto();
-            // }, []);
             return <>
                 <Topbar />
                 <main onLoad={() => {
                     $(function () {
                     });
-
-                    // 啟用smoove 共用區 (一定要單獨寫在最外面)
                     $('.smoove').smoove({
                         offset: '30%',
                     });
@@ -121,7 +88,12 @@
                                 <h1><a href="./news.html">瞭解更多...</a></h1>
                             </div>
                         </div>
-                        <figure className="news-img smoove"><img src="./image/news.png" alt="" /></figure>
+                        <figure className="news-img smoove">
+                            <img src="./image/news.png" alt="" className="news-img-1"/>
+                            <img src="./image/news-2.png" alt="" className="news-img-2"/>
+                            <img src="./image/news-3.png" alt="" className="news-img-3"/>
+                            <img src="./image/news-4.png" alt="" className="news-img-4"/>
+                        </figure>
                         <img src="./image/bird.png" alt="" className="bird smoove" />
                     </section>
                     <section className="brand">
@@ -191,8 +163,8 @@
                             <div className="contact-content">
                                 <ul>
                                     <li><img src="./image/contact-icon.png" alt="" />客服電話</li>
-                                    <li><img src="./image/contact-icon.png" alt="" />官方Email</li>
-                                    <li><img src="./image/contact-icon.png" alt="" />客服服務時間</li>
+                                    <li><img src="./image/contact-icon.png" alt="" />官方信箱</li>
+                                    <li><img src="./image/contact-icon.png" alt="" />服務時間</li>
                                 </ul>
                                 <ul>
                                     <li><img src="./image/contact-icon.png" alt="" />02-2222-6666</li>

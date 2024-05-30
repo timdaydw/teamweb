@@ -1,5 +1,8 @@
 body {
     background-color: #FFFAF8;
+    background-image: url(./image/product/bg.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
 }
 
 .topbar-h{
@@ -55,6 +58,7 @@ body {
     position: relative;
     display: flex;
     /* font-weight: 500; */
+
 }
 
 .filter {

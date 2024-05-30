@@ -2,14 +2,14 @@
 
 main {
     overflow: hidden;
-    background-color: #FFF6F2;
+    background-color: #FFFAF8;
 }
 
 /* banner */
 
 #banner {
     position: relative;
-    background-color: #FFF6F2;
+    background-color: #FFFAF8;
     display: flex;
     height: 800px;
     padding-top: 169px;
@@ -133,13 +133,16 @@ main {
         width: 100%;
         padding: 30px 0 0 0;
     }
+    #banner .right h2{
+        display: none;
+    }
 }
 
 /* about */
 
 #about {
     position: relative;
-    background-color: #FFF6F2;
+    background-color: #FFFAF8;
     height: 800px;
     text-align: center;
     padding: 52px 25.5%;
@@ -267,7 +270,7 @@ main {
 #curry-first {
     position: relative;
     height: 800px;
-    background-color: #FFF6F2;
+    background-color: #FFFAF8;
     display: flex;
 }
 
@@ -286,6 +289,7 @@ main {
 }
 
 .curry-first-box p {
+    line-height: 2;
     font-size: 1.125rem;
     color: var(--09302b);
 }
@@ -353,7 +357,7 @@ main {
 
 #curry-orgin {
     height: 800px;
-    background: linear-gradient(170deg, #9F4800 60%, #FFF6F2 40%);
+    background: linear-gradient(170deg, #9F4800 60%, #FFFAF8 40%);
     position: relative;
     padding-top: 35px;
 }
@@ -411,7 +415,7 @@ main {
 }
 
 .curry-orgin-footer h2 {
-    padding-left: 110px;
+    padding-left: 90px;
     color: #09302B;
     margin-top: 11px;
 }
@@ -467,7 +471,7 @@ main {
 #curry-eachcountry {
     /* height: 800px; */
     width: 100%;
-    background-color: #FFF6F2;
+    background-color: #FFFAF8;
     display: flex;
     justify-content: center;
     align-items: center;

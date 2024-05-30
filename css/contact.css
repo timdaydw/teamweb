@@ -130,6 +130,9 @@ main {
     .contact-info-title {
         padding: 200px 0 0 0;
     }
+    .contact-info-box{
+        padding-left: 10px;
+    }
 }
 
 /* 小型設備(手機) */

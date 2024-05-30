@@ -156,7 +156,7 @@ a {
 }
 
 body {
-
+    overflow: hidden;
     margin: auto;
 }
 
@@ -210,5 +210,27 @@ footer .menu a {
     color: #FCECCC;
     text-align: right;
     padding-right: 78px;
+}
+
+/* RWD斷點 */
+/* 大型設備(桌機) */
+@media (min-width:821px) {}
+
+/* 中型設備(平板) */
+@media (max-width:820px) {
+
+}
+
+/* 小型設備(手機) */
+@media (max-width:640px) {
+    footer .menu li {
+        margin-right: 15px;
+        margin-bottom: 15px;
+    }
+    
+    footer .icon a img{
+        margin-right: 0;
+        margin-left: 10px;
+    }
 
 }
