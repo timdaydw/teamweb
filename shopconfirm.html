@@ -187,7 +187,9 @@
                             <div className="btn">
                                 <a href="./sendinfo.html"><button className="borderradius5px">回到上一頁</button></a>
                                 <a href="./shopdone.html"><button className="borderradius5px" onClick={()=>{
-                                    
+                                    cardType.map((cardType) => {
+                                        window.localStorage.removeItem(cardType.title);
+                                    })
                                 }}>完成訂單</button></a>
                             </div>
                         </div>
