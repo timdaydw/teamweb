@@ -26,14 +26,27 @@
             const randomClassName = Math.floor(Math.random() * 1000000);
             return <>
                 <div onLoad={() => {
+                    let a=0;
                     $(`.slideQ-${randomClassName}`).click(function () {
-                        $(`.slideA-${randomClassName}`).slideToggle("slow");
+                        // $(`.slideA-${randomClassName}`).slideToggle("slow");
+                        if (a%2 == 0 ) {
+                            $(`.slideA-${randomClassName}`).slideDown("slow");
+                            $(`.slideQ-${randomClassName} a .add`).css({"display":"none"});
+                            $(`.slideQ-${randomClassName} a .sub`).css({"display":"block"});
+                        }else{
+                            $(`.slideA-${randomClassName}`).slideUp("slow");
+                            $(`.slideQ-${randomClassName} a .add`).css({"display":"block"});
+                            $(`.slideQ-${randomClassName} a .sub`).css({"display":"none"});
+                        }
+                        a++;
                     });
+
                 }}>
                     <div className={`qa-box bordertopradius5px slideQ-${randomClassName}`}>
                         <p>{content}</p>
                         <a href="##">
-                            <img src="./image/contact/add.png" alt="" />
+                            <img className="add" src="./image/contact/add.png" alt="" />
+                            <img className="sub" src="./image/contact/sub.png" alt="" />
                         </a>
                     </div>
                     <div className={`ans-box borderbottomradius5px slideA-${randomClassName}`}>

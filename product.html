@@ -223,7 +223,14 @@
                 <Topbar />
                 <main>
                     <div className="topbar-h"></div>
-                    <section id="banner">
+                    <section id="banner" onLoad={() => {
+                        $(document).ready(function () {
+                            $(".banner-content-img1").animate({right: '22%'}, "slow");
+                            $(".banner-content-img2").animate({right: '31%'}, "slow");
+                            $(".banner-content-img3").animate({right: '33%'}, "slow");
+                            $(".banner-content-img4").animate({right: '27%'}, "slow");
+                        });
+                    }}>
                         <div className="banner-content">
                             <div className="banner-content-title">
                                 <h1>瑪莎拉雞肉咖哩</h1>
@@ -322,7 +329,16 @@
                             }
                         </div>
                     </section>
-                    <div className="shop-num"><a href="./shoplist.html"><img src="./image/product/shop-cart.png" alt="" /><p>{shopNum}</p></a></div>
+                    <div className="shop-num" onLoad={() => {
+                        $(window).scroll(function () {
+                            if ($(this).scrollTop() > 500) {
+                                // .stop:離開之後即可停止
+                                $('.shop-num').stop().fadeTo('slow', 1);
+                            } else {
+                                $('.shop-num').stop().fadeOut('fast');
+                            }
+                        });
+                    }}><a href="./shoplist.html"><img src="./image/product/shop-cart.png" alt="" /><p>{shopNum}</p></a></div>
                 </main>
                 <Footer />
             </>;

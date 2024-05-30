@@ -243,6 +243,9 @@ del {
 
 
 /* footer */
+.footer {
+    height: 254px;
+}
 
 .footer iframe {
     width: 100%;

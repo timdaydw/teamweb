@@ -81,28 +81,28 @@ body {
 .banner-content-img1 {
     position: absolute;
     top: 2%;
-    right: 22%;
+    right: 0;
     z-index: 10;
 }
 
 .banner-content-img2 {
     position: absolute;
     top: 15%;
-    right: 31%;
+    right: 0;
     z-index: 10;
 }
 
 .banner-content-img3 {
     position: absolute;
     top: 33%;
-    right: 33%;
+    right: 0;
     z-index: 10;
 }
 
 .banner-content-img4 {
     position: absolute;
     top: 70%;
-    right: 27%;
+    right: 0;
     z-index: 10;
 }
 
@@ -599,6 +599,7 @@ body {
     bottom: 10%;
     right: 2%;
     z-index: 99;
+    display: none;
 }
 
 .shop-num a {

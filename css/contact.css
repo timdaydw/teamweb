@@ -27,6 +27,9 @@ main {
     height: 23px;
     transition: all 0.35s;
 }
+.qa-box .sub{
+    display: none;
+}
 
 .ans-box {
     display: none;
