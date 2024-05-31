@@ -37,9 +37,37 @@
                 <Topbar />
                 <main onLoad={() => {
                     $(function () {
+                        $(window).scroll(function () {
+                            let x=  -($(this).scrollTop())/10+"px"
+                            let y=  -($(this).scrollTop())/30+"px"
+                            if ($(this).scrollTop() > 1200 && $(this).scrollTop() <1400 ) {
+                                $('.wave-1-bg').stop().animate({ "bottom": y });
+                            } else {
+                                $('.wave-1-bg').stop().animate({ "bottom": "0" });
+                            }
+                            if ($(this).scrollTop() > 1200) {
+                                $('.wave-2-bg').stop().animate({ "bottom": x });
+                            } else {
+                                $('.wave-2-bg').stop().animate({ "bottom": "0" });
+                            }
+                            if ($(this).scrollTop() > 1100) {
+                                $('.wave-3-bg').stop().animate({ "bottom": x });
+                            } else {
+                                $('.wave-3-bg').stop().animate({ "bottom": "0" });
+                            }
+                            if ($(this).scrollTop() > 1000) {
+                                $('.wave-4-bg').stop().animate({ "bottom": x });
+                            } else {
+                                $('.wave-4-bg').stop().animate({ "bottom": "0" });
+                            }
+                        });
+
                     });
                     $('.smoove').smoove({
                         offset: '30%',
+                    });
+                    $('.smoove-2').smoove({
+                        offset: '10%',
                     });
 
                     $('.star').smoove({
@@ -89,10 +117,10 @@
                             </div>
                         </div>
                         <figure className="news-img smoove">
-                            <img src="./image/news.png" alt="" className="news-img-1"/>
-                            <img src="./image/news-2.png" alt="" className="news-img-2"/>
-                            <img src="./image/news-3.png" alt="" className="news-img-3"/>
-                            <img src="./image/news-4.png" alt="" className="news-img-4"/>
+                            <img src="./image/news.png" alt="" className="news-img-1" />
+                            <img src="./image/news-2.png" alt="" className="news-img-2" />
+                            <img src="./image/news-3.png" alt="" className="news-img-3" />
+                            <img src="./image/news-4.png" alt="" className="news-img-4" />
                         </figure>
                         <img src="./image/bird.png" alt="" className="bird smoove" />
                     </section>
@@ -118,10 +146,10 @@
                         </div>
                         <figure className="brand-img smoove"><img className="borderradius5px" src="./image/brand-img.png" alt="" /></figure>
 
-                        <img src="./image/wave-4-bg.png" alt="" className="wave-4-bg smoove" data-move-y="100px" />
-                        <img src="./image/wave-3-bg.png" alt="" className="wave-3-bg smoove" data-move-y="200px" />
-                        <img src="./image/wave-2-bg.png" alt="" className="wave-2-bg smoove" data-move-y="300px" />
-                        <img src="./image/wave-1-bg.png" alt="" className="wave-1-bg smoove" data-move-y="400px" />
+                        <img src="./image/wave-4-bg.png" alt="" className="wave-4-bg smoove-2" data-move-y="100px" />
+                        <img src="./image/wave-3-bg.png" alt="" className="wave-3-bg smoove-2" data-move-y="200px" />
+                        <img src="./image/wave-2-bg.png" alt="" className="wave-2-bg smoove-2" data-move-y="300px" />
+                        <img src="./image/wave-1-bg.png" alt="" className="wave-1-bg smoove-2" data-move-y="400px" />
 
                         <img src="./image/star.png" alt="" className="star" />
                     </section>

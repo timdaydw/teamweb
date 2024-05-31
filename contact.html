@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./css/contact.css">
     <link rel="icon" href="./favicon.ico">
 
-    <script src="./js/jquery-3.7.1.min.js"></script>
+
 </head>
 
 <body>
@@ -26,17 +26,17 @@
             const randomClassName = Math.floor(Math.random() * 1000000);
             return <>
                 <div onLoad={() => {
-                    let a=0;
+                    let a = 0;
                     $(`.slideQ-${randomClassName}`).click(function () {
                         // $(`.slideA-${randomClassName}`).slideToggle("slow");
-                        if (a%2 == 0 ) {
+                        if (a % 2 == 0) {
                             $(`.slideA-${randomClassName}`).slideDown("slow");
-                            $(`.slideQ-${randomClassName} a .add`).css({"display":"none"});
-                            $(`.slideQ-${randomClassName} a .sub`).css({"display":"block"});
-                        }else{
+                            $(`.slideQ-${randomClassName} a .add`).css({ "display": "none" });
+                            $(`.slideQ-${randomClassName} a .sub`).css({ "display": "block" });
+                        } else {
                             $(`.slideA-${randomClassName}`).slideUp("slow");
-                            $(`.slideQ-${randomClassName} a .add`).css({"display":"block"});
-                            $(`.slideQ-${randomClassName} a .sub`).css({"display":"none"});
+                            $(`.slideQ-${randomClassName} a .add`).css({ "display": "block" });
+                            $(`.slideQ-${randomClassName} a .sub`).css({ "display": "none" });
                         }
                         a++;
                     });
@@ -72,7 +72,13 @@
         function MyApp() {
             return <>
                 <Topbar />
-                <main>
+                <main onLoad={() => {
+                    $(function () {
+                    });
+                    $('.smoove').smoove({
+                        offset: '20%',
+                    });
+                }}>
                     <section id="contact">
                         <div className="contact-info-title lancelot-regular">
                             <h1>Contact & FAQ</h1>
@@ -94,7 +100,7 @@
                         </div>
                     </section>
                     <section id="shop-qa">
-                        <div className="shop-qa-box">
+                        <div className="shop-qa-box smoove">
                             <QaBox content={"我可以在你們的網站上訂購嗎？"} ans={"如果您需要取消或修改訂單，請在我們的客服工作時間內盡快聯繫我們。我們將盡力協助您處理，但請注意，一旦訂單已經發貨，我們將無法進行取消或修改。"} />
                             <QaBox content={"我可以取消或修改已經下單的訂單嗎？"} ans={"如果您需要取消或修改訂單，請在我們的客服工作時間內盡快聯繫我們。我們將盡力協助您處理，但請注意，一旦訂單已經發貨，我們將無法進行取消或修改。"} />
                             <QaBox content={"我可以在網站上追蹤我的訂單嗎？"} ans={"是的，您可以透過登入我們官網的會員帳戶來查詢您的訂單狀態。一旦您的訂單被確認，您可以在會員中心找到相關的訂單資訊。"} />
@@ -107,7 +113,7 @@
                         </div>
                     </section>
                     <section id="transport-qa">
-                        <div className="transport-qa-box">
+                        <div className="transport-qa-box smoove">
                             <QaBox content={"運費如何計算？"} ans={"我們的運費政策是統一消費未滿1000元的訂單收取100元的運費。若您的訂單金額達到或超過1000元，則可享受免運費優惠。"} />
                             <QaBox content={"是否有免運費的優惠？"} ans={"是的，當您的訂單金額達到或超過1000元時，即可享有免運費的優惠。這項優惠適用於所有地區的訂單，讓您在購物時更加方便省錢。"} />
                             <QaBox content={"我可以選擇配送方式嗎？"} ans={"目前我們僅提供宅配服務，無法提供超商取貨等其他配送方式。我們將根據您的配送地址和訂單內容，選擇適合的宅配方式進行配送。"} />
@@ -123,7 +129,7 @@
                             <h1>Product Instructions</h1>
                             <h2>產品需知</h2>
                         </div>
-                        <div className="product-qa-box">
+                        <div className="product-qa-box smoove">
                             <QaBox content={"調理包該如何使用？"} ans={"我們的咖哩調理包配有詳細的使用說明，包括烹飪步驟和所需食材清單。請按照包裝上的指示進行操作，即可輕鬆烹製美味的咖哩料理。"} />
                             <QaBox content={"產品包含了哪些成分？"} ans={"我們的產品使用新鮮且高品質的食材，並遵循嚴格的製造標準。您可以在每個產品的包裝上找到成分列表和適用過敏警告。"} />
                             <QaBox content={"產品是否適合素食者或特殊飲食需求者？"} ans={"我們的一些產品適合素食者，但並非所有產品都是。請查看每個產品的產品描述以確定是否符合您的飲食需求。"} />
@@ -139,6 +145,8 @@
         const root = ReactDOM.createRoot(container);
         root.render(<MyApp />);
     </script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/jquery.smoove.min.js"></script>
     <!--
         Note: this page is a great way to try React but it's not suitable for production.
         It slowly compiles JSX with Babel in the browser and uses a large development build of React.
