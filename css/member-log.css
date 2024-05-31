@@ -103,6 +103,10 @@ main,button {
     margin-bottom: 50px;
 }
 
+.forgetacc a {
+    margin-bottom: 53px;
+}
+
 .forgetacc button {
     width: 418px;
     height: 74px;
@@ -111,7 +115,7 @@ main,button {
     border: none;
     font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 53px;
+
     
 }
 
