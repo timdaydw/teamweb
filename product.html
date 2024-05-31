@@ -21,7 +21,8 @@
     <script>
     </script>
     <script type="text/babel">
-        const { useState } = React;
+        const { useState, createContext, useContext } = React;
+        const UserContext = createContext({});
 
         const cardType = [
             {
@@ -169,177 +170,183 @@
                 }
             }
         }
+
+        const Card = (props) => {
+            const { shopNum, setShopNum } = useContext(UserContext);
+            const [num, setNum] = useState(0);
+            const { title } = props;
+            return <>
+                <div className="product-content-card notosans">
+                    <a href={`./product-${title}.html`}><figure><img src={`./image/product/product-content-img/${title}.png`} alt="" /></figure>
+                        <p className="product-content-card-title">{title}</p>
+                        <div className="price">
+                            <small>NT$</small><h2>150</h2>
+                        </div>
+                        <small className="weight">200g</small></a>
+                    <div className="card-buy">
+                        <form action="" name="shop" id="shop" title="加入購物車" method="post" className="card-buy-form">
+                            <div className="card-hover-number">
+                                <img src="./image/product/product-card-hover-sub.png" alt="" onClick={() => {
+                                    // num--;
+                                    if (num > 0) {
+                                        setNum(num - 1);
+                                    }
+                                }} />
+                                <p>{num}</p>
+                                <img src="./image/product/product-card-hover-add.png" alt="" onClick={() => {
+                                    // num+;
+                                    setNum(num + 1);
+                                }} />
+                            </div>
+                            <a href="##" onClick={() => {
+                                if (num > 0) {
+                                    setShopNum(shopNum + num);
+
+                                    if (window.localStorage.getItem(title) != undefined) {
+                                        window.localStorage.setItem(title, Number(window.localStorage.getItem(title)) + num);
+                                    } else {
+                                        window.localStorage.setItem(title, num);
+                                    }
+                                    window.alert(`"${title}"共${num}份，已放入購物車`);
+                                } else {
+                                    return
+                                }
+                                // console.log(shopList)
+                            }}><img src="./image/product/shop-cart.png" alt="" className="shopAdd" /></a>
+                        </form>
+                    </div>
+                </div>
+            </>
+        }
+
         window.localStorage.setItem("type", "all");
         function MyApp() {
             const [shopNum, setShopNum] = useState(shopList);
-            const Card = (props) => {
-                const [num, setNum] = useState(0);
-                const { title } = props;
-                return <>
-                    <div className="product-content-card notosans">
-                        <a href={`./product-${title}.html`}><figure><img src={`./image/product/product-content-img/${title}.png`} alt="" /></figure>
-                            <p className="product-content-card-title">{title}</p>
-                            <div className="price">
-                                <small>NT$</small><h2>150</h2>
-                            </div>
-                            <small className="weight">200g</small></a>
-                        <div className="card-buy">
-                            <form action="" name="shop" id="shop" title="加入購物車" method="post" className="card-buy-form">
-                                <div className="card-hover-number">
-                                    <img src="./image/product/product-card-hover-sub.png" alt="" onClick={() => {
-                                        // num--;
-                                        if (num > 0) {
-                                            setNum(num - 1);
-                                        }
-                                    }} />
-                                    <p>{num}</p>
-                                    <img src="./image/product/product-card-hover-add.png" alt="" onClick={() => {
-                                        // num+;
-                                        setNum(num + 1);
-                                    }} />
-                                </div>
-                                <a href="##" onClick={() => {
-                                    if (num > 0) {
-                                        setShopNum(shopNum + num);
 
-                                        if (window.localStorage.getItem(title) != undefined) {
-                                            window.localStorage.setItem(title, Number(window.localStorage.getItem(title)) + num);
-                                        } else {
-                                            window.localStorage.setItem(title, num);
-                                        }
-                                        window.alert(`"${title}"共${num}份，已放入購物車`);
-                                    } else {
-                                        return
-                                    }
-                                    // console.log(shopList)
-                                }}><img src="./image/product/shop-cart.png" alt="" className="shopAdd" /></a>
-                            </form>
-                        </div>
-                    </div>
-                </>
-            }
             const [products, setProducts] = useState(choiceTag);
             return <>
                 <Topbar />
-                <main>
-                    <div className="topbar-h"></div>
-                    <section id="banner" onLoad={() => {
-                        $(document).ready(function () {
-                            $(".banner-content-img1").animate({right: '22%'}, "slow");
-                            $(".banner-content-img2").animate({right: '31%'}, "slow");
-                            $(".banner-content-img3").animate({right: '33%'}, "slow");
-                            $(".banner-content-img4").animate({right: '27%'}, "slow");
-                        });
-                    }}>
-                        <div className="banner-content">
-                            <div className="banner-content-title">
-                                <h1 className="notosans">瑪莎拉雞肉咖哩</h1>
-                                <small className="elsie-swash-caps">Chicken Masala Curry</small>
+                <UserContext.Provider value={{ shopNum, setShopNum }}>
+                    <main>
+                        <div className="topbar-h"></div>
+                        <section id="banner" onLoad={() => {
+                            $(document).ready(function () {
+                                $(".banner-content-img1").animate({ right: '22%' }, "slow");
+                                $(".banner-content-img2").animate({ right: '31%' }, "slow");
+                                $(".banner-content-img3").animate({ right: '33%' }, "slow");
+                                $(".banner-content-img4").animate({ right: '27%' }, "slow");
+                            });
+                        }}>
+                            <div className="banner-content">
+                                <div className="banner-content-title">
+                                    <h1 className="notosans">瑪莎拉雞肉咖哩</h1>
+                                    <small className="elsie-swash-caps">Chicken Masala Curry</small>
+                                </div>
+                                <p className="notosans">品嚐正宗印度風味的瑪莎拉雞肉咖哩！每一口都充滿了深邃的香料風味，搭配著椰奶的濃郁口感，絕對是您晚餐時光的完美選擇。</p>
+                                <a href="./product-瑪莎拉香料雞肉咖哩.html">前往購買</a>
                             </div>
-                            <p className="notosans">品嚐正宗印度風味的瑪莎拉雞肉咖哩！每一口都充滿了深邃的香料風味，搭配著椰奶的濃郁口感，絕對是您晚餐時光的完美選擇。</p>
-                            <a href="./product-瑪莎拉香料雞肉咖哩.html">前往購買</a>
-                        </div>
-                        <img src="./image/product/product-banner-right-img-2.png" alt="" className="right" />
-                        <img src="./image/product/product-banner-masalaspice-img.png" alt="" className="banner-content-img1" />
-                        <img src="./image/product/product-banner-coconutmilk-img.png" alt="" className="banner-content-img2" />
-                        <img src="./image/product/product-banner-freshchicken-img.png" alt="" className="banner-content-img3" />
-                        <img src="./image/product/product-banner-freshtomatoes-img.png" alt="" className="banner-content-img4" />
-                    </section>
-                    <section id="masalaintro">
-                        <div className="masalaintro-img-box">
-                            <div className="masalaintro-img-box-left">
-                                <img src="./image/product/product-masalaintro-img1.png" alt="" />
-                                <img src="./image/product/product-masalaintro-img2.png" alt="" />
+                            <img src="./image/product/product-banner-right-img-2.png" alt="" className="right" />
+                            <img src="./image/product/product-banner-masalaspice-img.png" alt="" className="banner-content-img1" />
+                            <img src="./image/product/product-banner-coconutmilk-img.png" alt="" className="banner-content-img2" />
+                            <img src="./image/product/product-banner-freshchicken-img.png" alt="" className="banner-content-img3" />
+                            <img src="./image/product/product-banner-freshtomatoes-img.png" alt="" className="banner-content-img4" />
+                        </section>
+                        <section id="masalaintro">
+                            <div className="masalaintro-img-box">
+                                <div className="masalaintro-img-box-left">
+                                    <img src="./image/product/product-masalaintro-img1.png" alt="" />
+                                    <img src="./image/product/product-masalaintro-img2.png" alt="" />
+                                </div>
+                                <img src="./image/product/product-masalaintro-img3.png" alt="" />
                             </div>
-                            <img src="./image/product/product-masalaintro-img3.png" alt="" />
-                        </div>
-                        <div className="masalaintro-content">
-                            <h1 className="notosans">什麼是瑪莎拉香料？</h1>
-                            <small className="elsie-swash-caps">What is masala spice?</small>
-                            <p className="notosans">
-                                瑪莎拉香料起源於印度南部的瑪莎拉地區，擁有悠久的香料製作傳統和獨特的地理環境。
-                                <br /><br />
-                                我們精心挑選的瑪莎拉香料混合了多種來自印度及其他地區的香料，包括孜然、肉桂、丁香、芫荽等，每一種都散發著獨特的香氣和風味。這些香料的組合給予了瑪莎拉香料濃郁而迷人的味道。
-                            </p>
-                        </div>
-                        <img src="./image/product/masalaintro-content-bg.png" alt="" />
-                    </section>
-                    <section id="menu-tag">
-                        <div id="flag"></div>
-                        <div className="tag-box ">
-                            <img src="./image/product/menu-img.png" alt="" />
-                            <h1 className="elsie-swash-caps">Menu</h1>
-                            <ul className="tag notosans">
-                                <li><button onClick={() => {
-                                    setProducts(cardType);
-                                }}>所有商品</button></li>
-                                <li><button onClick={() => {
-                                    const temp = []
-                                    for (let i = 0; i < cardType.length; i++) {
-                                        if (cardType[i].type1 == 1) {
-                                            temp.push(cardType[i]);
+                            <div className="masalaintro-content">
+                                <h1 className="notosans">什麼是瑪莎拉香料？</h1>
+                                <small className="elsie-swash-caps">What is masala spice?</small>
+                                <p className="notosans">
+                                    瑪莎拉香料起源於印度南部的瑪莎拉地區，擁有悠久的香料製作傳統和獨特的地理環境。
+                                    <br /><br />
+                                    我們精心挑選的瑪莎拉香料混合了多種來自印度及其他地區的香料，包括孜然、肉桂、丁香、芫荽等，每一種都散發著獨特的香氣和風味。這些香料的組合給予了瑪莎拉香料濃郁而迷人的味道。
+                                </p>
+                            </div>
+                            <img src="./image/product/masalaintro-content-bg.png" alt="" />
+                        </section>
+                        <section id="menu-tag">
+                            <div id="flag"></div>
+                            <div className="tag-box ">
+                                <img src="./image/product/menu-img.png" alt="" />
+                                <h1 className="elsie-swash-caps">Menu</h1>
+                                <ul className="tag notosans">
+                                    <li><button onClick={() => {
+                                        setProducts(cardType);
+                                    }}>所有商品</button></li>
+                                    <li><button onClick={() => {
+                                        const temp = []
+                                        for (let i = 0; i < cardType.length; i++) {
+                                            if (cardType[i].type1 == 1) {
+                                                temp.push(cardType[i]);
+                                            }
                                         }
-                                    }
-                                    setProducts(temp);
-                                }}>咖哩調理包</button></li>
-                                <li><button onClick={() => {
-                                    const temp = []
-                                    for (let i = 0; i < cardType.length; i++) {
-                                        if (cardType[i].type2 == 1) {
-                                            temp.push(cardType[i]);
+                                        setProducts(temp);
+                                    }}>咖哩調理包</button></li>
+                                    <li><button onClick={() => {
+                                        const temp = []
+                                        for (let i = 0; i < cardType.length; i++) {
+                                            if (cardType[i].type2 == 1) {
+                                                temp.push(cardType[i]);
+                                            }
                                         }
-                                    }
-                                    setProducts(temp);
-                                }}>湯品調理包</button></li>
-                                <li><button onClick={() => {
-                                    const temp = []
-                                    for (let i = 0; i < cardType.length; i++) {
-                                        if (cardType[i].type3 == 1) {
-                                            temp.push(cardType[i]);
+                                        setProducts(temp);
+                                    }}>湯品調理包</button></li>
+                                    <li><button onClick={() => {
+                                        const temp = []
+                                        for (let i = 0; i < cardType.length; i++) {
+                                            if (cardType[i].type3 == 1) {
+                                                temp.push(cardType[i]);
+                                            }
                                         }
-                                    }
-                                    setProducts(temp);
-                                }}>素食料理</button></li>
-                                <li><button onClick={() => {
-                                    const temp = []
-                                    for (let i = 0; i < cardType.length; i++) {
-                                        if (cardType[i].type4 == 1) {
-                                            temp.push(cardType[i]);
+                                        setProducts(temp);
+                                    }}>素食料理</button></li>
+                                    <li><button onClick={() => {
+                                        const temp = []
+                                        for (let i = 0; i < cardType.length; i++) {
+                                            if (cardType[i].type4 == 1) {
+                                                temp.push(cardType[i]);
+                                            }
                                         }
-                                    }
-                                    setProducts(temp);
-                                }}>調味粉</button></li>
-                            </ul>
-                        </div>
-                    </section>
-                    <section id="product-content">
-                        {
-                            products.map((products) => {
-                                return <Card key={products.id} title={products.title} />
-                            })
-                        }
-                    </section>
-                    <section id="comment">
-                        <h1 className="notosans">顧客好評</h1>
-                        <div className="comment-card-box notosans">
+                                        setProducts(temp);
+                                    }}>調味粉</button></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section id="product-content">
                             {
-                                comment.map((comment) => {
-                                    return <CommentCard key={comment.id} name={comment.name} content={comment.content} />
+                                products.map((products) => {
+                                    return <Card key={products.id} title={products.title} />
                                 })
                             }
-                        </div>
-                    </section>
-                    <div className="shop-num" onLoad={() => {
-                        $(window).scroll(function () {
-                            if ($(this).scrollTop() > 500) {
-                                // .stop:離開之後即可停止
-                                $('.shop-num').stop().fadeTo('slow', 1);
-                            } else {
-                                $('.shop-num').stop().fadeOut('fast');
-                            }
-                        });
-                    }}><a href="./shoplist.html"><img src="./image/product/shop-cart.png" alt="" /><p>{shopNum}</p></a></div>
-                </main>
+                        </section>
+                        <section id="comment">
+                            <h1 className="notosans">顧客好評</h1>
+                            <div className="comment-card-box notosans">
+                                {
+                                    comment.map((comment) => {
+                                        return <CommentCard key={comment.id} name={comment.name} content={comment.content} />
+                                    })
+                                }
+                            </div>
+                        </section>
+                        <div className="shop-num" onLoad={() => {
+                            $(window).scroll(function () {
+                                if ($(this).scrollTop() > 500) {
+                                    // .stop:離開之後即可停止
+                                    $('.shop-num').stop().fadeTo('slow', 1);
+                                } else {
+                                    $('.shop-num').stop().fadeOut('fast');
+                                }
+                            });
+                        }}><a href="./shoplist.html"><img src="./image/product/shop-cart.png" alt="" /><p>{shopNum}</p></a></div>
+                    </main>
+                </UserContext.Provider>
                 <Footer />
             </>;
         }
