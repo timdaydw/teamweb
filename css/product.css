@@ -21,6 +21,7 @@ body {
     right: 0;
     top: 7%;
     z-index: 10;
+    display: none;
 }
 
 .banner-content {
@@ -34,11 +35,13 @@ body {
     position: relative;
     z-index: 50;
     color: #B9773E;
+    /* display: none; */
 }
 
 .banner-content-title {
     text-align: center;
     color: #9F4800;
+    display: none;
 }
 
 .banner-content h1,
@@ -55,6 +58,7 @@ body {
     font-weight: 600;
     display: block;
     width: 340px;
+    display: none;
 }
 
 .banner-content small {
@@ -74,6 +78,7 @@ body {
     text-align: center;
     line-height: 57px;
     transition: all 0.35s;
+    display: none;
 }
 
 .banner-content a:hover {
@@ -120,7 +125,7 @@ body {
     }
 
     #banner .right {
-        display: none;
+        opacity: 0;
     }
 
     #banner {

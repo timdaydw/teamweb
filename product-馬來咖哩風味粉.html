@@ -20,7 +20,8 @@
 
     <div id="root"></div>
     <script type="text/babel">
-        const { useState } = React;
+        const { useState, createContext, useContext } = React;
+        const UserContext = createContext({});
         const cardType = [
             {
                 id: 1,
@@ -149,51 +150,36 @@
             }
         }
 
-        function MyApp() {
-            const [shopNum, setShopNum] = useState(shopList);
-            const ContentCard = (props) => {
-                const [num, setNum] = useState(0);
-                const { name, listContent1, listContent2, listContent3, listContent4 } = props;
-                return <>
-                    <div className="topinfo">
-                        <img src={`./產品圖/${name}/1.jpeg`} alt="" className="topinfo-rwd-img" />
-                        <div className="carousel">
-                            <iframe src={`./產品圖/${name}/carousel-${name}.html`} frameBorder="0" scrolling="no"></iframe>
-                        </div>
-                        <div className="buy-card">
-                            <h2 className="buy-card-title">{name}</h2>
-                            <small>06/01~06/30期間內 調理包買一送一</small>
-                            <h1>NT$150</h1>
-                            <p>數量</p>
-                            <h3 className="buy-number">
-                                <img src="./image/product/product-card-hover-sub.png" alt="" onClick={() => {
-                                    // num--;
-                                    if (num > 0) {
-                                        setNum(num - 1);
-                                    }
-                                }} />
-                                <p>{num}</p>
-                                <img src="./image/product/product-card-hover-add.png" alt="" onClick={() => {
-                                    // num+;
-                                    setNum(num + 1);
-                                }} />
-                            </h3>
-                            <a href="./shoplist.html">
-                                <button className="buynow" onClick={() => {
-                                    if (num > 0) {
-                                        setShopNum(shopNum + num);
-                                        if (window.localStorage.getItem(name) != undefined) {
-                                            window.localStorage.setItem(name, Number(window.localStorage.getItem(name)) + num);
-                                        } else {
-                                            window.localStorage.setItem(name, num);
-                                        }
-                                        window.alert(`"${name}"共${num}份，已放入購物車`);
-                                    } else {
-                                        return
-                                    }
-                                }}>立即購買</button>
-                            </a>
-                            <button className="addshop" onClick={() => {
+        const ContentCard = (props) => {
+            const [num, setNum] = useState(0);
+            const { shopNum, setShopNum } = useContext(UserContext);
+            const { name, listContent1, listContent2, listContent3, listContent4 } = props;
+            return <>
+                <div className="topinfo">
+                    <img src={`./產品圖/${name}/1.jpeg`} alt="" className="topinfo-rwd-img" />
+                    <div className="carousel">
+                        <iframe src={`./產品圖/${name}/carousel-${name}.html`} frameBorder="0" scrolling="no"></iframe>
+                    </div>
+                    <div className="buy-card">
+                        <h2 className="buy-card-title">{name}</h2>
+                        <small>06/01~06/30期間內 調理包買一送一</small>
+                        <h1>NT$150</h1>
+                        <p>數量</p>
+                        <h3 className="buy-number">
+                            <img src="./image/product/product-card-hover-sub.png" alt="" onClick={() => {
+                                // num--;
+                                if (num > 0) {
+                                    setNum(num - 1);
+                                }
+                            }} />
+                            <p>{num}</p>
+                            <img src="./image/product/product-card-hover-add.png" alt="" onClick={() => {
+                                // num+;
+                                setNum(num + 1);
+                            }} />
+                        </h3>
+                        <a href="./shoplist.html">
+                            <button className="buynow" onClick={() => {
                                 if (num > 0) {
                                     setShopNum(shopNum + num);
                                     if (window.localStorage.getItem(name) != undefined) {
@@ -205,65 +191,84 @@
                                 } else {
                                     return
                                 }
-                            }}>加入購物車</button>
-                            <h2 className="payinfo">付款與運送</h2>
-                            <h3>宅配滿NT$1,000免運</h3>
-                        </div>
+                            }}>立即購買</button>
+                        </a>
+                        <button className="addshop" onClick={() => {
+                            if (num > 0) {
+                                setShopNum(shopNum + num);
+                                if (window.localStorage.getItem(name) != undefined) {
+                                    window.localStorage.setItem(name, Number(window.localStorage.getItem(name)) + num);
+                                } else {
+                                    window.localStorage.setItem(name, num);
+                                }
+                                window.alert(`"${name}"共${num}份，已放入購物車`);
+                            } else {
+                                return
+                            }
+                        }}>加入購物車</button>
+                        <h2 className="payinfo">付款與運送</h2>
+                        <h3>宅配滿NT$1,000免運</h3>
                     </div>
-                    <div className="content-contenttext">
-                        <h1>商品特色</h1>
-                        <ul>
-                            <li>{listContent1}</li>
-                            <li>{listContent2}</li>
-                            <li>{listContent3}</li>
-                            <li>{listContent4}</li>
-                        </ul>
-                    </div>
-                </>
-            }
+                </div>
+                <div className="content-contenttext">
+                    <h1>商品特色</h1>
+                    <ul>
+                        <li>{listContent1}</li>
+                        <li>{listContent2}</li>
+                        <li>{listContent3}</li>
+                        <li>{listContent4}</li>
+                    </ul>
+                </div>
+            </>
+        }
+
+        function MyApp() {
+            const [shopNum, setShopNum] = useState(shopList);
             return <>
                 <Topbar />
-                <main>
-                    <section id="banner"></section>
-                    <section id="content">
-                        <div className="tag-box">
-                            <ul className="tag">
-                                <li><a href="./product.html#flag" onClick={() => {
-                                    window.localStorage.setItem("type", "all");
-                                }}>所有商品</a></li>
-                                <li><a href="./product.html#flag" onClick={() => {
-                                    window.localStorage.setItem("type", "1");
-                                }}>咖哩調理包</a></li>
-                                <li><a href="./product.html#flag" onClick={() => {
-                                    window.localStorage.setItem("type", "2");
-                                }}>湯品調理包</a></li>
-                                <li><a href="./product.html#flag" onClick={() => {
-                                    window.localStorage.setItem("type", "3");
-                                }}>素食料理</a></li>
-                                <li><a href="./product.html#flag" onClick={() => {
-                                    window.localStorage.setItem("type", "4");
-                                }}>調味粉</a></li>
-                            </ul>
-                        </div>
-                        <div className="content-content">
-                            <ContentCard
-                                name={"馬來咖哩風味粉"}
-                                listContent1={"濃厚香辣：咖哩醬汁融合了豐富的香料和辣椒，帶來濃郁的辛辣風味，令人回味無窮。"}
-                                listContent2={"鮮嫩雞肉：選用新鮮優質的雞肉，口感鮮嫩多汁，與咖哩醬汁完美融合，讓您感受到食材的原汁原味。"}
-                                listContent3={"營養菠菜：加入新鮮的菠菜，為咖哩增添了豐富的營養價值，同時融入了菠菜的清香，使整體口感更加豐富。"}
-                                listContent4={"多種香料：精心挑選並搭配多種香料，如薑、大蒜、洋蔥等，營造出深厚的味道和香氣，讓您享受到正宗的咖哩風味。"}
-                            />
+                <UserContext.Provider value={{ shopNum, setShopNum }}>
+                    <main>
+                        <section id="banner"></section>
+                        <section id="content">
+                            <div className="tag-box">
+                                <ul className="tag">
+                                    <li><a href="./product.html#flag" onClick={() => {
+                                        window.localStorage.setItem("type", "all");
+                                    }}>所有商品</a></li>
+                                    <li><a href="./product.html#flag" onClick={() => {
+                                        window.localStorage.setItem("type", "1");
+                                    }}>咖哩調理包</a></li>
+                                    <li><a href="./product.html#flag" onClick={() => {
+                                        window.localStorage.setItem("type", "2");
+                                    }}>湯品調理包</a></li>
+                                    <li><a href="./product.html#flag" onClick={() => {
+                                        window.localStorage.setItem("type", "3");
+                                    }}>素食料理</a></li>
+                                    <li><a href="./product.html#flag" onClick={() => {
+                                        window.localStorage.setItem("type", "4");
+                                    }}>調味粉</a></li>
+                                </ul>
+                            </div>
+                            <div className="content-content">
+                                <ContentCard
+                                    name={"馬來咖哩風味粉"}
+                                    listContent1={"濃厚香辣：咖哩醬汁融合了豐富的香料和辣椒，帶來濃郁的辛辣風味，令人回味無窮。"}
+                                    listContent2={"鮮嫩雞肉：選用新鮮優質的雞肉，口感鮮嫩多汁，與咖哩醬汁完美融合，讓您感受到食材的原汁原味。"}
+                                    listContent3={"營養菠菜：加入新鮮的菠菜，為咖哩增添了豐富的營養價值，同時融入了菠菜的清香，使整體口感更加豐富。"}
+                                    listContent4={"多種香料：精心挑選並搭配多種香料，如薑、大蒜、洋蔥等，營造出深厚的味道和香氣，讓您享受到正宗的咖哩風味。"}
+                                />
 
-                        </div>
-                    </section>
-                    <Recommend
-                        name1={"起司奶油咖哩(蛋奶素)"}
-                        name2={"辣味菠菜雞肉咖哩"}
-                        name3={"叻沙海鮮風味湯"}
-                        name4={"辣椒大豆咖哩(素食)"}
-                    />
-                    <div className="shop-num"><a href="./shoplist.html"><img src="./image/product/shop-cart.png" alt="" /><p>{shopNum}</p></a></div>
-                </main>
+                            </div>
+                        </section>
+                        <Recommend
+                            name1={"起司奶油咖哩(蛋奶素)"}
+                            name2={"辣味菠菜雞肉咖哩"}
+                            name3={"叻沙海鮮風味湯"}
+                            name4={"辣椒大豆咖哩(素食)"}
+                        />
+                        <div className="shop-num"><a href="./shoplist.html"><img src="./image/product/shop-cart.png" alt="" /><p>{shopNum}</p></a></div>
+                    </main>
+                </UserContext.Provider>
                 <Footer />
             </>;
         }

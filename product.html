@@ -231,6 +231,10 @@
                         <div className="topbar-h"></div>
                         <section id="banner" onLoad={() => {
                             $(document).ready(function () {
+                                $(".banner-content p").fadeIn(3000);
+                                $(".banner-content-title").fadeIn(3000);
+                                $(".banner-content a").fadeIn(4000);
+                                $(".right").fadeIn();
                                 $(".banner-content-img1").animate({ right: '22%' }, "slow");
                                 $(".banner-content-img2").animate({ right: '31%' }, "slow");
                                 $(".banner-content-img3").animate({ right: '33%' }, "slow");
