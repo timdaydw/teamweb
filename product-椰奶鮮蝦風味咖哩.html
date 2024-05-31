@@ -90,8 +90,8 @@
         const Recommend = (props) => {
             const { name1, name2, name3, name4 } = props;
             return <>
-                <div className="content-recommend">
-                    <h1 className="content-text-explain-title">推薦商品</h1>
+                <div className="content-recommend notosans">
+                    <h1 className="content-text-explain-title ">推薦商品</h1>
                     <div>
                         <div>
                             <a href={`./product-${name1}.html`}>
@@ -160,12 +160,12 @@
                         <div className="carousel">
                             <iframe src={`./產品圖/${name}/carousel-${name}.html`} frameBorder="0" scrolling="no"></iframe>
                         </div>
-                        <div className="buy-card">
-                            <h2 className="buy-card-title">{name}</h2>
-                            <small>06/01~06/30期間內 調理包買一送一</small>
-                            <h1>NT$150</h1>
+                        <div className="buy-card notosans">
+                            <h2 className="buy-card-title notosans">{name}</h2>
+                            <small className="notosans">06/01~06/30期間內 調理包買一送一</small>
+                            <h1 className="notosans">NT$150</h1>
                             <p>數量</p>
-                            <h3 className="buy-number">
+                            <h3 className="buy-number notosans">
                                 <img src="./image/product/product-card-hover-sub.png" alt="" onClick={() => {
                                     // num--;
                                     if (num > 0) {
@@ -212,7 +212,7 @@
                     </div>
                     <div className="content-contenttext">
                         <h1>商品特色</h1>
-                        <ul>
+                        <ul className="notosans">
                             <li>{listContent1}</li>
                             <li>{listContent2}</li>
                             <li>{listContent3}</li>

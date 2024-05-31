@@ -176,7 +176,7 @@
                 const [num, setNum] = useState(0);
                 const { title } = props;
                 return <>
-                    <div className="product-content-card">
+                    <div className="product-content-card notosans">
                         <a href={`./product-${title}.html`}><figure><img src={`./image/product/product-content-img/${title}.png`} alt="" /></figure>
                             <p className="product-content-card-title">{title}</p>
                             <div className="price">
@@ -233,10 +233,10 @@
                     }}>
                         <div className="banner-content">
                             <div className="banner-content-title">
-                                <h1>瑪莎拉雞肉咖哩</h1>
-                                <small>Chicken Masala Curry</small>
+                                <h1 className="notosans">瑪莎拉雞肉咖哩</h1>
+                                <small className="elsie-swash-caps">Chicken Masala Curry</small>
                             </div>
-                            <p>品嚐正宗印度風味的瑪莎拉雞肉咖哩！每一口都充滿了深邃的香料風味，搭配著椰奶的濃郁口感，絕對是您晚餐時光的完美選擇。</p>
+                            <p className="notosans">品嚐正宗印度風味的瑪莎拉雞肉咖哩！每一口都充滿了深邃的香料風味，搭配著椰奶的濃郁口感，絕對是您晚餐時光的完美選擇。</p>
                             <a href="./product-瑪莎拉香料雞肉咖哩.html">前往購買</a>
                         </div>
                         <img src="./image/product/product-banner-right-img-2.png" alt="" className="right" />
@@ -254,9 +254,9 @@
                             <img src="./image/product/product-masalaintro-img3.png" alt="" />
                         </div>
                         <div className="masalaintro-content">
-                            <h1>什麼是瑪莎拉香料？</h1>
-                            <small>What is masala spice?</small>
-                            <p>
+                            <h1 className="notosans">什麼是瑪莎拉香料？</h1>
+                            <small className="elsie-swash-caps">What is masala spice?</small>
+                            <p className="notosans">
                                 瑪莎拉香料起源於印度南部的瑪莎拉地區，擁有悠久的香料製作傳統和獨特的地理環境。
                                 <br /><br />
                                 我們精心挑選的瑪莎拉香料混合了多種來自印度及其他地區的香料，包括孜然、肉桂、丁香、芫荽等，每一種都散發著獨特的香氣和風味。這些香料的組合給予了瑪莎拉香料濃郁而迷人的味道。
@@ -266,10 +266,10 @@
                     </section>
                     <section id="menu-tag">
                         <div id="flag"></div>
-                        <div className="tag-box">
+                        <div className="tag-box ">
                             <img src="./image/product/menu-img.png" alt="" />
-                            <h1>MENU</h1>
-                            <ul className="tag">
+                            <h1 className="elsie-swash-caps">Menu</h1>
+                            <ul className="tag notosans">
                                 <li><button onClick={() => {
                                     setProducts(cardType);
                                 }}>所有商品</button></li>
@@ -320,8 +320,8 @@
                         }
                     </section>
                     <section id="comment">
-                        <h1>顧客好評</h1>
-                        <div className="comment-card-box">
+                        <h1 className="notosans">顧客好評</h1>
+                        <div className="comment-card-box notosans">
                             {
                                 comment.map((comment) => {
                                     return <CommentCard key={comment.id} name={comment.name} content={comment.content} />
