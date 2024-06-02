@@ -48,13 +48,14 @@
                                 <input className="borderradius5px" type="email" id="email" />
                             </div>
                         </form>
+                        <a href="./member-log.html">
                         <button className="borderradius5px" onClick={()=>{
                             if (document.getElementById("email").value == "") {
                                 window.alert("請輸入信箱");
                             }else {
                                 window.alert("已將密碼寄到您的信箱中");
                             }
-                        }}>送出</button>
+                        }}>送出</button></a>
                     </section>
                 </main>
                 <Footer />

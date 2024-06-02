@@ -33,13 +33,17 @@ main{
     margin-bottom: 56px;
 }
 
+.title h1:first-child{
+    color: #09302B;
+}
+
 #member-info .separator {
     font-size: 3rem;
     font-weight: 900;
 }
 
 .none a {
-    color: #B3B3B3;
+    color: #AE5422;
 }
 
 #member-info div {
