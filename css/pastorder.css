@@ -13,9 +13,9 @@ button {
     padding-top: 135px;
     padding-bottom: 48px;
     background-color: #FFFAF8;
-    background-image: url(./image/member/member-bk.png);
+    /* background-image: url(./image/member/member-bk.png);
     background-position:90% 90%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 
 .title h1 {
