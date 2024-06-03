@@ -267,6 +267,7 @@ body {
     flex-direction: column;
     align-items: center;
     color: #052F2A;
+    margin-bottom: 75px;
 }
 .news-text-content img {
     width: 100%;
