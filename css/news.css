@@ -221,6 +221,7 @@ body {
 /* 小型設備(手機) */
 @media (max-width:640px) {
     .news-card ,.news-card2 {
+        height: 120px;
         width: 90%;
         margin: auto;
     }
