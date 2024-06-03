@@ -152,6 +152,11 @@ main,button {
     margin-top: 22px;
 }
 
+.total-box button:hover{
+    background-color: #3B4A1F;
+    color: white;
+}
+
 
 /* RWD斷點 */
 /* 大型設備(桌機) */

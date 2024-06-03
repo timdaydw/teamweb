@@ -61,6 +61,11 @@ main,button {
     margin-left: 96px;
 }
 
+.register-btn:hover{
+    background-color: #d59c41;
+    
+}
+
 
 
 /* RWD斷點 */

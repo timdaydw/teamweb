@@ -76,6 +76,9 @@ main{
     border: none;
 }
 
+#member-info button:hover{
+    background-color: #3B4A1F;
+}
 
 /* RWD斷點 */
 /* 大型設備(桌機) */

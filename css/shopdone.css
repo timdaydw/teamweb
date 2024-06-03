@@ -43,6 +43,10 @@ main,button {
     font-size: 1rem;
 }
 
+.shopdone-box .btn button:hover{
+    background-color: #3B4A1F;
+}
+
 /* 小型設備(手機) */
 @media (max-width:640px) {
     .shopdone-box .btn button {

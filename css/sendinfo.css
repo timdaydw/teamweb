@@ -97,6 +97,10 @@ label ,fieldset p{
     margin-left: 156px;
 }
 
+.sendinfo-content button:hover{
+    background-color: #3B4A1F;
+}
+
 .sendinfo-content fieldset{
     /* width: 700px; */
     margin-bottom: 24px;

@@ -184,6 +184,10 @@ main,button {
     margin-top: 22px;
 }
 
+.total-box a button:hover{
+    background-color: #3B4A1F;
+}
+
 @media (min-width:821px) {}
 
 /* 中型設備(平板) */

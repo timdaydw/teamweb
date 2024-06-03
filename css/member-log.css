@@ -72,6 +72,11 @@ main,button {
     margin-bottom: 24px;
 }
 
+.log-box button:hover{
+    background-color: #3B4A1F;
+    color: white;
+}
+
 .log-box>a{
     color: var(--d59c41);
     margin-bottom: 72px;
@@ -115,8 +120,10 @@ main,button {
     border: none;
     font-size: 1.5rem;
     font-weight: 600;
+}
 
-    
+.forgetacc button:hover{
+    background-color: #D59C41;
 }
 
 

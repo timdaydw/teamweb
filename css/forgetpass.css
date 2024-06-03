@@ -60,6 +60,10 @@ main{
     font-weight: 600;
 }
 
+#resetpass button:hover{
+    background-color: #3B4A1F;
+}
+
 /* RWD斷點 */
 /* 大型設備(桌機) */
 @media (min-width:821px) {}

@@ -85,6 +85,11 @@ button {
     font-size: 1rem;
 }
 
+.row button:hover{
+    background-color: #3B4A1F;
+    color: white;
+}
+
 .w346 {
     width: 346px;
 }

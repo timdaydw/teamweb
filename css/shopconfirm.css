@@ -210,6 +210,10 @@ main,button {
     margin-left: 107px;
 }
 
+.btn button:hover{
+    background-color: #3B4A1F;
+}
+
 @media (min-width:821px) {}
 
 /* 中型設備(平板) */
