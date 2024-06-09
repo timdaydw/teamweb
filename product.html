@@ -174,10 +174,10 @@
         const Card = (props) => {
             const { shopNum, setShopNum } = useContext(UserContext);
             const [num, setNum] = useState(0);
-            const { title } = props;
+            const { title,id } = props;
             return <>
                 <div className="product-content-card notosans">
-                    <a href={`./product-${title}.html`}><figure><img src={`./image/product/product-content-img/${title}.png`} alt="" /></figure>
+                    <a href={`./product-${id}.html`}><figure><img src={`./image/product/product-content-img/${title}.png`} alt="" /></figure>
                         <p className="product-content-card-title">{title}</p>
                         <div className="price">
                             <small>NT$</small><h2>150</h2>
