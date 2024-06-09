@@ -17,7 +17,6 @@
 </head>
 
 <body>
-
     <div id="root"></div>
     <script type="text/babel">
         const { useState } = React;
@@ -97,19 +96,25 @@
             </>
         }
         const vehiclenumber = window.localStorage.getItem("vehiclenumber");
-        const CheckBill = ()=>{
+        const CheckBill = () => {
             if (window.localStorage.getItem("bill") == "雲端載具") {
                 return <div><h1>載具編號</h1><p>{vehiclenumber}</p></div>
-            }else {
+            } else {
                 return
             }
         }
         const OrderRow = (props) => {
             const { title, num } = props;
+            let id = 0;
+            for (let i = 0; i < cardType.length; i++) {
+                if(title == cardType[i].title){
+                    id = cardType[i].id;
+                }
+            }
             return <>
                 <div className="order-row borderradius5px">
                     <div className="w359">
-                        <img src={`./產品圖/${title}/1.jpeg`} alt="" />
+                        <img src={`./product-image/product-${id}/1.jpeg`} alt="" />
                         <div className="h1">
                             <h1>{title}</h1>
                         </div>
@@ -123,19 +128,19 @@
                             </p>
                         </div>
                     </div>
-                    <div className="w208"><p><del>NT $150</del><br/>NT $75</p></div>
+                    <div className="w208"><p><del>NT $150</del><br />NT $75</p></div>
                     <div className="w181 amount"><p>{num}</p></div>
-                    <div className="w325 total"><p><del>NT ${num * 150}</del><br/>NT$ {num * 75}</p></div>
+                    <div className="w325 total"><p><del>NT ${num * 150}</del><br />NT$ {num * 75}</p></div>
                 </div>
             </>
         }
         function MyApp() {
             const name = window.localStorage.getItem("name");
-            const email=window.localStorage.getItem("email");
-            const tel= window.localStorage.getItem("tel");
-            const address= window.localStorage.getItem("address");
-            const pay= window.localStorage.getItem("pay");
-            const bill= window.localStorage.getItem("bill");
+            const email = window.localStorage.getItem("email");
+            const tel = window.localStorage.getItem("tel");
+            const address = window.localStorage.getItem("address");
+            const pay = window.localStorage.getItem("pay");
+            const bill = window.localStorage.getItem("bill");
             return <>
                 <Topbar />
                 <main>
@@ -172,7 +177,7 @@
                                 </div>
                                 <div className="borderradius5px">
                                     <div className="total-l"><h2>合計 :</h2></div>
-                                    <div className="total-r"><p>NT$ {totalPrice+100}</p></div>
+                                    <div className="total-r"><p>NT$ {totalPrice + 100}</p></div>
                                 </div>
                             </div>
                             <div className="memberinfo">
@@ -182,11 +187,11 @@
                                 <div><h1>收貨地址</h1><p>{address}</p></div>
                                 <div><h1>付款方式</h1><p>{pay}</p></div>
                                 <div><h1>開立發票</h1><p>{bill}</p></div>
-                                <CheckBill/>
+                                <CheckBill />
                             </div>
                             <div className="btn">
                                 <a href="./sendinfo.html"><button className="borderradius5px">回到上一頁</button></a>
-                                <a href="./shopdone.html"><button className="borderradius5px" onClick={()=>{
+                                <a href="./shopdone.html"><button className="borderradius5px" onClick={() => {
                                     cardType.map((cardType) => {
                                         window.localStorage.removeItem(cardType.title);
                                     })

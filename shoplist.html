@@ -98,11 +98,17 @@
             </>
         }
         const OrderRow = (props) => {
-            const { title, num } = props;
+            const { title, num} = props;
+            let id = 0;
+            for (let i = 0; i < cardType.length; i++) {
+                if(title == cardType[i].title){
+                    id = cardType[i].id;
+                }
+            }
             return <>
                 <div className="order-row borderradius5px">
                     <div className="w359">
-                        <img src={`./產品圖/${title}/1.jpeg`} alt="" />
+                        <img src={`./product-image/product-${id}/1.jpeg`} alt="" />
                         <div className="h1">
                             <h1>{title}</h1>
                         </div>
