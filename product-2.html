@@ -153,12 +153,12 @@
         const ContentCard = (props) => {
             const [num, setNum] = useState(0);
             const { shopNum, setShopNum } = useContext(UserContext);
-            const { name, listContent1, listContent2, listContent3, listContent4 } = props;
+            const { name, listContent1, listContent2, listContent3, listContent4,id } = props;
             return <>
                 <div className="topinfo">
-                    <img src={`./product-image/${name}/1.jpeg`} alt="" className="topinfo-rwd-img" />
+                    <img src={`./product-image/product-${id}/1.jpeg`} alt="" className="topinfo-rwd-img" />
                     <div className="carousel">
-                        <iframe src={`./product-image/${name}/carousel-${name}.html`} frameBorder="0" scrolling="no"></iframe>
+                        <iframe src={`./product-image/product-${id}/product-${id}.html`} frameBorder="0" scrolling="no"></iframe>
                     </div>
                     <div className="buy-card">
                         <h2 className="buy-card-title">{name}</h2>
@@ -252,6 +252,7 @@
                             <div className="content-content">
                                 <ContentCard
                                     name={"瑪莎拉香料雞肉咖哩"}
+                                    id={2}
                                     listContent1={"正宗印度風味：我們的瑪莎拉香料雞肉咖哩是印度風味的絕佳代表，精選了最具代表性的瑪莎拉香料，呈現出正宗的印度咖哩風味。"}
                                     listContent2={"瑪莎拉香料：咖哩醬汁中融入了肉桂、丁香、孜然等瑪莎拉特有的香料，帶來獨特的香氣和深厚的口感，讓您彷彿置身於印度的風情中。"}
                                     listContent3={"鮮嫩雞肉：我們選用新鮮優質的雞肉，與瑪莎拉咖哩醬汁完美融合，帶來滿滿的雞肉香氣，讓您品味到最道地的印度美食。"}

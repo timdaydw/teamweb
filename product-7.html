@@ -153,12 +153,12 @@
         const ContentCard = (props) => {
             const [num, setNum] = useState(0);
             const { shopNum, setShopNum } = useContext(UserContext);
-            const { name, listContent1, listContent2, listContent3, listContent4 } = props;
+            const { name, listContent1, listContent2, listContent3, listContent4,id } = props;
             return <>
                 <div className="topinfo">
-                    <img src={`./product-image/${name}/1.jpeg`} alt="" className="topinfo-rwd-img" />
+                    <img src={`./product-image/product-${id}/1.jpeg`} alt="" className="topinfo-rwd-img" />
                     <div className="carousel">
-                        <iframe src={`./product-image/${name}/carousel-${name}.html`} frameBorder="0" scrolling="no"></iframe>
+                        <iframe src={`./product-image/product-${id}/product-${id}.html`} frameBorder="0" scrolling="no"></iframe>
                     </div>
                     <div className="buy-card">
                         <h2 className="buy-card-title">{name}</h2>
@@ -252,6 +252,7 @@
                             <div className="content-content">
                                 <ContentCard
                                     name={"綠咖哩風味粉"}
+                                    id={7}
                                     listContent1={"濃厚香辣：咖哩醬汁融合了豐富的香料和辣椒，帶來濃郁的辛辣風味，令人回味無窮。"}
                                     listContent2={"鮮嫩雞肉：選用新鮮優質的雞肉，口感鮮嫩多汁，與咖哩醬汁完美融合，讓您感受到食材的原汁原味。"}
                                     listContent3={"營養菠菜：加入新鮮的菠菜，為咖哩增添了豐富的營養價值，同時融入了菠菜的清香，使整體口感更加豐富。"}

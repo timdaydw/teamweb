@@ -153,12 +153,12 @@
         const ContentCard = (props) => {
             const [num, setNum] = useState(0);
             const { shopNum, setShopNum } = useContext(UserContext);
-            const { name, listContent1, listContent2, listContent3, listContent4 } = props;
+            const { name, listContent1, listContent2, listContent3, listContent4,id } = props;
             return <>
                 <div className="topinfo">
-                    <img src={`./product-image/${name}/1.jpeg`} alt="" className="topinfo-rwd-img" />
+                    <img src={`./product-image/product-${id}/1.jpeg`} alt="" className="topinfo-rwd-img" />
                     <div className="carousel">
-                        <iframe src={`./product-image/${name}/carousel-${name}.html`} frameBorder="0" scrolling="no"></iframe>
+                        <iframe src={`./product-image/product-${id}/product-${id}.html`} frameBorder="0" scrolling="no"></iframe>
                     </div>
                     <div className="buy-card">
                         <h2 className="buy-card-title">{name}</h2>
@@ -252,6 +252,7 @@
                             <div className="content-content">
                                 <ContentCard
                                     name={"濃郁奶油雞肉咖哩"}
+                                    id={6}
                                     listContent1={"純素友善：完全不含蛋和奶製品，適合素食者和對蛋奶產品敏感的人食用。"}
                                     listContent2={"豐富口感：獨特的配方結合了濃郁的起司風味和奶油質感，加上精選的咖哩香料，為您帶來滿滿的口感和豐富的味道。"}
                                     listContent3={"健康美味：精心挑選的天然食材，不含人工添加劑和防腐劑，讓您可以安心享受美味同時保持健康。"}

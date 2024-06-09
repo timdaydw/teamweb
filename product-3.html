@@ -153,12 +153,12 @@
         const ContentCard = (props) => {
             const [num, setNum] = useState(0);
             const { shopNum, setShopNum } = useContext(UserContext);
-            const { name, listContent1, listContent2, listContent3, listContent4 } = props;
+            const { name, listContent1, listContent2, listContent3, listContent4,id } = props;
             return <>
                 <div className="topinfo">
-                    <img src={`./product-image/${name}/1.jpeg`} alt="" className="topinfo-rwd-img" />
+                    <img src={`./product-image/product-${id}/1.jpeg`} alt="" className="topinfo-rwd-img" />
                     <div className="carousel">
-                        <iframe src={`./product-image/${name}/carousel-${name}.html`} frameBorder="0" scrolling="no"></iframe>
+                        <iframe src={`./product-image/product-${id}/product-${id}.html`} frameBorder="0" scrolling="no"></iframe>
                     </div>
                     <div className="buy-card">
                         <h2 className="buy-card-title">{name}</h2>
@@ -252,6 +252,7 @@
                             <div className="content-content">
                                 <ContentCard
                                     name={"椰奶鮮蝦風味咖哩"}
+                                    id={3}
                                     listContent1={"椰奶濃郁：咖哩醬汁中融入了椰奶，賦予了咖哩濃郁的椰奶香氣和滑順的口感，令人愛不釋手。"}
                                     listContent2={"鮮嫩蝦肉：選用新鮮優質的大蝦，口感鮮嫩彈牙，與椰奶咖哩醬汁完美融合，帶來滿滿的海鮮風味。"}
                                     listContent3={"香料搭配：精心搭配了各種香料，如咖哩粉、薑、蒜等，讓咖哩醬汁更加香濃，風味更加豐富。"}
