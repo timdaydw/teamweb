@@ -174,7 +174,7 @@
         const Card = (props) => {
             const { shopNum, setShopNum } = useContext(UserContext);
             const [num, setNum] = useState(0);
-            const { title,id } = props;
+            const { title, id } = props;
             return <>
                 <div className="product-content-card notosans">
                     <a href={`./product-${id}.html`}><figure><img src={`./image/product/product-content-img/${id}.png`} alt="" /></figure>
@@ -325,7 +325,7 @@
                         <section id="product-content">
                             {
                                 products.map((products) => {
-                                    return <Card key={products.id} title={products.title} id={products.id}/>
+                                    return <Card key={products.id} title={products.title} id={products.id} />
                                 })
                             }
                         </section>
