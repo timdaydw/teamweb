@@ -599,18 +599,21 @@ del {
         margin-left: 10%;
     }
 }
-@media (max-width:1110px){
+@media (max-width:1150px){
     .brand-box {
         padding-left: 35px;
         margin-left: 0;
     }
-}
-@media (max-width:960px) {
+/* }
+@media (max-width:960px) { */
     .leaf-right-bg {
         display: none;
     }
 
     .brand-img {
+        display: none;
+    }
+    .light-bg {
         display: none;
     }
 }
@@ -635,8 +638,7 @@ del {
         margin: 8px;
     }
 
-    .star,
-    .light-bg {
+    .star {
         display: none;
     }
 }
