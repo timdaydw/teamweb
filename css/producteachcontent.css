@@ -387,7 +387,7 @@ body {
     height: 426px;
 }
 
-@media (max-width:1050px) {
+@media (max-width:1160px) {
     .tag {
         display: none;
     }

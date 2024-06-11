@@ -640,7 +640,11 @@ main {
 }
 
 /* 小型設備(手機) */
-@media (max-width:640px) {}
+@media (max-width:640px) {
+    .comment-card div{
+        padding: 0 2%;
+    }
+}
 
 
 /* RWD斷點 */
