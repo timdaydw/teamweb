@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Product</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/product.css">
+    <link rel="icon" href="./favicon.ico">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/babel">
+        (async()=>{
+
+
+        const { useState, createContext, useContext } = React;
+        const UserContext = createContext({});
+
+        // const cardType = [
+        //     {
+        //         id: 1,
+        //         title: '起司奶油咖哩(蛋奶素)',
+        //         type1: 1,
+        //         type3: 1,
+        //     },
+        //     {
+        //         id: 2,
+        //         title: '瑪莎拉香料雞肉咖哩',
+        //         type1: 1,
+        //     },
+        //     {
+        //         id: 3,
+        //         title: '椰奶鮮蝦風味咖哩',
+        //         type1: 1,
+        //     },
+        //     {
+        //         id: 4,
+        //         title: '雞肉野菜湯咖哩',
+        //         type2: 1,
+        //     },
+        //     {
+        //         id: 5,
+        //         title: '叻沙海鮮風味湯',
+        //         type2: 1,
+        //     },
+        //     {
+        //         id: 6,
+        //         title: '濃郁奶油雞肉咖哩',
+        //         type1: 1,
+        //     },
+        //     {
+        //         id: 7,
+        //         title: '綠咖哩風味粉',
+        //         type4: 1
+        //     },
+        //     {
+        //         id: 8,
+        //         title: '馬來咖哩風味粉',
+        //         type4: 1
+        //     },
+        //     {
+        //         id: 9,
+        //         title: '辣椒大豆咖哩(素食)',
+        //         type1: 1,
+        //         type3: 1,
+        //     },
+        //     {
+        //         id: 10,
+        //         title: '印度咖哩風味粉',
+        //         type4: 1
+        //     },
+
+        //     {
+        //         id: 11,
+        //         title: '日式咖哩風味粉',
+        //         type4: 1
+        //     },
+        //     {
+        //         id: 12,
+        //         title: '辣味菠菜雞肉咖哩',
+        //         type1: 1,
+        //     },
+        // ]
+
+        const data = await axios.get('./card-type.json');
+        const cardType = data.data.cardType;
+
+        let shopList = 0;
+        for (let i = 0; i < cardType.length; i++) {
+            if (window.localStorage.getItem(cardType[i].title) != undefined) {
+                shopList = shopList + Number(window.localStorage.getItem(cardType[i].title));
+            }
+        }
+
+        const Topbar = () => {
+            return <>
+                <div className="topbar">
+                    <iframe src="./topbar.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+
+        const Footer = () => {
+            return <>
+                <div className="footer">
+                    <iframe src="./footer.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+
+        const comment = [
+            {
+                id: 1,
+                name: 'Brian Wu',
+                content: '瑪莎拉雞肉調理包讓我對印度菜的魅力有了全新的理解！它的香料混合得恰到好處，不會太辣但又帶有一絲辛香，起司奶油咖哩也很特別，讓人難以忘懷。'
+            },
+            {
+                id: 2,
+                name: 'Chang',
+                content: '這是我在台灣吃過最好吃的印度咖哩！它的風味豐富，而且份量十足，非常適合與朋友一起分享。我已經向我的朋友們推薦了這家，下次還會購買！'
+            }, {
+                id: 3,
+                name: 'Jessica Lin',
+                content: '食用上很方便！只需要加熱，雞肉軟嫩多汁，搭配著椰奶的濃郁口感，簡直就是完美的組合。非常推薦給上班族，真的超級方便！下次想試試看辣味菠菜咖哩。'
+            },
+
+        ]
+        const CommentCard = (props) => {
+            const { name, content } = props;
+            return <>
+                <div className="comment-card">
+                    <div>
+                        <h2>{name}</h2>
+                        <img src="./image/product/product-comment-fivestar.png" alt="" />
+                    </div>
+                    <p>{content}</p>
+                </div>
+            </>
+        }
+
+        let choiceTag = [];
+        if (window.localStorage.getItem("type") == undefined || window.localStorage.getItem("type") == "all") {
+            choiceTag = cardType;
+        } else if (window.localStorage.getItem("type") == "1") {
+            for (let i = 0; i < cardType.length; i++) {
+                if (cardType[i].type1 == 1) {
+                    choiceTag.push(cardType[i]);
+                }
+            }
+        } else if (window.localStorage.getItem("type") == "2") {
+            for (let i = 0; i < cardType.length; i++) {
+                if (cardType[i].type2 == 1) {
+                    choiceTag.push(cardType[i]);
+                }
+            }
+        } else if (window.localStorage.getItem("type") == "3") {
+            for (let i = 0; i < cardType.length; i++) {
+                if (cardType[i].type3 == 1) {
+                    choiceTag.push(cardType[i]);
+                }
+            }
+        } else if (window.localStorage.getItem("type") == "4") {
+            for (let i = 0; i < cardType.length; i++) {
+                if (cardType[i].type4 == 1) {
+                    choiceTag.push(cardType[i]);
+                }
+            }
+        }
+
+        const Card = (props) => {
+            const { shopNum, setShopNum } = useContext(UserContext);
+            const [num, setNum] = useState(0);
+            const { title,id } = props;
+            return <>
+                <div className="product-content-card notosans">
+                    <a href={`./product-${id}.html`}><figure><img src={`./image/product/product-content-img/${id}.png`} alt="" /></figure>
+                        <p className="product-content-card-title">{title}</p>
+                        <div className="price">
+                            <small>NT$</small><h2>150</h2>
+                        </div>
+                        <small className="weight">200g</small></a>
+                    <div className="card-buy">
+                        <form action="" name="shop" id="shop" title="加入購物車" method="post" className="card-buy-form">
+                            <div className="card-hover-number">
+                                <img src="./image/product/product-card-hover-sub.png" alt="" onClick={() => {
+                                    // num--;
+                                    if (num > 0) {
+                                        setNum(num - 1);
+                                    }
+                                }} />
+                                <p>{num}</p>
+                                <img src="./image/product/product-card-hover-add.png" alt="" onClick={() => {
+                                    // num+;
+                                    setNum(num + 1);
+                                }} />
+                            </div>
+                            <a href="##" onClick={() => {
+                                if (num > 0) {
+                                    setShopNum(shopNum + num);
+
+                                    if (window.localStorage.getItem(title) != undefined) {
+                                        window.localStorage.setItem(title, Number(window.localStorage.getItem(title)) + num);
+                                    } else {
+                                        window.localStorage.setItem(title, num);
+                                    }
+                                    window.alert(`"${title}"共${num}份，已放入購物車`);
+                                } else {
+                                    return
+                                }
+                                // console.log(shopList)
+                            }}><img src="./image/product/shop-cart.png" alt="" className="shopAdd" /></a>
+                        </form>
+                    </div>
+                </div>
+            </>
+        }
+
+        window.localStorage.setItem("type", "all");
+        function MyApp() {
+            const [shopNum, setShopNum] = useState(shopList);
+
+            const [products, setProducts] = useState(choiceTag);
+            return <>
+                <Topbar />
+                <UserContext.Provider value={{ shopNum, setShopNum }}>
+                    <main>
+                        <div className="topbar-h"></div>
+                        <section id="banner" onLoad={() => {
+                            $(document).ready(function () {
+                                $(".banner-content p").fadeIn(3000);
+                                $(".banner-content-title").fadeIn(3000);
+                                $(".banner-content a").fadeIn(4000);
+                                $(".right").fadeIn();
+                                $(".banner-content-img1").animate({ right: '22%' }, "slow");
+                                $(".banner-content-img2").animate({ right: '31%' }, "slow");
+                                $(".banner-content-img3").animate({ right: '33%' }, "slow");
+                                $(".banner-content-img4").animate({ right: '27%' }, "slow");
+                            });
+                        }}>
+                            <div className="banner-content">
+                                <div className="banner-content-title">
+                                    <h1 className="notosans">瑪莎拉雞肉咖哩</h1>
+                                    <small className="elsie-swash-caps">Chicken Masala Curry</small>
+                                </div>
+                                <p className="notosans">品嚐正宗印度風味的瑪莎拉雞肉咖哩！每一口都充滿了深邃的香料風味，搭配著椰奶的濃郁口感，絕對是您晚餐時光的完美選擇。</p>
+                                <a href="./product-2.html">前往購買</a>
+                            </div>
+                            <img src="./image/product/product-banner-right-img-2.png" alt="" className="right" />
+                            <img src="./image/product/product-banner-masalaspice-img.png" alt="" className="banner-content-img1" />
+                            <img src="./image/product/product-banner-coconutmilk-img.png" alt="" className="banner-content-img2" />
+                            <img src="./image/product/product-banner-freshchicken-img.png" alt="" className="banner-content-img3" />
+                            <img src="./image/product/product-banner-freshtomatoes-img.png" alt="" className="banner-content-img4" />
+                        </section>
+                        <section id="masalaintro">
+                            <div className="masalaintro-img-box">
+                                <div className="masalaintro-img-box-left">
+                                    <img src="./image/product/product-masalaintro-img1.png" alt="" />
+                                    <img src="./image/product/product-masalaintro-img2.png" alt="" />
+                                </div>
+                                <img src="./image/product/product-masalaintro-img3.png" alt="" />
+                            </div>
+                            <div className="masalaintro-content">
+                                <h1 className="notosans">什麼是瑪莎拉香料？</h1>
+                                <small className="elsie-swash-caps">What is masala spice?</small>
+                                <p className="notosans">
+                                    瑪莎拉香料起源於印度南部的瑪莎拉地區，擁有悠久的香料製作傳統和獨特的地理環境。
+                                    <br /><br />
+                                    我們精心挑選的瑪莎拉香料混合了多種來自印度及其他地區的香料，包括孜然、肉桂、丁香、芫荽等，每一種都散發著獨特的香氣和風味。這些香料的組合給予了瑪莎拉香料濃郁而迷人的味道。
+                                </p>
+                            </div>
+                            <img src="./image/product/masalaintro-content-bg.png" alt="" />
+                        </section>
+                        <section id="menu-tag">
+                            <div id="flag"></div>
+                            <div className="tag-box ">
+                                <img src="./image/product/menu-img.png" alt="" />
+                                <h1 className="elsie-swash-caps">Menu</h1>
+                                <ul className="tag notosans">
+                                    <li><button onClick={() => {
+                                        setProducts(cardType);
+                                    }}>所有商品</button></li>
+                                    <li><button onClick={() => {
+                                        const temp = []
+                                        for (let i = 0; i < cardType.length; i++) {
+                                            if (cardType[i].type1 == 1) {
+                                                temp.push(cardType[i]);
+                                            }
+                                        }
+                                        setProducts(temp);
+                                    }}>咖哩調理包</button></li>
+                                    <li><button onClick={() => {
+                                        const temp = []
+                                        for (let i = 0; i < cardType.length; i++) {
+                                            if (cardType[i].type2 == 1) {
+                                                temp.push(cardType[i]);
+                                            }
+                                        }
+                                        setProducts(temp);
+                                    }}>湯品調理包</button></li>
+                                    <li><button onClick={() => {
+                                        const temp = []
+                                        for (let i = 0; i < cardType.length; i++) {
+                                            if (cardType[i].type3 == 1) {
+                                                temp.push(cardType[i]);
+                                            }
+                                        }
+                                        setProducts(temp);
+                                    }}>素食料理</button></li>
+                                    <li><button onClick={() => {
+                                        const temp = []
+                                        for (let i = 0; i < cardType.length; i++) {
+                                            if (cardType[i].type4 == 1) {
+                                                temp.push(cardType[i]);
+                                            }
+                                        }
+                                        setProducts(temp);
+                                    }}>調味粉</button></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section id="product-content">
+                            {
+                                products.map((products) => {
+                                    return <Card key={products.id} title={products.title} id={products.id}/>
+                                })
+                            }
+                        </section>
+                        <section id="comment">
+                            <h1 className="notosans">顧客好評</h1>
+                            <div className="comment-card-box notosans">
+                                {
+                                    comment.map((comment) => {
+                                        return <CommentCard key={comment.id} name={comment.name} content={comment.content} />
+                                    })
+                                }
+                            </div>
+                        </section>
+                        <div className="shop-num" onLoad={() => {
+                            $(window).scroll(function () {
+                                if ($(this).scrollTop() > 500) {
+                                    // .stop:離開之後即可停止
+                                    $('.shop-num').stop().fadeTo('slow', 1);
+                                } else {
+                                    $('.shop-num').stop().fadeOut('fast');
+                                }
+                            });
+                        }}><a href="./shoplist.html"><img src="./image/product/shop-cart.png" alt="" /><p>{shopNum}</p></a></div>
+                    </main>
+                </UserContext.Provider>
+                <Footer />
+            </>;
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    })();
+    </script>
+    <!-- jquery -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+</body>
+
+</html>
