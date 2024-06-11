@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>訂單確認</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/shopconfirm.css">
+    <link rel="icon" href="./favicon.ico">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        const { useState } = React;
+
+        const cardType = [
+            {
+                id: 1,
+                title: "起司奶油咖哩(蛋奶素)",
+                type1: 1,
+                type3: 1
+            },
+            {
+                id: 2,
+                title: "瑪莎拉香料雞肉咖哩",
+                type1: 1
+            },
+            {
+                id: 3,
+                title: "椰奶鮮蝦風味咖哩",
+                type1: 1
+            },
+            {
+                id: 4,
+                title: "雞肉野菜湯咖哩",
+                type2: 1
+            },
+            {
+                id: 5,
+                title: "叻沙海鮮風味湯",
+                type2: 1
+            },
+            {
+                id: 6,
+                title: "濃郁奶油雞肉咖哩",
+                type1: 1
+            },
+            {
+                id: 7,
+                title: "綠咖哩風味粉",
+                type4: 1
+            },
+            {
+                id: 8,
+                title: "馬來咖哩風味粉",
+                type4: 1
+            },
+            {
+                id: 9,
+                title: "辣椒大豆咖哩(素食)",
+                type1: 1,
+                type3: 1
+            },
+            {
+                id: 10,
+                title: "印度咖哩風味粉",
+                type4: 1
+            },
+            {
+                id: 11,
+                title: "日式咖哩風味粉",
+                type4: 1
+            },
+            {
+                id: 12,
+                title: "辣味菠菜雞肉咖哩",
+                type1: 1
+            }
+
+        ];
+        let totalPrice = 0;
+        let shopList = [];
+        for (let i = 0; i < cardType.length; i++) {
+            if (window.localStorage.getItem(cardType[i].title) != undefined) {
+                // window.localStorage.setItem(title, Number(window.localStorage.getItem(title)) + num);
+                shopList.push({ "title": cardType[i].title, "num": Number(window.localStorage.getItem(cardType[i].title)) });
+                totalPrice = totalPrice + Number(window.localStorage.getItem(cardType[i].title)) * 75;
+            } else {
+            }
+        }
+        const Topbar = () => {
+            return <>
+                <div className="topbar">
+                    <iframe src="./topbar.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+        const Footer = () => {
+            return <>
+                <div className="footer">
+                    <iframe src="./footer.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+        const vehiclenumber = window.localStorage.getItem("vehiclenumber");
+        const CheckBill = () => {
+            if (window.localStorage.getItem("bill") == "雲端載具") {
+                return <div><h1>載具編號</h1><p>{vehiclenumber}</p></div>
+            } else {
+                return
+            }
+        }
+        const OrderRow = (props) => {
+            const { title, num } = props;
+            let id = 0;
+            for (let i = 0; i < cardType.length; i++) {
+                if (title == cardType[i].title) {
+                    id = cardType[i].id;
+                }
+            }
+            return <>
+                <div className="order-row borderradius5px">
+                    <div className="w359">
+                        <img src={`./product-image/product-${id}/1.jpeg`} alt="" />
+                        <div className="h1">
+                            <h1>{title}</h1>
+                        </div>
+                    </div>
+                    <div className="discount w269">
+                        <div className="discount-banner borderradius5px"><p>任選優惠</p></div>
+                        <div>
+                            <p>
+                                06/01~06/30期間內<br />
+                                調理包買一送一
+                            </p>
+                        </div>
+                    </div>
+                    <div className="w208"><p><del>NT $150</del><br />NT $75</p></div>
+                    <div className="w181 amount"><p>{num}</p></div>
+                    <div className="w325 total"><p><del>NT ${num * 150}</del><br />NT$ {num * 75}</p></div>
+                </div>
+            </>
+        }
+        function MyApp() {
+            const name = window.localStorage.getItem("name");
+            const email = window.localStorage.getItem("email");
+            const tel = window.localStorage.getItem("tel");
+            const address = window.localStorage.getItem("address");
+            const pay = window.localStorage.getItem("pay");
+            const bill = window.localStorage.getItem("bill");
+            return <>
+                <Topbar />
+                <main>
+                    <section id="shoplist">
+                        <div className="shoplist-box">
+                            <div className="title borderradius5px">
+                                <h1>訂單確認</h1>
+                            </div>
+                            <div className="step">
+                                <img src="./image/shop/progressbar-shopconfirm.png" alt="" />
+                            </div>
+                            <div className="shoplist-content">
+                                <div className="order-title-box borderradius5px">
+                                    <div className="w359"><h2>商品資料</h2></div>
+                                    <div className="w269"><h2>優惠</h2></div>
+                                    <div className="w208"><h2>單件價格</h2></div>
+                                    <div className="w181"><h2>數量</h2></div>
+                                    <div className="w325"><h2>小計</h2></div>
+                                </div>
+                                {
+                                    shopList.map((shopList) => {
+                                        return <OrderRow key={shopList.title} title={shopList.title} num={shopList.num} />
+                                    })
+                                }
+                            </div>
+                            <div className="total-box">
+                                <div className="borderradius5px">
+                                    <div className="total-l"><h2>小計 :</h2></div>
+                                    <div className="total-r"><p>NT$ {totalPrice}</p></div>
+                                </div>
+                                <div className="borderradius5px">
+                                    <div className="total-l"><h2>運費 :</h2></div>
+                                    <div className="total-r"><p>NT$ 100</p></div>
+                                </div>
+                                <div className="borderradius5px">
+                                    <div className="total-l"><h2>合計 :</h2></div>
+                                    <div className="total-r"><p>NT$ {totalPrice + 100}</p></div>
+                                </div>
+                            </div>
+                            <div className="memberinfo">
+                                <div><h1>收件姓名</h1><p>{name}</p></div>
+                                <div><h1>會員信箱</h1><p>{email}</p></div>
+                                <div><h1>聯絡電話</h1><p>{tel}</p></div>
+                                <div><h1>收貨地址</h1><p>{address}</p></div>
+                                <div><h1>付款方式</h1><p>{pay}</p></div>
+                                <div><h1>開立發票</h1><p>{bill}</p></div>
+                                <CheckBill />
+                            </div>
+                            <div className="btn">
+                                <a href="./sendinfo.html"><button className="borderradius5px">回到上一頁</button></a>
+                                <a href="./shopdone.html"><button className="borderradius5px" onClick={() => {
+                                    cardType.map((cardType) => {
+                                        window.localStorage.removeItem(cardType.title);
+                                    })
+                                }}>完成訂單</button></a>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+                <Footer />
+            </>;
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    </script>
+</body>
+
+</html>
