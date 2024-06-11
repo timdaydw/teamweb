@@ -20,6 +20,7 @@
 
     <div id="root"></div>
     <script type="text/babel">
+        const { useState } = React;
         const Topbar = () => {
             return <>
                 <div className="topbar">
@@ -36,6 +37,7 @@
             </>
         }
         function MyApp() {
+            const [link, setLink] = useState("./member-log.html");
             return <>
                 <Topbar />
                 <main>
@@ -48,9 +50,10 @@
                                 <input className="borderradius5px" type="email" id="email" />
                             </div>
                         </form>
-                        <a href="./member-log.html">
+                        <a href={link}>
                         <button className="borderradius5px" onClick={()=>{
                             if (document.getElementById("email").value == "") {
+                                setLink("./forgetpass.html");
                                 window.alert("請輸入信箱");
                             }else {
                                 window.alert("已將密碼寄到您的信箱中");
