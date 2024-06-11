@@ -54,24 +54,9 @@
                 </div>
             </>
         }
-
-        const comment = [
-            {
-                id: 1,
-                name: 'Brian Wu',
-                content: '瑪莎拉雞肉調理包讓我對印度菜的魅力有了全新的理解！它的香料混合得恰到好處，不會太辣但又帶有一絲辛香，起司奶油咖哩也很特別，讓人難以忘懷。'
-            },
-            {
-                id: 2,
-                name: 'Chang',
-                content: '這是我在台灣吃過最好吃的印度咖哩！它的風味豐富，而且份量十足，非常適合與朋友一起分享。我已經向我的朋友們推薦了這家，下次還會購買！'
-            }, {
-                id: 3,
-                name: 'Jessica Lin',
-                content: '食用上很方便！只需要加熱，雞肉軟嫩多汁，搭配著椰奶的濃郁口感，簡直就是完美的組合。非常推薦給上班族，真的超級方便！下次想試試看辣味菠菜咖哩。'
-            },
-
-        ]
+        const commentData = await axios.get('https://timdaydw.github.io/teamweb/comment.json');
+        // const commentData = await axios.get('./comment.json');
+        const comment = commentData.data.comment;
         const CommentCard = (props) => {
             const { name, content } = props;
             return <>
