@@ -20,83 +20,75 @@
     <div id="root"></div>
     <script>
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="text/babel">
-        (async()=>{
-
-
         const { useState, createContext, useContext } = React;
         const UserContext = createContext({});
 
-        // const cardType = [
-        //     {
-        //         id: 1,
-        //         title: '起司奶油咖哩(蛋奶素)',
-        //         type1: 1,
-        //         type3: 1,
-        //     },
-        //     {
-        //         id: 2,
-        //         title: '瑪莎拉香料雞肉咖哩',
-        //         type1: 1,
-        //     },
-        //     {
-        //         id: 3,
-        //         title: '椰奶鮮蝦風味咖哩',
-        //         type1: 1,
-        //     },
-        //     {
-        //         id: 4,
-        //         title: '雞肉野菜湯咖哩',
-        //         type2: 1,
-        //     },
-        //     {
-        //         id: 5,
-        //         title: '叻沙海鮮風味湯',
-        //         type2: 1,
-        //     },
-        //     {
-        //         id: 6,
-        //         title: '濃郁奶油雞肉咖哩',
-        //         type1: 1,
-        //     },
-        //     {
-        //         id: 7,
-        //         title: '綠咖哩風味粉',
-        //         type4: 1
-        //     },
-        //     {
-        //         id: 8,
-        //         title: '馬來咖哩風味粉',
-        //         type4: 1
-        //     },
-        //     {
-        //         id: 9,
-        //         title: '辣椒大豆咖哩(素食)',
-        //         type1: 1,
-        //         type3: 1,
-        //     },
-        //     {
-        //         id: 10,
-        //         title: '印度咖哩風味粉',
-        //         type4: 1
-        //     },
+        const cardType = [
+            {
+                id: 1,
+                title: '起司奶油咖哩(蛋奶素)',
+                type1: 1,
+                type3: 1,
+            },
+            {
+                id: 2,
+                title: '瑪莎拉香料雞肉咖哩',
+                type1: 1,
+            },
+            {
+                id: 3,
+                title: '椰奶鮮蝦風味咖哩',
+                type1: 1,
+            },
+            {
+                id: 4,
+                title: '雞肉野菜湯咖哩',
+                type2: 1,
+            },
+            {
+                id: 5,
+                title: '叻沙海鮮風味湯',
+                type2: 1,
+            },
+            {
+                id: 6,
+                title: '濃郁奶油雞肉咖哩',
+                type1: 1,
+            },
+            {
+                id: 7,
+                title: '綠咖哩風味粉',
+                type4: 1
+            },
+            {
+                id: 8,
+                title: '馬來咖哩風味粉',
+                type4: 1
+            },
+            {
+                id: 9,
+                title: '辣椒大豆咖哩(素食)',
+                type1: 1,
+                type3: 1,
+            },
+            {
+                id: 10,
+                title: '印度咖哩風味粉',
+                type4: 1
+            },
 
-        //     {
-        //         id: 11,
-        //         title: '日式咖哩風味粉',
-        //         type4: 1
-        //     },
-        //     {
-        //         id: 12,
-        //         title: '辣味菠菜雞肉咖哩',
-        //         type1: 1,
-        //     },
-        // ]
-        const data = await axios.get('https://timdaydw.github.io/teamweb/card-type.json');
-        // const data = await axios.get('./card-type.json');
-        const cardType = data.data.cardType;
-
+            {
+                id: 11,
+                title: '日式咖哩風味粉',
+                type4: 1
+            },
+            {
+                id: 12,
+                title: '辣味菠菜雞肉咖哩',
+                type1: 1,
+            },
+        ]
         let shopList = 0;
         for (let i = 0; i < cardType.length; i++) {
             if (window.localStorage.getItem(cardType[i].title) != undefined) {
@@ -366,7 +358,6 @@
         const container = document.getElementById('root');
         const root = ReactDOM.createRoot(container);
         root.render(<MyApp />);
-    })();
     </script>
     <!-- jquery -->
     <script src="./js/jquery-3.7.1.min.js"></script>
