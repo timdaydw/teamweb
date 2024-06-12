@@ -26,6 +26,7 @@ button {
 
 .title {
     display: flex;
+    align-items: center;
     width: 471px;
     justify-content: space-between;
     margin-bottom: 40px;
@@ -33,7 +34,7 @@ button {
 }
 
 .title .separator {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 900;
 }
 
