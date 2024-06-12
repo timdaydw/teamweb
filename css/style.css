@@ -280,6 +280,12 @@ del {
 
 .fqa a {
     color: #FCECCC;
+    transition: all 0.35s;
+}
+
+.fqa a:hover {
+    padding-bottom: 3px;
+    border-bottom: #FCECCC solid 1px;
 }
 
 /* banner */
