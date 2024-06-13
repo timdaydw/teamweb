@@ -486,6 +486,7 @@ del {
     }
 
     .news-more-button a {
+        margin: 16% auto 0 auto;
         background-color: #062F2A;
     }
 }
