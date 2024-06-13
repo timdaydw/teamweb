@@ -647,6 +647,10 @@ del {
     .star {
         display: none;
     }
+    
+    .brand-more-button{
+        margin: 60px auto 0 auto;
+    }
 }
 
 /* product */
