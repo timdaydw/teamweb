@@ -808,8 +808,8 @@ del {
         margin: 20px 0;
     }
 
-    .product-more-button a{
-        margin: 15px 0;
+    .product-content-box{
+        height: auto;
     }
 }
 
@@ -933,6 +933,7 @@ del {
         height: 100vh;
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
         justify-content: space-around;
         padding-bottom: 15%;
         padding-left: 20px;
@@ -961,7 +962,6 @@ del {
     }
 
     .contact-content ul:first-child li {
-        padding-left: 10px;
         margin: 10px 0;
     }
 
@@ -972,7 +972,7 @@ del {
     .fqa {
         align-self: flex-start;
         flex-direction: column;
-        margin-left: 10px;
+        margin: 0;
     }
 
     .fqa h1 {

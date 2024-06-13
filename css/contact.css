@@ -153,6 +153,7 @@ main {
     #contact {
         flex-direction: column;
         background-color: #CE9741;
+        padding: 0 10px;
     }
 
     .contact-info-title {
@@ -164,6 +165,9 @@ main {
     .contact-info-box {
         padding: 50px 0;
         width: 100%;
+    }
+    .contact-info-box h3{
+        width: 120px;
     }
 }
 
@@ -214,7 +218,7 @@ main {
 
     .qa-box,
     .ans-box {
-        width: 90%;
+        width: 95%;
         min-width: 351px;
     }
     #shop-qa {
@@ -316,6 +320,7 @@ main {
     #product-qa {
         flex-direction: column;
         justify-content: flex-start;
+        padding-right: 0;
     }
 
     .product-qa-box {

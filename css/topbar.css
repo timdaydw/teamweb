@@ -313,7 +313,7 @@ header {
     }
 
     .member-box {
-        padding-top: 20px;
+        padding-top: 16px;
     }
 
     .home {
@@ -328,7 +328,9 @@ header {
         height: 16px;
         align-self: flex-end;
     }
-
+    .topbar-member img{
+        display: none;
+    }
     .member a {
         padding: 0;
     }
