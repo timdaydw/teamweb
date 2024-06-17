@@ -132,6 +132,9 @@ main,button {
     padding-right: 30px;
     text-align: end;
 }
+.total a {
+    color: red;
+}
 
 .w359{
     width: 359px;
@@ -293,4 +296,8 @@ main,button {
     .order-title-box>div, .order-row>div{
         padding-left: 5px;
     }
+}
+
+.checkBuy{
+    color: red;
 }

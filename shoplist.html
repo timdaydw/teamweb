@@ -81,7 +81,9 @@
                         </div>
                         <div className="w208"><p><del>NT $150</del><br />NT $75</p></div>
                         <div className="w181 amount"><p>{num}</p></div>
-                        <div className="w325 total"><p><del>NT ${num * 150}</del><br />NT$ {num * 75}</p></div>
+                        <div className="w325 total"><p><del>NT ${num * 150}</del><br />NT$ {num * 75}</p><a href="./shoplist.html" onClick={() => {
+                            window.localStorage.removeItem(title);
+                        }}>刪除</a></div>
                     </div>
                 </>
             }
@@ -91,13 +93,23 @@
             } else {
                 checkLog = window.localStorage.getItem("logCheck");
             }
+
+            const CheckBuy = () => {
+                if (totalPrice == 0) {
+                    return <>
+                        <p className="checkBuy">購物車內尚未加入產品，請先至商品頁購買</p>
+                    </>
+                }
+            }
+
             function MyApp() {
                 const [link, setLink] = useState("./sendinfo.html");
                 function CheckLog() {
-                    if (checkLog == "notLog") {
+                    if (totalPrice == 0) {
+                        setLink("./product.html");
+                    } else if (checkLog == "notLog") {
                         window.alert("請先行登入");
                         setLink("./member-log.html");
-                    } else {
                     }
                 }
                 return <>
@@ -119,6 +131,7 @@
                                         <div className="w181"><h2>數量</h2></div>
                                         <div className="w325"><h2>小計</h2></div>
                                     </div>
+                                    <CheckBuy/>
                                     {
                                         shopList.map((shopList) => {
                                             return <OrderRow key={shopList.title} title={shopList.title} num={shopList.num} />
@@ -138,7 +151,9 @@
                                         <div className="total-l"><h2>合計 :</h2></div>
                                         <div className="total-r"><p>NT$ {totalPrice + 100}</p></div>
                                     </div>
-                                    <a href={link}><button className="borderradius5px" onClick={() => CheckLog()}>下一步</button></a>
+                                    <a href={link}><button className="borderradius5px" onClick={() => {
+                                        CheckLog();
+                                    }}>下一步</button></a>
                                 </div>
                             </div>
                         </section>
